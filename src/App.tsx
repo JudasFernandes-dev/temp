@@ -6,6 +6,7 @@ import PagLogin from "./assets/pages/PagLogin";
 import PagCadProjetos from "./assets/pages/PagCadProjetos";
 import Empresa from "./assets/pages/Pagemp/Empresa";
 import Usuario from "./assets/pages/Paguser/Usuario";
+import EditProfile from "./assets/components/perfil/EditProfile"; // Added import
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             path="/cadastro"
             element={<PagCadastro key="cadastro" />}
           />
+          <Route path="/edit-profile" element={<EditProfile />} /> {/* Added route */}
         </Routes>
       </Router>
     </>

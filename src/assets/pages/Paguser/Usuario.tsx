@@ -37,7 +37,7 @@ const Usuario = () => {
   };
 
   const handleEditProfile = () => {
-    navigate('/edit-profile');
+    window.open('/edit-profile', '_blank');
   };
 
   const handleParticipate = (projectId: number) => {

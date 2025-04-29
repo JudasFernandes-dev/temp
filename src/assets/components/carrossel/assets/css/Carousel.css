@@ -1,0 +1,33 @@
+.carousel-container {
+  background-color: #f0f0f0; /* Fundo cinza */
+  padding: 20px; /* Espaçamento interno */
+  margin: 0 auto; /* Centraliza o carrossel na página */
+  max-width: 100%; /* Faz o carrossel ocupar todo o espaço disponível */
+  overflow: hidden; /* Remove qualquer conteúdo que ultrapasse os limites */
+}
+
+.carousel-item {
+  display: flex; /* Garante que os itens fiquem alinhados */
+  justify-content: center; /* Centraliza as imagens horizontalmente */
+  align-items: center; /* Centraliza as imagens verticalmente */
+  padding: 10px; /* Espaçamento ao redor de cada imagem */
+  margin-left: 50px;
+
+}
+
+.carousel-logo {
+  max-width: 100px; /* Largura máxima da imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  transition: transform 0.3s ease; /* Animação suave ao interagir */
+}
+
+.carousel-logo:hover {
+  transform: scale(1.1); /* Aumenta o tamanho da imagem ao passar o mouse */
+}
+
+
+@media (max-width: 768px) {
+  .carousel-logo {
+    max-width: 80px; /* Ajusta o tamanho em telas pequenas */
+  }
+}

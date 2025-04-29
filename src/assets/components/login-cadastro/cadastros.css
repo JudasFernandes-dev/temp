@@ -1,0 +1,253 @@
+.cadastro-aluno-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 24px;
+  color: var(--cor-laranja);
+  background-color: var(--cor-verde);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.container-titulo-subtitulo-cadastro {
+  text-align: center;
+  margin-top: 3%;
+
+}
+
+.container-titulo-subtitulo-cadastro h1 {
+  font-size: 2em;
+}
+
+.container-inputs-cadastro {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.conatiner-input-icon input {
+
+  color: var(--cor-azul);
+}
+
+.conatiner-input-icon input::placeholder {
+  color: var(--cor-azul);
+  opacity: 80%;
+}
+.conatiner-input-icon {
+  width: 70%;
+  display: flex;
+  align-items: last baseline;
+  border-bottom: 1px solid #36171245;
+}
+
+.conatiner-input-icon div {
+  width: 100%;
+}
+
+.conatiner-input-icon svg {
+  font-size: 18px;
+  margin-right: 12px;
+  color: var(--cor-azul);
+}
+
+.button-container {
+  display: flex; /* Faz os botões ficarem lado a lado */
+  gap: 10px; /* Espaço entre os botões, você pode ajustar esse valor */
+  justify-content: center; /* Alinha os botões ao centro */
+  margin: 15px; /* Adiciona margem no container */
+}
+
+button.botao-formulario-cadastro {
+  cursor: pointer;
+  margin-top: 16px;
+  width: 130px;
+  height: 40px;
+  font-size: 0.9em;
+  max-width: 450px;
+  background-color: var(--cor-verde);
+  border: 2px solid var(--cor-laranja);
+  color: var(--cor-azul);
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 13px;
+  margin-right: 10px;
+}
+.label-selecionada {
+  font-weight: bold;
+}
+
+.texto-inscricao {
+  padding-bottom: 12px;
+}
+
+.input-component {
+  border: 0;
+  width: 100%;
+  height: 25px;
+  padding-left: 0px;
+  text-align: center;
+  font-size: 1em;
+}
+
+.input-component:focus {
+  outline: 0;
+}
+
+.conatiner-input-titulo {
+  width: 100%;
+}
+
+.double-inputs-line {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.double-inputs-line select {
+  color: var(--cor-azul);
+  background-color: var(--cor-verde);
+}
+
+.logotipo{
+  width: 60%;
+  padding-bottom: 5%;
+}
+
+.triangle {
+  position: absolute;
+  width: 500px; /* Largura do triângulo */
+  height: 500px; /* Altura do triângulo */
+  overflow: hidden; /* Garante que os triângulos não ultrapassem os limites */
+}
+
+/* Triângulo 1 */
+.triangle-1 {
+  top: 48%;
+  left: 10%; /* Ajuste a posição horizontal */
+  transform: translate(-52%, -42%) rotate(132deg);
+  border-bottom: none;
+  border-right: none;
+  box-sizing: border-box;
+  background-color: #1E40AF;
+  margin-left: -61%;
+  border-radius: 20px;
+}
+
+/* Triângulo 2 */
+.triangle-2 {
+  top: 40%;
+  left: 30%; /* Ajuste a posição horizontal */
+  transform: translate(-59%, -35%) rotate(127deg);
+  border-bottom: none;
+  border-right: none;
+  box-sizing: border-box;
+  margin-top: 250px;
+  margin-left: -65%;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+/* Triângulo 3 */
+.triangle-3 {
+  top: 40%;
+  left: 30%; /* Ajuste a posição horizontal */
+  transform: translate(-59%, -35%) rotate(127deg);
+  border-bottom: none;
+  border-right: none;
+  box-sizing: border-box;
+  margin-top: 250px;
+  margin-left: -65%;
+  background-color: #F97316;
+  border-radius: 20px;
+}
+
+.container-tipo-empresa {
+  margin: 10px;
+}
+
+.container-tipo-empresa p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.container-tipo-empresa label {
+  margin: 5px 0;
+  font-size: 14px;
+  padding-left: 20px;
+  color: var(--cor-azul);
+}
+
+.container-tipo-empresa input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Estilo para o texto em negrito quando selecionado */
+.container-tipo-empresa .selecionado {
+  font-weight: bold;
+}
+
+.container-termos-uso {
+  margin-top: 5px;
+  font-size: 10px;
+  color: rgb(97, 96, 96);
+}
+
+/* Estilo unificado do checkbox */
+.container-termos-uso input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-right: 8px; /* Prevalece o 8px sobre o 3px duplicado */
+  width: 13px;
+  height: 13px;
+  border: 1px solid #0066cc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+  transition: all 0.2s ease; /* Adicionado para suavizar transições */
+}
+
+/* Estilo quando checkbox está marcado */
+.container-termos-uso input[type="checkbox"]:checked {
+  background-color: #ffffff;
+}
+
+/* Ponto branco interno quando marcado */
+.container-termos-uso input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 45%;
+  top: 55%;
+  width: 8px;
+  height: 8px;
+  background: #0066cc;
+  border-radius: 50%;
+  transform: translate(-45%, -58%);
+}
+
+/* Estilo do link */
+.container-termos-uso a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.container-termos-uso a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+  .double-inputs-line {
+    flex-wrap: wrap;
+  }
+
+}
+  
+  

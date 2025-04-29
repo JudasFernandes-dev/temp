@@ -1,0 +1,42 @@
+.wrapper-comentarios {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: #66d966;
+
+}
+
+.card-coments {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 12px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid orange;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+  
+  }
+
+.card-coments:hover {
+  transform: scale(1.05);
+}
+
+.stars-coments {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+  }
+  
+  .star-coments {
+    font-size: 20px;
+    color: #ddd;
+  }
+  
+  .star.filled {
+    color: #ffc107; 
+  }

@@ -1,0 +1,163 @@
+header {
+  width: 100%;
+  position: fixed; /* Fixa a navbar no topo da página */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que a navbar fique sobre todo o conteúdo */
+  
+}
+  
+.nav-bar {
+  height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Transparência do fundo */
+    backdrop-filter: blur(10px) saturate(180%); /* Efeito de vidro */
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras para o efeito de profundidade */
+    padding: 0 24px;
+}
+  
+  .left-header {
+    width: 40vw;
+    padding: 0
+  }
+
+  .menu-header {
+    text-align: center;
+    margin-left: -12px;
+    margin-top: 4.1vh;
+    padding: 24px 12px;
+    background-color: var(--cor-laranja);
+    color: var(--cor-branca);
+    list-style-type: none;
+    position: absolute;
+    height: calc(100vh - 12vh);
+    width: 40vw;
+    transform: translateX(-100%);
+    transition: all .3s;
+    left: 0; /* Posiciona o menu no canto esquerdo */
+  }
+
+  .menu-header-visible {
+    transform: translateX(0);
+  }
+
+  .menu-header li {
+    margin-bottom: 12px;
+  }
+
+  .menu-header li a{
+    text-decoration: none;
+    color: var(--cor-branca);
+  }
+
+  .menu-header li a:visited{
+    color: var(--cor-branca);
+  }
+
+  .burguer-menu {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+    .line-buguer-menu {
+      background-color: var(--cor-laranja);
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      transition: all .3s;
+    }
+  
+
+
+  #line-1.active{
+    transform: rotate(-45deg) translate(-9px, 8px);
+  }
+
+  #line-2.active{
+    display: none;
+  }
+
+  #line-3.active{
+    transform: rotate(45deg) translate(-7px, -8px);
+  }
+  
+  .center-header {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    backdrop-filter: blur(10px) saturate(180%); /* Efeito de vidro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 50px;
+    object-fit: cover; 
+    border-radius: 50%;
+}
+
+  
+  .right-header {
+    width: 40vw;
+    text-align: right;
+    padding: 0 12px;
+  }
+
+  div.buttons-container button{
+    cursor: pointer;
+  }
+
+  .primary-button a {
+    color: var(--cor-branca);
+    text-decoration: none;
+  }
+
+  .secundary-button a {
+    color: var(--cor-branca);
+    text-decoration: none;
+  }
+
+  .logo-right {
+    display: none;
+  }
+
+  .logo-right img {
+    width: 150px;
+  }
+
+@media screen and (max-width: 860px){
+  .left-header{
+    width: 50vw;
+  }    
+
+  .center-header{
+    display: none;
+  }
+
+  .right-header{
+    width: 50vw;
+  }
+
+  div.buttons-container{
+    display: none;
+  }
+
+  .logo-right{
+    display: block;
+  }
+}

@@ -1,0 +1,126 @@
+:root {
+  --cor-branca: #ffffff;
+}
+
+/* Estilo Base (Mobile First - 350px) */
+.main-pagcadastro {
+  background-color: whitesmoke;
+  min-height: 100vh;
+  margin: 0;
+  padding: 12px; /* Reduzido para telas muito pequenas */
+  box-sizing: border-box;
+  overflow-x: hidden; /* Impede vazamento horizontal */
+}
+
+.section-pagcadastro {
+  width: 100%;
+  max-width: 100%; /* Garante que não ultrapasse a tela */
+  margin: 0 auto;
+  min-height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 6px; /* Reduzido para mobile */
+  background-color: var(--cor-branca);
+  box-shadow: 
+    1px 1px 3px rgba(0, 0, 0, 0.1),
+    -1px -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section-arvore {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.left-side {
+  display: none;
+}
+
+/* Ajustes para telas muito pequenas (350px-400px) */
+@media (max-width: 400px) {
+  .main-pagcadastro {
+    padding: 8px;
+  }
+  
+  .section-pagcadastro {
+    border-radius: 4px;
+  }
+
+  .logotipo {
+    margin-top: 15px; /* Adiciona o espaçamento superior para a logo */
+  }
+}
+
+/* Tablet Pequeno (600px+) */
+@media (min-width: 600px) {
+  .main-pagcadastro {
+    padding: 20px;
+  }
+  
+  .section-pagcadastro {
+    width: 95%;
+    border-radius: 8px;
+  }
+
+  .logotipo {
+    width: 40%; /* Adiciona o tamanho da imagem */
+  }
+}
+
+/* Tablet Grande/Notebook (1024px+) */
+@media (min-width: 1024px) {
+  .main-pagcadastro {
+    padding: 32px;
+  }
+  
+  .section-pagcadastro {
+    width: 900px;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 12px;
+    box-shadow: 
+      4px 4px 6px rgba(0, 0, 0, 0.1),
+      -4px -4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-side {
+    display: block;
+    position: absolute;
+    top: -17%;
+    width: 6%;
+    height: 100%;
+  }
+
+  .logotipo {
+    width: 60%; /* Adiciona o tamanho da imagem */
+  }
+}
+
+/* Desktop Grande (1440px+) */
+@media (min-width: 1440px) {
+  .section-pagcadastro {
+    width: 1200px;
+  }
+}
+
+/* Tablet Pequeno (600px+) */
+@media (min-width: 320px) {
+  .containeer-inputs-cadastro {
+      margin-right: -6%;
+      margin-left: 4%;
+  }
+}
+
+/* Tablet Grande/Notebook (1024px+) */
+@media (min-width: 1024px) {
+  .containeer-inputs-cadastro {
+    margin-right: 0%;
+    margin-left: 0%;
+  }
+}
+
+@media (max-width: 400px) {
+  .containeer-inputs-cadastro {
+      margin-right: -4%;
+      margin-left: -8%;
+  }
+}

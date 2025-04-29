@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  font-family: "DM Sans";
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 12vh; /* Adiciona espaço equivalente à altura da navbar */
+  padding-top: 12vh; 
+}
+
+
+/* h1 {
+  text-align: center;
+  color: var(--cor-laranja);
+} */
+
+:root {
+  --cor-laranja: #fc7f00;
+  --cor-branca: #fff;
+  --cor-azul: #012369;
+  /*--cor-verde: #66d966;*/
+  --cor-cinza: #d9d9d9;
+  --cor-preto: black;
+}
+

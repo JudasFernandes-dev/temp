@@ -1,0 +1,115 @@
+/* Estilos para a seção de cards */
+.cards-section h1 {
+  font-size: 2rem; 
+  margin-bottom: 30px; 
+  color: var(--cor-preto);
+  text-align: center; 
+  margin-top: -60px; 
+}
+
+/* Estilos para o container de cards */
+.container-inicial {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 70px; 
+  justify-content: center; 
+  max-width: 700px; 
+  margin: 0 auto; 
+}
+
+/* Estilos para cada card */
+.card-iniciais {
+  background-color: var(--cor-branca); 
+  padding: 24px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  width: 280px; 
+  height: 250px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 0.5rem; 
+  border-top-left-radius: 30px; 
+  border-bottom-right-radius: 30px; 
+  opacity: 0; 
+  transform: translateX(0); 
+  transition: transform 0.5s ease, opacity 0.5s ease; 
+}
+
+/* Estilos específicos para o primeiro card */
+.card-iniciais:nth-child(1) {
+  background-color: var(--cor-verde); 
+  margin-left: -200px; 
+}
+
+/* Estilos específicos para o segundo card */
+.card-iniciais:nth-child(2) {
+  background-color: var(--cor-cinza); 
+  margin-left: -30px; 
+}
+
+/* Estilos específicos para o terceiro card */
+.card-iniciais:nth-child(3) {
+  background-color: var(--cor-verde); 
+  margin-right: -30px; 
+}
+/* Estilos específicos para o quarto card */
+.card-iniciais:nth-child(4) {
+  background-color: var(--cor-cinza); 
+  margin-right: -200px; 
+}
+
+/* Estilos de animação para os cards ao entrarem na tela */
+.card-iniciais.animate {
+  opacity: 1; 
+  transform: translateX(0);
+}
+
+/* Estilos para o título dentro de cada card */
+.card-iniciais h2 {
+  font-size: 20px; 
+  font-weight: bold; 
+  text-align: center; 
+  margin-bottom: 10px; 
+}
+
+/* Animação de entrada para o card vindo da esquerda */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-220px); 
+    opacity: 0; 
+  }
+  to {
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+/* Animação de entrada para o card vindo da direita */
+@keyframes slideInRight {
+  from {
+    transform: translateX(220px); 
+    opacity: 0; 
+  }
+  to {
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+/* Estilos responsivos para telas menores */
+@media screen and (max-width: 815px) {
+  .container-inicial {
+    flex-direction: column; 
+    gap: 20px;
+    padding: 0 20px; 
+  }
+
+  .card-iniciais {
+    width: 100%; 
+  }
+  .card-iniciais:nth-child(1) {
+    margin-left: 10px; 
+  }
+  .card-iniciais:nth-child(2) {
+    margin-left: 5px; 
+  }
+}

@@ -1,0 +1,98 @@
+/* CONTAINER GERAL */
+.projetos-container {
+    flex: 1; /* Para ocupar o restante da largura */
+    height: 90vh;
+    padding: 20px;
+    background-color: var(--cor-branca);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 1px solid var(--cor-verde);
+    border-radius: 20px;
+  }
+  
+  /* CABEÇALHO */
+  .projetos-header {
+    margin-bottom: 20px;
+  }
+  
+  .projetos-header p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .projetos-botao {
+    margin-top: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--cor-verde);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .projetos-botao:hover {
+    background-color: var(--cor-verde);
+  }
+  
+  /* CARROSSEL */
+  .projetos-carrossel {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .carrossel-item-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .carrossel-item {
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--cor-verde);
+    transition: transform 0.3s ease;
+  }
+  
+  .carrossel-botoes {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  
+  .carrossel-botao {
+    background-color: transparent;
+    color: var(--cor-verde);
+    border: 2px solid var(--cor-verde);
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s ease;
+  }
+  
+  .carrossel-botao:hover {
+    background-color: var(--cor-verde);
+    color: white;
+    border-color: white;
+  }
+  
+  

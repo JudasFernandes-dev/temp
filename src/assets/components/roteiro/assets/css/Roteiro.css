@@ -1,0 +1,84 @@
+/* Container principal do componente Roteiro */
+.roadmap-container {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  background: url('../img/folhaas.svg') no-repeat center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Título principal da seção */
+.roadmap-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  margin-top: 50px;
+  color: var(--cor-preto)
+}
+
+/* Contêiner dos cards */
+.roadmap-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* Estilo de cada card dentro do roadmap */
+.roadmap-card {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  border-radius: 15px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  overflow: hidden;
+  opacity: 0; 
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease; 
+}
+
+/* Contêiner do conteúdo de cada card */
+.roadmap-card-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Estilo do número dentro de cada card */
+.roadmap-card-number {
+  font-size: 6rem;
+  font-weight: bold;
+  color: var(--cor-preto);
+  flex-shrink: 0;
+}
+
+/* Contêiner para os textos dentro do card */
+.roadmap-card-texts {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo do título dentro de cada card */
+.roadmap-card-title {
+  font-size: 1.5rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* Estilo do texto descritivo dentro de cada card */
+.roadmap-card-description {
+  font-size: 1rem;
+  color: var(--cor-preto);
+}
+

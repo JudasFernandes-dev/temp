@@ -1,0 +1,156 @@
+/* Container principal do banner */
+.banner-container {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  margin-top: 7vh;
+  background-color: #fff; 
+}
+
+/* Adiciona uma imagem de fundo com opacidade reduzida */
+.banner-container::before {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://s2-galileu.glbimg.com/-JZEkhn8PFqEI-D7ZFR_HajbOFg=/0x0:1920x1280/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2022/Z/Y/Hj508jQ0iDFga4hziHHQ/israel-andrade-yi-9sivvt-s-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+/* Sobrepõe outra imagem de fundo com opacidade total */
+.banner-container::after {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/banner.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1; 
+  z-index: 2;
+}
+
+/* Estilos do conteúdo do banner */
+.banner-content {
+  color: black;
+  text-align: left;
+  padding: 10px;
+  max-width: 600px;
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Estilos título */
+.logo-title-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; 
+}
+.banner-title {
+  font-size: 3rem; 
+  line-height: 1.4;
+  margin: 0;
+  margin-bottom: -20px;
+}
+
+/* Estilos para o subtítulo */
+.subtitle-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; 
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.subtitle-highlight {
+  font-size: 2rem; 
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+.subtitle-regular{
+  margin-top: -20px ;
+}
+
+/* Estilos para o botão "Saiba +" */
+.button-learn-more {
+  margin-top: 20px;
+  border: 2px solid #e55b00; 
+  border-radius: 8px; 
+  color: black;
+  padding: 12px 40px; 
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  min-width: 250px; 
+}
+
+.button-learn-more:hover {
+  background-color: #e55b00; 
+}
+
+/* Estilos para os detalhes de contato */
+.contact-details {
+  display: flex;
+  gap: 28px; 
+  font-size: 0.7rem;
+  margin-top: 15px;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon {
+  margin-right: 10px; 
+  font-size: 1rem; 
+}
+
+/* Estilos responsivos para telas menores */
+@media (max-width: 768px) {
+  .banner-container {
+    background-size: 100%;
+  }
+
+  .banner-content {
+    left: 20px;
+    top: 40%;
+    transform: translateY(-40%);
+    max-width: 90%;
+  }
+
+.banner-quote{
+  font-size: 0.7rem;
+}
+}
+
+@media (max-width: 480px) {
+  .banner-container {
+    height: auto;
+    margin-top: 4vh;
+    padding: 20px;
+  }
+
+  .banner-content {
+    left: 0;
+    max-width: 100%;
+    text-align: center;
+    transform: none;
+    padding: 10px;
+  }
+}

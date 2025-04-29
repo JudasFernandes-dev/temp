@@ -1,0 +1,71 @@
+.aluno-instituicao-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--cor-verde);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    padding: 0px 24px;
+}
+
+.logotipo-aluno-instituicao{
+    width: 340px;
+    padding: 3%;
+    
+}
+
+.chamada-aluno-instituicao-seletor {
+    color: var(--cor-azul);
+    text-align: center;
+    font-size: 17px;
+    max-width: 300px;
+}
+
+.container-botoes-seletor {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+   
+ 
+}
+
+.container-botoes-seletor button {
+    background-color: var(--cor-verde);
+    border: 2px solid var(--cor-azul);
+    color: var(--cor-azul);
+    border-radius: 5px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    cursor: pointer;
+    margin-top: 15px;
+
+}
+.container-botoes-seletor1 button {
+    background-color: var(--cor-verde);
+    border: 2px solid var(--cor-laranja);
+    color: var(--cor-azul);
+    border-radius: 5px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+    margin-top: 30px;
+}
+.container-botoes-seletor1 button:hover {
+    background-color: var(--cor-branco); /* Muda a cor de fundo */
+    color: var(--cor-branco); /* Muda a cor do texto */
+    border: 2px solid var(--cor-azul); /* Altera a cor da borda */
+    transform: scale(1.05); /* Aumenta um pouco o tamanho */
+    transition: all 0.3s ease-in-out; /* Suaviza a transição */
+}
+.texto-inscricao{
+    margin: 5px;
+    
+}
+.texto-inscricao a {
+    text-decoration: none; /* Remove o sublinhado do link */
+}

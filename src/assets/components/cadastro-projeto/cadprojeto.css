@@ -1,0 +1,643 @@
+.container-agentespermitidos ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    color: #012369;
+}
+.container-perguntas{
+  list-style-type: none;
+  margin-top: 12px;
+  color: #012369;
+  padding-left: 13%;
+  padding-right: 7%;
+  padding-bottom: 5%;
+}
+.container-perguntas ul {
+  list-style-type: none; /* Remove os marcadores da lista */
+  
+}
+.container-perguntas label {
+  margin-left: 0; /* Remove o deslocamento aplicado globalmente */
+  color: inherit; /* Usa a cor herdada */
+  font-size: 1rem; /* Define o tamanho da fonte */
+  margin-right: 5px; /* Adiciona espaçamento entre o checkbox e o texto */
+}
+
+/* Estilos para as ações do formulário */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    
+}
+
+.custom-question-container input {
+  border: 0.5px solid #012369;/* Remove a borda do botão */
+  width: 80%; /* Define a largura do botão */
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.form-actions button {
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    background-color: var(--cor-verde);
+    border: 2px solid var(--cor-laranja);
+    color: var(--cor-azul);
+}
+
+.form-actions button:hover {
+    background-color: #0057b375;
+    border-color: #0056b3;
+}
+
+.form-actions .botao-formulario-cadastro:disabled {
+   
+    cursor: not-allowed;
+}
+
+.form-actions .botao-formulario-cadastro.voltar-home {
+    background-color: #6c757d;
+}
+
+.form-actions .botao-formulario-cadastro.voltar-home:hover {
+    background-color: #5a6268;
+}
+
+/* Estilos para upload de arquivo */
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-upload-button {
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-upload-button:hover {
+    background-color: #e0e0e0;
+}
+
+.file-name {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.file-instructions {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Estilos para termos e condições */
+.terms-container {
+    margin-top: 10px;
+}
+
+.terms-container label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+/* Barra de progresso opcional */
+.progress-steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.progress-step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.progress-step.active {
+    background-color: #4CAF50;
+    color: white;
+}
+/* Estilo para o botão de voltar na primeira página */
+.botao-formulario-cadastro.voltar-home {
+    background-color: #6c757d;
+}
+
+.botao-formulario-cadastro.voltar-home:hover {
+    background-color: #5a6268;
+}
+.textarea-component {
+    resize: vertical;
+    min-height: 100px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    color: #012369;
+
+}
+/* Container sem ícone */
+.input-container {
+    width: 66%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+.input-component::placeholder {
+    color: #aaa; /* Cinza mais claro */
+    opacity: 0.7; /* Levemente transparente */
+    font-style: italic; /* Itálico para diferenciar */
+    font-size: 0.95rem; /* Um pouco menor que o texto normal */
+  }
+  
+  /* Para garantir consistência em todos os inputs */
+textarea.input-component::placeholder {
+    color: #aaa;
+    opacity: 0.7;
+    font-style: italic;
+  }
+
+  /* Placeholder verde claro */
+input.input-component::placeholder {
+    color: #0124697a !important; 
+    opacity: 0.7 !important;
+  }
+h1.titulo-formulario-cadastro-projeto{
+    color: var(--cor-laranja);
+    margin-top: 3%;
+    margin-bottom: 4%;
+    margin-right: 3%;
+  
+  }
+p{
+   color: var(--cor-laranja);
+ 
+  }
+label{
+    margin-left: 20px;
+  }
+input{
+    margin-right: 4px;
+  }
+
+.containeer-inputs-cadastro {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+    padding-right: 2%;
+    
+    }
+button.botao-formulario-cadastro{
+    margin-left: 19px;
+    margin-right: 4px;
+    height: 46px;
+}
+.file-upload-button {
+    padding: 6px 12px;
+    margin-top: 12px;
+}
+
+/* No seu cadastro.css */
+.api-integration-container {
+    display: flex;
+    flex-wrap: wrap; /* Para que os cards quebrem se não houver espaço */
+    gap: 12px; /* Espaçamento entre os cards */
+    margin-top: 10px; /* Adicione um pouco de margem superior para separar da pergunta */
+  }
+
+/* Estilos específicos para a seção de premiação */
+.premiacao-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    height: 350px;
+    width: 90%;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 10%;
+    text-align: center;
+  
+}
+
+.premiacao-container h3 {
+    color: #343a40;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.premiacao-control {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.premiacao-control label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+}
+
+.premiacao-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.premiacao-select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+.conatiner-input-iconn {
+  margin-left: -14px;
+  justify-items: center;
+}
+
+/* Estilos para os campos de premiação */
+.premiacao-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.premiacao-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Leve sombra para destaque */
+}
+
+.premiacao-item label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+}
+
+.premiacao-item input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.premiacao-item input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botão de salvar premiação */
+#btnSalvar {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+#btnSalvar:hover {
+    background-color: #218838;
+}
+
+/* Resumo da premiação */
+#visualizacao {
+    padding-left: 25px;
+    padding-right: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#visualizacao h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#listaPremios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#listaPremios .list-group-item {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #495057;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-left: -1%;
+}
+
+/* Container principal dos campos de premiação */
+#camposPremiacao{
+    display: ruby;
+}
+.h5.mb-3{
+    text-align: center;
+}
+
+.conatiner-input-icon.datas-container{
+    margin-bottom: 3%;
+}
+
+.progress-container {
+  margin: 20px 0;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.progress-bar {
+  width: 300px;
+  height: 5px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: -10%;
+
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #4caf50; /* Cor da barra de progresso */
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-text {
+  
+  color: #ffffff;
+}
+
+.progress-separator {
+  width: 60%; /* Ocupa toda a largura do contêiner */
+  height: 1px; /* Define a espessura da linha */
+  background-color: #dee2e6; /* Cor da linha */
+  margin-top: 4%; /* Espaçamento entre a linha e a barra de progresso */
+}
+
+.habilidades-container {
+  display: flex;
+  gap: 6px;
+  margin-top: 20px;
+  margin-left: -12px;
+  margin-right: 9px;
+  padding-bottom: 2%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.descricao-habilidades {
+  margin-top: 7%;
+  color: var(--cor-azul);
+  text-align: center;
+  margin-left: -11%;
+}
+
+.conatiner-input-habilidades{
+  margin-left: 14%;
+  margin-bottom: 0%;
+}
+
+
+.habilidade-item {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  border: 1px solid #f97316;
+  border-radius: 10px;
+  padding: 1px 5px;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.habilidade-item button {
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-size: 1rem;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.adicionar-habilidade-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  margin-right: 16%;
+  margin-left: 10%;
+}
+
+.adicionar-habilidade-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.add-habilidade-button {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-habilidade-button:hover {
+  background-color: #45a049;
+}
+
+.add-habilidade-button {
+  background-color: #6c757d; /* Cor de fundo igual ao botão de voltar */
+  color: white; /* Cor do texto */
+  border: none; /* Remove borda */
+  border-radius: 4px; /* Bordas arredondadas */
+  padding: 10px 15px; /* Espaçamento interno */
+  cursor: pointer; /* Mostra o cursor de clique */
+  font-size: 1rem; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.add-habilidade-button:hover {
+  background-color: #5a6268; /* Cor de fundo ao passar o mouse */
+}
+
+.titulo-habilidades {
+  margin-left: 5%;
+}
+
+.remove-question-button {
+  background: none;
+  border: none;
+  color: #dc3545; /* Cor vermelha */
+  font-size: 1rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.remove-question-button:hover {
+  color: #a71d2a; /* Vermelho mais escuro ao passar o mouse */
+}
+
+/* Ajustes para telas muito pequenas (350px-400px) */
+@media (max-width: 400px) {
+    .main-pagcadastro {
+      padding: 8px;
+    }
+    
+    .section-pagcadastro {
+      border-radius: 4px;
+    }
+  
+    .logotipo {
+      margin-top: 15px; /* Adiciona o espaçamento superior para a logo */
+    }
+
+    .datas-container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      
+      .input-metade {
+        flex: 1;
+        min-width: 250px;
+      }   
+  
+  }
+  
+  /* Tablet Pequeno (600px+) */
+  @media (min-width: 600px) {
+    .main-pagcadastro {
+      padding: 20px;
+    }
+    
+    .section-pagcadastro {
+      width: 95%;
+      border-radius: 8px;
+    }
+    
+  }
+  
+  /* Tablet Grande/Notebook (1024px+) */
+  @media (max-width: 1024px) {
+    
+    .titulo-habilidades {
+      margin-left: 18%;
+    }
+
+    .descricao-habilidades {
+      margin-right: 8%;
+  }
+
+    .adicionar-habilidade-container {
+    margin-left: 1%;
+  }
+    .habilidades-container {
+      margin-left: 3%;
+      margin-right: 10%;
+  }
+
+  h1.titulo-formulario-cadastro-projeto{
+    margin-left: 8%;
+  }
+
+  }
+
+  @media (min-width: 1024px) {
+    .main-pagcadastro {
+      padding: 32px;
+    }
+    .habilidade-item {
+      padding-left: 5%;
+      margin-left: 3%;
+    }
+    
+    .section-pagcadastro {
+      width: 900px;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 12px;
+      box-shadow: 
+        4px 4px 6px rgba(0, 0, 0, 0.1),
+        -4px -4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .left-side {
+      display: block;
+      position: absolute;
+      top: -17%;
+      width: 6%;
+      height: 100%;
+    }
+
+  
+  /* Desktop Grande (1440px+) */
+  @media (min-width: 1440px) {
+    .section-pagcadastro {
+      width: 1200px;
+    }
+}
+  }

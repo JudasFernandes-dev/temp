@@ -1,0 +1,23 @@
+.main-container-principal {
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+@media screen and (max-width: 600px) {
+    .main-container-principal {
+        flex-direction: column; 
+        min-height: auto; /* Remove a altura mínima */
+        padding: 10px; 
+        justify-content: flex-start;
+        max-width: 460px; 
+        width: 100%; /* Garante que ocupe toda a largura disponível até o limite de 460px */
+        margin: 0 auto; /* Centraliza o container horizontalmente */
+    }
+}
+
+    

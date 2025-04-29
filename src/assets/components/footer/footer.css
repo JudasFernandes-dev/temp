@@ -1,0 +1,76 @@
+.footer {
+    width: 100%;
+    background-color: #0246cd27;
+    padding: 30px 0;  /* Reduzi o padding para deixar mais fino */
+    font-family: Arial, sans-serif;
+    clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%); /* Faz o efeito diagonal */
+}
+
+.top-footer {
+    text-align: center;
+    padding: 10px 0;  /* Reduzi o espaço superior */
+    font-size: 14px;
+}
+
+.top-footer ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 0.8rem;  /* Reduzi o espaço entre os ícones */
+    padding: 0;
+}
+
+.middle-footer {
+    display: flex;
+    justify-content: center;  /* Centraliza as colunas */
+    text-align: center;
+    padding: 10px 5%;  /* Reduzi o padding vertical */
+    gap: 30%; /* Adiciona espaço entre as colunas */
+    max-width: 900px; /* Define uma largura máxima */
+    margin: 0 auto; /* Centraliza a seção no meio */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-column h3 {
+    font-size: 14px;  /* Diminuí o tamanho do título */
+    font-weight: bold;
+    margin-bottom: 6px;  /* Menos espaço entre título e links */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 4px;  /* Reduzi o espaçamento entre os itens */
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;  /* Diminuí o tamanho dos links */
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.bottom-footer {
+    text-align: center;
+    padding: 5px 0;  /* Reduzi o espaço inferior */
+    background-color: #e8eef3;
+    font-size: 12px;  /* Diminuí o tamanho do texto */
+}
+
+.icon-rede-footer svg {
+    font-size: 20px;  /* Diminuí o tamanho dos ícones */
+    color: #ff7f00;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

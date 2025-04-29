@@ -1,0 +1,56 @@
+.api-options {
+  display: flex; /* Exibe as opções lado a lado */
+  flex-wrap: wrap; /* Permite que as opções quebrem para a próxima linha, se necessário */
+  justify-content: center; /* Centraliza as opções horizontalmente */
+  margin-left: -2%;
+
+}
+
+.api-card {
+  display: flex;
+  flex-direction: column; /* Mantém o conteúdo interno alinhado verticalmente */
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  border: 2px solid #ccc; /* Borda para destacar cada opção */
+  border-radius: 8px; /* Bordas arredondadas */
+  width: 150px; /* Largura fixa para cada card */
+  height: 75px; /* Altura fixa para cada card */
+  text-align: center; /* Centraliza o texto */
+  cursor: pointer; /* Mostra o cursor de clique */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animação ao passar o mouse */
+  margin-top: 2%;/* Espaçamento da margen superior */
+  font-size: 92%; /* Tamanho da fonte */
+}
+
+.api-card.selected {
+  border-color: #4caf50; /* Cor da borda para itens selecionados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Destaque para itens selecionados */
+}
+
+.api-card:hover {
+  transform: scale(1.05); /* Aumenta levemente o tamanho ao passar o mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao passar o mouse */
+}
+
+.api-card input {
+  display: none; /* Esconde o checkbox */
+}
+
+.api-card div {
+  margin-top: 8px; /* Espaçamento entre o título e a descrição */
+}
+
+/* Adaptações para telas menores (opcional) */
+@media (max-width: 768px) {
+  .api-card {
+    width: calc(100% - 12px); /* Exibe 1 card por linha em telas médias */
+  }
+}
+
+@media (max-width: 1023px) {
+  .api-options{
+    margin-left: 7%;
+  }
+    .api-card{
+    margin-right: 8%;
+    }
+}

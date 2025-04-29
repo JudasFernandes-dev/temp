@@ -60,9 +60,18 @@
     transform: scale(1.10);
 }
 
-.botao-logout {
+.botao-logout, .botao-edit {
     border: 1px solid var(--cor-azul);
     color: var(--cor-azul);
     background-color: var(--cor-verde);
     cursor: pointer;
+    padding: 8px 16px;
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.botao-edit:hover {
+    background-color: var(--cor-azul);
+    color: var(--cor-verde);
 }

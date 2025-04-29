@@ -69,6 +69,9 @@ const PerfilParticipante: React.FC = () => {
                 </div>
             </div>
 
+            <button className="botao-edit" onClick={() => navigate('/edit-profile')}>
+                Editar Perfil
+            </button>
             <button className="botao-logout" onClick={handleLogout}>
                 Sair
             </button>

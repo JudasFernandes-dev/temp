@@ -1,321 +1,150 @@
 .main-users-container-principal {
-    padding: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-    min-height: 100vh;
-    min-width: 100vw;
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f6fa;
+  padding: 20px;
+  gap: 20px;
 }
 
-/*CONTEÚDO PRINCIPAL*/
-.conteudo-principal {
-    width: 75%;
-    height: 100vh;
-    max-width: 100%;
-    border-radius: 10px;
-    border: 1px solid #073763;
-    padding: 20px 50px 20px 30px;
-    max-height: 600px;
-    overflow-y: scroll;
-    margin: 0; /* Remove a margem */
+.perfil-lateral-container {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: fit-content;
 }
 
-.usuario-paragrafo {
-    align-items: center;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #6b727a;
+.profile-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
 }
 
-/* CARROSSEL CATEGORIAS */
-.container-carrossel {
-    width: 100%;
-    max-height: 600px;
-    display: flex;
-    flex-direction: column;  
-    padding-top: 10px;
-    align-items: center;
+.perfil-lateral-container h2 {
+  text-align: center;
+  margin: 10px 0;
+  color: #333;
 }
 
-.carrossel-categorias-item {
-    background-color:#fff;
-    width: 100%;
-    max-width: 800px;
-    overflow: hidden;
-    position: relative;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    background-color: #fff;
+.perfil-lateral-container p {
+  text-align: center;
+  color: #666;
 }
 
-.categorias-item{
-    display: flex;
-    transition: transform 0.5s ease;
+.profile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
 }
 
-.item {
-    padding: 5px 15px;
-    min-width: 20%; /* 100% dividido por 5 itens */
-    box-sizing: border-box;
-    border-right: 1px; /* separação entre os itens */
-    cursor: pointer; 
-    
-    font-size: 0.80rem;
-    color: #073763;
-    border-radius: 10px;
-    background: #fff;
-    font-weight: 500;
-    border: 1px solid transparent;
-    transition: 0.2s ease;
+.profile-nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.item a {
-    text-decoration: none;
-    color: #ccc;
+.profile-nav a:hover {
+  background-color: #f0f0f0;
 }
 
-.item:last-child {
-    border-right: none; /* remove a borda do último item */
+.edit-profile-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.botoes {
-    position:absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+.content-container {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.botao {
-    background-color: transparent;
-    color: black;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-/* FIM CARROSSEL CATEGORIAS */
-
-
-/* CARROSSEL PROJETOS*/
-.container-carrossel2 {
-    width: 100%;
-    max-width: 800px; /* largura máxima do carrossel */
-    overflow: hidden;
-    position: relative;
-    
-    border-radius: 10px;
-    background-color: #fff;
-
-    margin-top: 10px;   
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.carrossel-projetos-item {
-    display: flex;
-    transition: transform 0.5s ease;
-    gap: 10px;
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-.projetos-item {
-    min-width: 18%; /* Cada item ocupa 20% da largura do carrossel */
-    box-sizing: border-box;
-    padding: 20px;
-    text-align: center;
-
-    border-radius: 15px;
-    background-color: #eceaea;
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.projetos-item img {
-    max-width: 100%; /* Ajusta a imagem para não ultrapassar o limite do item */
-    border-radius: 5px;
+.categories {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.conteudo {
-    padding-top: 10px;
+.categories button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
 }
 
-.conteudo button {
-    margin-top: 10px;
-    font-size: 0.80rem;
-    padding: 5px 15px;
-    color: #073763;
-    border-radius: 10px;
-    background: #fff;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: 0.2s ease;
+.categories button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
 }
 
-.conteudo button:hover {
-    background: #073763;
-    border: 1px solid #fff;
-    color: #fff;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-/* RESPOSSIVIDADE  */
-@media (max-width: 480px) {
-    /* Ajuste no container principal */
-    .main-container-principal {
-        flex-direction: column; 
-        min-height: auto; /* Remove a altura mínima */
-        padding: 10px; 
-        justify-content: flex-start;
-        max-width: 460px; 
-        width: 100%; /* Garante que ocupe toda a largura disponível até o limite de 460px */
-        margin: 0 auto; /* Centraliza o container horizontalmente */
-    }
-    
-
-    /* Ajuste no perfil lateral */
-    .card-lateral {
-        width: 100%; 
-        padding: 10px; 
-        margin: 10px 0; 
-        max-height: none; /* Remove limite de altura */
-    }
-
-    /* Ajuste na imagem do perfil */
-    .imagem {
-        width: 70px; 
-        height: 70px;
-        border-radius: 50%;
-        margin-left: 10px; 
-        margin-right: 15px; 
-        display: block; /* Faz a imagem ocupar toda a largura disponível, forçando o alinhamento à esquerda */
-        margin-bottom: 10px; 
-    }
-
-    /* Ajustes no nome e info do usuário */
-    .usuario-nome,
-    .usuario-user {
-        text-align: left; /* Alinha o texto à esquerda */
-        font-size: 1rem; 
-    }
-
-    .usuario-social {
-        display: block;
-        text-align: left; 
-    }
-
-    .usuario-social li {
-        margin-left: 15px;
-        margin: 5px 0; 
-        font-size: 0.85rem; 
-    }
-
-    .conteudo-principal {
-        width: 100%; 
-        padding: 15px; 
-        margin: 0;
-        max-width: 100%; /* Não ultrapassa a largura da tela */
-    }
-
-    .usuario-paragrafo {
-        padding-bottom: 10px;
-        font-size: 0.9rem;
-        margin-left: 10px;
-    }
-
-    .carrossel-categorias-item {
-        width: 100%; /* O carrossel ocupa toda a largura da tela */
-        height: 150px;
-    }
-
-    .categorias-item {
-        flex-wrap: wrap; /* Permite que os itens se quebrem em várias linhas */
-        justify-content: center; 
-        height: 150px;
-    }
-
-    .item {
-        min-width: 45%; 
-        text-align: center; 
-        margin: 5px 0; 
-    }
-
-    .container-carrossel2 {
-        width: 100%; /* Garante que o carrossel ocupe toda a largura da tela */
-    }
-
-    .projetos-item {
-        min-width: 18%; /* Aumenta o tamanho dos itens para caberem melhor em telas pequenas */
-        padding: 10px;
-        margin: 10px 0; 
-        height: 150px;
-        font-size: 0.70rem ;
-    }
-
-    .conteudo button {
-        font-size: 0.68rem; 
-        padding: 6px 10px; 
-        margin-top: 10px;
-        text-align: center;
-    }
+.project-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
 }
 
-/* RESPOSSIVIDADE PARA TABLET E TELAS MÉDIAS (481px - 1024px) */
-@media (min-width: 481px) and (max-width: 1024px) {
-    .main-container-principal {
-        flex-direction: row; /* Mantém o layout em linha (side by side) */
-        padding: 20px;                    
-        justify-content: space-between;
-    }
+.project-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
 
-    .conteudo-principal {
-        width: 65%; /* Diminui a largura do conteúdo principal para deixar espaço para o perfil lateral */
-        padding: 20px;                   
-        max-width: 100%;/* ocupa toda a largura disponível */
-    }
+.participate-btn, .more-info-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .usuario-paragrafo {
-        padding-bottom: 15px;             
-        font-size: 1rem;            
-    }
+.participate-btn {
+  background-color: #007bff;
+  color: white;
+}
 
-    /* CARROSSEL CATEGORIAS */
-    .carrossel-categorias-item {
-        width: 100%; /* O carrossel ocupa toda a largura disponível */
-        height: 180px; /* altura do carrossel */
-    }
-
-    .categorias-item {
-        justify-content: flex-start;  /* Alinha os itens à esquerda */
-        flex-wrap: wrap; /* Pquebra de linha dos item */
-        height: 180px;
-    }
-
-    .item {
-        min-width: 30%; /* largura dos itens do carrossel */
-        text-align: center;               
-        margin: 0 10px;          
-    }
-
-    /* CARROSSEL PROJETOS */
-    .container-carrossel2 {
-        width: 100%;   /* carrossel vai ocupar toda a largura */
-        margin-top: 20px;                 
-    }
-
-    .projetos-item {
-        min-width: 22%;   
-        padding: 15px;
-        margin: 10px;
-    }
-
-    .projetos-item button {
-        width: 100%; /* botão vai ocupar toda a largura do item */
-        max-width: 200px;  /* define a largura do botão */
-        margin-top: 15px;                
-        font-size: 1rem;                
-        padding: 8px 20px;
-    }
-
-    .projetos-item button:hover {
-        background: #073763;
-        border: 1px solid #fff;
-        color: #fff;
-    }
+.more-info-btn {
+  background-color: #f0f0f0;
+  color: #333;
 }

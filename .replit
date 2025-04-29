@@ -21,4 +21,4 @@ args = "npm install"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npx vite"
+args = "npm run dev"

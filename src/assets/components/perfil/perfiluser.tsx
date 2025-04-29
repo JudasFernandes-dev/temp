@@ -60,21 +60,14 @@ const PerfilParticipante: React.FC = () => {
                 </div>
             </div>
 
-            <div className="achievements">
-                <h3>Achievements</h3>
-                <div className="achievements-list">
-                    <img className='badge' src={selo1} alt="Achievement 1" />
-                    <img className='badge' src={selo2} alt="Achievement 2" />
-                    <img className='badge' src={selo3} alt="Achievement 3" />
-                </div>
+            <div className="profile-actions">
+                <button className="profile-btn primary" onClick={() => navigate('/edit-profile')}>
+                    Editar Perfil
+                </button>
+                <button className="profile-btn secondary" onClick={handleLogout}>
+                    Sair
+                </button>
             </div>
-
-            <button className="botao-edit" onClick={() => navigate('/edit-profile')}>
-                Editar Perfil
-            </button>
-            <button className="botao-logout" onClick={handleLogout}>
-                Sair
-            </button>
         </div>
     );
 };

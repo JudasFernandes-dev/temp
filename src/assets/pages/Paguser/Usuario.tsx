@@ -1,12 +1,12 @@
 import './usuario.css';
 import { useState } from 'react';
 import PerfilParticipante from '../../components/perfil/perfiluser';
+import { FaSearch } from 'react-icons/fa';
 
 const Usuario = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('Todos');
 
-  const categories = ['Todos', 'Design', 'Dev', 'Marketing', 'Gestão'];
+  const categories = ['Todos', 'Em andamento', 'Concluídos', 'Favoritos'];
 
   const projects = [
     {
@@ -17,7 +17,7 @@ const Usuario = () => {
       status: 'Em andamento'
     },
     {
-      id: 2, 
+      id: 2,
       name: 'UX/UI Design System',
       company: 'Design Co',
       description: 'Criação de sistema de design para aplicativo móvel',
@@ -25,7 +25,7 @@ const Usuario = () => {
     },
     {
       id: 3,
-      name: 'Marketing Digital', 
+      name: 'Marketing Digital',
       company: 'Marketing Plus',
       description: 'Campanha de marketing para produto inovador',
       status: 'Finalizado'
@@ -34,25 +34,24 @@ const Usuario = () => {
 
   return (
     <div className="main-users-container-principal">
-      <PerfilParticipante />
+      <aside className="perfil-lateral-container">
+        <PerfilParticipante />
+      </aside>
 
       <main className="content-container">
         <div className="search-bar">
-          <input 
+          <input
             type="text"
-            placeholder="Buscar projetos..."
+            placeholder="Pesquisar projetos..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
+          <FaSearch className="search-icon" />
         </div>
 
         <div className="categories">
           {categories.map(category => (
-            <button 
-              key={category}
-              className={selectedCategory === category ? 'active' : ''}
-              onClick={() => setSelectedCategory(category)}
-            >
+            <button key={category} className="category-btn">
               {category}
             </button>
           ))}

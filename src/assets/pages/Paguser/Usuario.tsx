@@ -1,11 +1,15 @@
 import './usuario.css';
 import { useState } from 'react';
 import PerfilParticipante from '../../components/perfil/perfiluser';
+import Sidebar from '../../components/sidebar/Sidebar';
 import { FaSearch } from 'react-icons/fa';
+
 const Usuario = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todos');
+
   const categories = ['Todos', 'Em andamento', 'Concluídos', 'Favoritos'];
+
   const projects = [
     {
       id: 1,
@@ -29,10 +33,12 @@ const Usuario = () => {
       status: 'Finalizado'
     },
   ];
+
   return (
     <div className="main-users-container-principal">
       <aside className="perfil-lateral-container">
         <PerfilParticipante />
+        <Sidebar />
       </aside>
       <main className="content-container">
         <div className="search-bar">
@@ -69,4 +75,5 @@ const Usuario = () => {
     </div>
   );
 };
+
 export default Usuario;

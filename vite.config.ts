@@ -4,11 +4,12 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  optimizeDeps: {
-    include: ['axios']
-  },
   server: {
     host: '0.0.0.0',
-    port: 5000
+    port: 5000,
+    strictPort: true,
+    hmr: {
+      clientPort: 443
+    }
   }
 })

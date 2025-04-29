@@ -1,33 +1,20 @@
 .main-users-container-principal {
   display: flex;
-  min-height: 100vh;
-  background-color: #f5f6fa;
-  padding: 20px;
-  gap: 20px;
 }
-
 .perfil-lateral-container {
-  width: 300px;
-  background: white;
+  width: 250px;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  height: fit-content;
+  background-color: #f5f5f5;
 }
-
 .content-container {
   flex: 1;
-  background: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: white;
 }
-
 .search-bar {
   position: relative;
   margin-bottom: 20px;
 }
-
 .search-bar input {
   width: 100%;
   padding: 12px 40px 12px 12px;
@@ -35,7 +22,6 @@
   border-radius: 8px;
   font-size: 16px;
 }
-
 .search-icon {
   position: absolute;
   right: 12px;
@@ -43,14 +29,12 @@
   transform: translateY(-50%);
   color: #666;
 }
-
 .categories {
   display: flex;
   gap: 10px;
   margin-bottom: 30px;
   flex-wrap: wrap;
 }
-
 .category-btn {
   padding: 8px 16px;
   border: 1px solid #ddd;
@@ -59,147 +43,26 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .category-btn.active {
   background: #007bff;
   color: white;
   border-color: #007bff;
 }
-
 .category-btn:hover {
   background: #f0f0f0;
 }
-
 .category-btn.active:hover {
   background: #0056b3;
 }
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
 }
-
-.profile-image img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin: 0 auto;
-  display: block;
-}
-
-.perfil-lateral-container h2 {
-  text-align: center;
-  margin: 10px 0;
-  color: #333;
-}
-
-.perfil-lateral-container p {
-  text-align: center;
-  color: #666;
-}
-
-.profile-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.profile-nav a {
-  text-decoration: none;
-  color: #333;
-  padding: 8px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.profile-nav a:hover {
-  background-color: #f0f0f0;
-}
-
-.edit-profile-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .project-card {
   background: white;
   border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 20px;
-  transition: transform 0.2s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.project-card h3 {
-  margin: 0 0 10px 0;
-  color: #333;
-}
-
-.company-name {
-  color: #666;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.project-description {
-  color: #444;
-  margin-bottom: 15px;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.project-status {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 12px;
-  background-color: #e3f2fd;
-  color: #1976d2;
-  margin-bottom: 15px;
-}
-
-.project-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.participate-btn, .more-info-btn {
-  flex: 1;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.participate-btn {
-  background-color: #007bff;
-  color: white;
-}
-
-.participate-btn:hover {
-  background-color: #0056b3;
-}
-
-.more-info-btn {
-  background-color: #f8f9fa;
-  color: #333;
-  border: 1px solid #ddd;
-}
-
-.more-info-btn:hover {
-  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }

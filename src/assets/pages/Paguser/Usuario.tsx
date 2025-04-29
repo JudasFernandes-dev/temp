@@ -1,84 +1,49 @@
-
 import './usuario.css';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import PerfilParticipante from '../../components/perfil/perfiluser';
 
 const Usuario = () => {
-  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todos');
 
   const categories = ['Todos', 'Design', 'Dev', 'Marketing', 'Gestão'];
-  
+
   const projects = [
     {
       id: 1,
-      name: 'Nome do projeto 1',
-      company: 'Empresa A',
+      name: 'Desenvolvimento Web Full Stack',
+      company: 'Tech Solutions',
+      description: 'Projeto de desenvolvimento web utilizando React e Node.js',
       status: 'Em andamento'
     },
     {
       id: 2, 
-      name: 'Nome do projeto 2',
-      company: 'Empresa B',
-      status: 'Finalizado'
+      name: 'UX/UI Design System',
+      company: 'Design Co',
+      description: 'Criação de sistema de design para aplicativo móvel',
+      status: 'Novo'
     },
     {
       id: 3,
-      name: 'Nome do projeto 3', 
-      company: 'Empresa C',
-      status: 'Novo'
+      name: 'Marketing Digital', 
+      company: 'Marketing Plus',
+      description: 'Campanha de marketing para produto inovador',
+      status: 'Finalizado'
     }
   ];
 
-  const handleSearch = () => {
-    // Implementar lógica de busca
-    console.log('Buscando por:', searchQuery);
-  };
-
-  const handleEditProfile = () => {
-    window.open('/edit-profile', '_blank');
-  };
-
-  const handleParticipate = (projectId: number) => {
-    console.log('Participando do projeto:', projectId);
-    // Implementar lógica de participação
-  };
-
-  const handleMoreInfo = (projectId: number) => {
-    navigate(`/project/${projectId}`);
-  };
-
   return (
     <div className="main-users-container-principal">
-      <aside className="perfil-lateral-container">
-        <div className="profile-image">
-          <img src="/user-avatar.png" alt="Profile" />
-        </div>
-        <h2>Nome do Usuário</h2>
-        <p>@username</p>
-        
-        <nav className="profile-nav">
-          <Link to="/funcao"><i className="fas fa-briefcase"></i> Função</Link>
-          <Link to="/github"><i className="fab fa-github"></i> Github</Link>
-          <Link to="/linkedin"><i className="fab fa-linkedin"></i> LinkedIn</Link>
-          <Link to="/website"><i className="fas fa-link"></i> Link</Link>
-        </nav>
-        
-        <button className="edit-profile-btn" onClick={handleEditProfile}>
-          Editar Perfil
-        </button>
-      </aside>
+      <PerfilParticipante />
 
       <main className="content-container">
         <div className="search-bar">
           <input 
             type="text"
-            placeholder="Procurar..."
+            placeholder="Buscar projetos..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button onClick={handleSearch}>Buscar</button>
         </div>
 
         <div className="categories">
@@ -97,19 +62,15 @@ const Usuario = () => {
           {projects.map(project => (
             <div key={project.id} className="project-card">
               <h3>{project.name}</h3>
-              <p>Empresa: {project.company}</p>
+              <p className="company-name">{project.company}</p>
+              <p className="project-description">{project.description}</p>
+              <div className="project-status">{project.status}</div>
               <div className="project-actions">
-                <button 
-                  className="participate-btn"
-                  onClick={() => handleParticipate(project.id)}
-                >
+                <button className="participate-btn">
                   Participar
                 </button>
-                <button 
-                  className="more-info-btn"
-                  onClick={() => handleMoreInfo(project.id)}
-                >
-                  Saber +
+                <button className="more-info-btn">
+                  Saber mais
                 </button>
               </div>
             </div>

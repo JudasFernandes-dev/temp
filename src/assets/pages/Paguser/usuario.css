@@ -72,31 +72,22 @@
 }
 
 .search-bar {
-  display: flex;
-  gap: 10px;
   margin-bottom: 20px;
 }
 
 .search-bar input {
-  flex: 1;
-  padding: 10px;
+  width: 100%;
+  padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.search-bar button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .categories {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .categories button {
@@ -105,6 +96,7 @@
   border-radius: 20px;
   background: white;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .categories button.active {
@@ -115,15 +107,49 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
 }
 
 .project-card {
   background: white;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   border-radius: 10px;
-  padding: 15px;
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.company-name {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  color: #444;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.project-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  margin-bottom: 15px;
 }
 
 .project-actions {
@@ -133,10 +159,13 @@
 }
 
 .participate-btn, .more-info-btn {
+  flex: 1;
   padding: 8px 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .participate-btn {
@@ -144,7 +173,16 @@
   color: white;
 }
 
+.participate-btn:hover {
+  background-color: #0056b3;
+}
+
 .more-info-btn {
-  background-color: #f0f0f0;
+  background-color: #f8f9fa;
   color: #333;
+  border: 1px solid #ddd;
+}
+
+.more-info-btn:hover {
+  background-color: #e9ecef;
 }

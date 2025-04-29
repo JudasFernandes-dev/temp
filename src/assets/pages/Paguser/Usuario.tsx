@@ -1,9 +1,10 @@
 
 import './usuario.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Usuario = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todos');
 
@@ -30,6 +31,24 @@ const Usuario = () => {
     }
   ];
 
+  const handleSearch = () => {
+    // Implementar lógica de busca
+    console.log('Buscando por:', searchQuery);
+  };
+
+  const handleEditProfile = () => {
+    navigate('/edit-profile');
+  };
+
+  const handleParticipate = (projectId: number) => {
+    console.log('Participando do projeto:', projectId);
+    // Implementar lógica de participação
+  };
+
+  const handleMoreInfo = (projectId: number) => {
+    navigate(`/project/${projectId}`);
+  };
+
   return (
     <div className="main-users-container-principal">
       <aside className="perfil-lateral-container">
@@ -46,7 +65,9 @@ const Usuario = () => {
           <Link to="/website"><i className="fas fa-link"></i> Link</Link>
         </nav>
         
-        <button className="edit-profile-btn">Editar Perfil</button>
+        <button className="edit-profile-btn" onClick={handleEditProfile}>
+          Editar Perfil
+        </button>
       </aside>
 
       <main className="content-container">
@@ -57,7 +78,7 @@ const Usuario = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button>Buscar</button>
+          <button onClick={handleSearch}>Buscar</button>
         </div>
 
         <div className="categories">
@@ -78,8 +99,18 @@ const Usuario = () => {
               <h3>{project.name}</h3>
               <p>Empresa: {project.company}</p>
               <div className="project-actions">
-                <button className="participate-btn">Participar</button>
-                <button className="more-info-btn">Saber +</button>
+                <button 
+                  className="participate-btn"
+                  onClick={() => handleParticipate(project.id)}
+                >
+                  Participar
+                </button>
+                <button 
+                  className="more-info-btn"
+                  onClick={() => handleMoreInfo(project.id)}
+                >
+                  Saber +
+                </button>
               </div>
             </div>
           ))}

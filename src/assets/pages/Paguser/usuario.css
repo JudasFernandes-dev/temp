@@ -1,0 +1,184 @@
+
+.user-page {
+  display: grid;
+  grid-template-columns: 180px 1fr 250px;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.left-sidebar {
+  position: fixed;
+  width: 180px;
+  height: 100vh;
+  padding: 20px;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+}
+
+.profile-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.edit-profile-btn {
+  width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-nav a {
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.sidebar-nav a.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.achievements {
+  margin-top: 20px;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.badge {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.badge.yellow { background-color: #FCD34D; }
+.badge.green { background-color: #10B981; }
+.badge.red { background-color: #EF4444; }
+
+.version {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.main-content {
+  padding: 20px;
+  margin-left: 180px;
+  margin-right: 250px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: white;
+  cursor: pointer;
+}
+
+.filters button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.right-sidebar {
+  position: fixed;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  padding: 20px;
+  background-color: var(--sidebar-bg);
+  border-left: 1px solid var(--border-color);
+}
+
+.progress-bar {
+  background: #eee;
+  border-radius: 10px;
+  height: 10px;
+  margin: 10px 0;
+}
+
+.progress-fill {
+  background: var(--primary-color);
+  height: 100%;
+  border-radius: 10px;
+}
+
+.tasks ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tasks li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 270px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}

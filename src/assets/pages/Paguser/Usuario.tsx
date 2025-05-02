@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './usuario.css';
 import { useTheme } from '../../../contexts/ThemeContext';
@@ -16,6 +15,7 @@ const Usuario: React.FC = () => {
   const [currentHackathonIndex, setCurrentHackathonIndex] = useState(0);
   const [currentGroupIndex, setCurrentGroupIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState('Todos');
+  const [currentSlide, setCurrentSlide] = useState(0); // Added state for carousel
 
   const projects = [
     { name: 'nome:', empresa: 'empresa' },
@@ -31,10 +31,19 @@ const Usuario: React.FC = () => {
     { name: 'Hackathon adicional', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   ];
 
+  const handleCarousel = (direction) => {
+    if (direction === 'next') {
+      setCurrentSlide(currentSlide >= projects.length -1 ? projects.length -1 : currentSlide + 1);
+    } else {
+      setCurrentSlide(currentSlide <= 0 ? 0 : currentSlide - 1);
+    }
+  };
+
+
   return (
     <div className={`app-container ${theme}`}>
       <Header />
-      
+
       {/* Sidebar Esquerda */}
       <div className="sidebar-left">
         <div className="profile-section">
@@ -104,17 +113,21 @@ const Usuario: React.FC = () => {
           <section className="projects-section">
             <h3>projetos</h3>
             <div className="cards-grid">
-              {projects.map((project, index) => (
-                <div key={index} className="project-card">
-                  <div className="card-icon">🏆</div>
-                  <h4>{project.name}</h4>
-                  <p>{project.empresa}</p>
-                  <div className="card-actions">
-                    <button>participar</button>
-                    <button>saber</button>
+              <button className="carousel-button prev" onClick={() => handleCarousel('prev')}>&lt;</button>
+              <button className="carousel-button next" onClick={() => handleCarousel('next')}>&gt;</button>
+              <div className="carousel-content" style={{ transform: `translateX(-${currentSlide * 320}px)` }}>
+                {projects.map((project, index) => (
+                  <div key={index} className="project-card">
+                    <div className="card-icon">🏆</div>
+                    <h4>{project.name}</h4>
+                    <p>{project.empresa}</p>
+                    <div className="card-actions">
+                      <button>participar</button>
+                      <button>saber</button>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </section>
 

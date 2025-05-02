@@ -1,38 +1,20 @@
-
 .footer {
     width: 100%;
-    background-color: #0246cd27;
+    background-color: #0246cd; /* Cor sólida para teste */
     padding: 20px 0;
     font-family: Arial, sans-serif;
-    position: fixed;
-    bottom: 0;
+    position: relative; /* Fixa o footer na parte inferior */
+    bottom: 0; /* Garante que ele fique no final da janela */
     left: 0;
-    right: 0;
-    z-index: 100;
-}
-
-.app-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 200px; /* Espaço para o footer */
-}
-
-main {
-    flex: 1;
-    position: relative;
-    z-index: 1;
-}
-
-.sidebar-left, .sidebar-right {
-    position: fixed;
-    z-index: 101; /* Maior que o z-index do footer */
-    top: 60px;
+    z-index: 1000; /* Garante que o footer fique acima de outros elementos */
+    color: white; /* Texto visível */
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombras para destaque */
 }
 
 .top-footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 0;  /* Reduzi o espaço superior */
     font-size: 14px;
 }
 
@@ -40,18 +22,18 @@ main {
     display: flex;
     justify-content: center;
     list-style-type: none;
-    gap: 0.8rem;
+    gap: 0.8rem;  /* Reduzi o espaço entre os ícones */
     padding: 0;
 }
 
 .middle-footer {
     display: flex;
-    justify-content: center;
+    justify-content: center;  /* Centraliza as colunas */
     text-align: center;
-    padding: 10px 5%;
-    gap: 30%;
-    max-width: 900px;
-    margin: 0 auto;
+    padding: 10px 5%;  /* Reduzi o padding vertical */
+    gap: 30%; /* Adiciona espaço entre as colunas */
+    max-width: 900px; /* Define uma largura máxima */
+    margin: 0 auto; /* Centraliza a seção no meio */
 }
 
 .footer-column {
@@ -60,9 +42,9 @@ main {
 }
 
 .footer-column h3 {
-    font-size: 14px;
+    font-size: 14px;  /* Diminuí o tamanho do título */
     font-weight: bold;
-    margin-bottom: 6px;
+    margin-bottom: 6px;  /* Menos espaço entre título e links */
 }
 
 .footer-column ul {
@@ -72,13 +54,13 @@ main {
 }
 
 .footer-column ul li {
-    margin-bottom: 4px;
+    margin-bottom: 4px;  /* Reduzi o espaçamento entre os itens */
 }
 
 .footer-column ul li a {
     text-decoration: none;
     color: #000;
-    font-size: 12px;
+    font-size: 12px;  /* Diminuí o tamanho dos links */
 }
 
 .footer-column ul li a:hover {
@@ -87,13 +69,13 @@ main {
 
 .bottom-footer {
     text-align: center;
-    padding: 5px 0;
+    padding: 5px 0;  /* Reduzi o espaço inferior */
     background-color: #e8eef3;
-    font-size: 12px;
+    font-size: 12px;  /* Diminuí o tamanho do texto */
 }
 
 .icon-rede-footer svg {
-    font-size: 20px;
+    font-size: 20px;  /* Diminuí o tamanho dos ícones */
     color: #ff7f00;
     margin-top: 15px;
     margin-bottom: 15px;

@@ -7,6 +7,19 @@ import { MdSearch, MdNotifications, MdMessage } from 'react-icons/md';
 
 const Usuario = () => {
   const [currentFilter, setCurrentFilter] = useState('Todos');
+  
+  // Safe storage access
+  useEffect(() => {
+    try {
+      // Your localStorage operations here
+      const userData = localStorage.getItem('userData');
+      if (userData) {
+        // Handle user data
+      }
+    } catch (error) {
+      console.error('Storage access error:', error);
+    }
+  }, []);
 
   return (
     <div className="user-page">

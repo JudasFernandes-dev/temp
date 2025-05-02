@@ -8,6 +8,7 @@ import Empresa from "./assets/pages/Pagemp/Empresa";
 
 import EditProfile from "./assets/components/perfil/EditProfile"; // Added import
 import { ThemeProvider } from './contexts/ThemeContext'; // Added import
+import Usuario from "./assets/pages/Paguser/Usuario"; // Added import
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/cadprojeto" element={<PagCadProjetos />} />
           
           <Route path="/pagempresa" element={<Empresa />} />
+          <Route path="/paguser" element={<Usuario />} />
           {/* Rota /cadastro-empresa com chave única */}
           <Route
             path="/cadastro-empresa"

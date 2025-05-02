@@ -1,142 +1,104 @@
+:root {
+  --bg-color: #fff; /* Example - Define your background color */
+  --text-color: #333; /* Example - Define your text color */
+  --border-color: #eee; /* Example - Define your border color */
+  --hover-color: rgba(0, 0, 0, 0.1); /* Example - Define hover color */
+}
 
 .header-user {
-  height: 60px;
   position: fixed;
   top: 0;
-  right: 0;
   left: 180px;
-  z-index: 999;
-  transition: all 0.3s ease;
-}
-
-.header-user.light {
-  background: #EBF5FF;
-  color: #333;
-}
-
-.header-user.dark {
-  background: #374151;
-  color: #fff;
-}
-
-.header-nav {
+  right: 0;
+  height: 60px;
+  background: var(--bg-color);
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
   padding: 0 20px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.nav-left {
+.nav-links {
   display: flex;
   gap: 20px;
 }
 
-.nav-left a {
-  color: inherit;
+.nav-links a {
+  color: var(--text-color);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 14px;
 }
 
-.nav-left a:hover {
-  color: #3B82F6;
-}
-
-.nav-right {
+.right-icons {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .icon-button {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 20px;
-  color: inherit;
-  display: flex;
-  align-items: center;
+  color: var(--text-color);
   position: relative;
-  padding: 8px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.icon-button:hover {
-  background-color: rgba(0,0,0,0.1);
 }
 
 .notification-badge {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -5px;
+  right: -5px;
   background: #EF4444;
   color: white;
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 10px;
-}
-
-.user-avatar {
-  width: 32px;
-  height: 32px;
   border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: border-color 0.3s ease;
-}
-
-.user-avatar:hover {
-  border-color: #3B82F6;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  padding: 8px 0;
-  min-width: 180px;
-  margin-top: 8px;
-}
-
-.dropdown-menu a,
-.dropdown-menu button {
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  text-decoration: none;
-  color: #333;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.dropdown-menu a:hover,
-.dropdown-menu button:hover {
-  background: #f5f5f5;
+  justify-content: center;
 }
 
 .theme-toggle {
-  background: none;
-  border: none;
   cursor: pointer;
-  font-size: 20px;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  padding: 8px;
+  padding: 5px;
   border-radius: 50%;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .theme-toggle:hover {
-  background-color: rgba(0,0,0,0.1);
+  background-color: var(--hover-color);
+}
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--bg-color);
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 8px 0;
+  z-index: 1001;
+}
+
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--hover-color);
+}
+
+.user-dropdown:hover .dropdown-content {
+  display: block;
 }

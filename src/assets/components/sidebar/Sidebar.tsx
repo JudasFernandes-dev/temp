@@ -1,53 +1,57 @@
 
-import React from 'react';
+import { Link } from 'wouter';
+import { useState, useEffect } from 'react';
 import './Sidebar.css';
-import { Link } from 'react-router-dom';
+import { MdHome, MdNotifications, MdMessage, MdGroup, MdPerson, MdSettings } from 'react-icons/md';
+import { FaHackerrank, FaProjectDiagram } from 'react-icons/fa';
 
 const Sidebar = () => {
+  const [userData, setUserData] = useState({
+    name: 'João Silva',
+    title: 'Desenvolvedor Front-end',
+    avatar: '/default-avatar.png',
+    github: 'github.com/joaosilva',
+    linkedin: 'linkedin.com/in/joaosilva',
+    website: 'joaosilva.dev'
+  });
+
   return (
     <div className="sidebar">
       <div className="profile-section">
-        <img src="https://github.com/user.png" alt="Profile" className="profile-image" />
-        <span className="profile-name">nome</span>
+        <img src={userData.avatar} alt="Avatar" className="avatar" />
+        <h3>{userData.name}</h3>
+        <p>{userData.title}</p>
         
         <div className="social-links">
-          <Link to="#" className="social-link">
-            <img src="/icons/building.png" alt="Função" />
-            <span>Função</span>
-          </Link>
-          <Link to="#" className="social-link">
-            <img src="/icons/github.png" alt="Github" />
-            <span>Github</span>
-          </Link>
-          <Link to="#" className="social-link">
-            <img src="/icons/linkedin.png" alt="LinkedIn" />
-            <span>LinkedIn</span>
-          </Link>
-          <Link to="#" className="social-link">
-            <img src="/icons/link.png" alt="Link" />
-            <span>Link</span>
-          </Link>
+          <a href={`https://${userData.github}`} target="_blank" rel="noopener noreferrer">Github</a>
+          <a href={`https://${userData.linkedin}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href={`https://${userData.website}`} target="_blank" rel="noopener noreferrer">Website</a>
         </div>
-        
-        <button className="edit-profile">Editar Perfil</button>
-        
-        <nav className="sidebar-nav">
-          <Link to="/home" className="nav-link">Página Inicial</Link>
-          <Link to="/notifications" className="nav-link">Notificações</Link>
-          <Link to="/messages" className="nav-link">Mensagens</Link>
-          <Link to="/hackathons" className="nav-link">Hackathons</Link>
-          <Link to="/projects" className="nav-link">Projetos</Link>
-          <Link to="/teams" className="nav-link">Equipes</Link>
-          <Link to="/profile" className="nav-link">Perfil</Link>
-          <Link to="/settings" className="nav-link">Configurações</Link>
-        </nav>
-        
-        <div className="achievement-badges">
+
+        <button className="edit-profile-btn">Editar Perfil</button>
+      </div>
+
+      <nav className="navigation">
+        <Link href="/"><MdHome /> Página Inicial</Link>
+        <Link href="/notifications"><MdNotifications /> Notificações</Link>
+        <Link href="/messages"><MdMessage /> Mensagens</Link>
+        <Link href="/hackathons"><FaHackerrank /> Hackathons</Link>
+        <Link href="/projects"><FaProjectDiagram /> Projetos</Link>
+        <Link href="/teams"><MdGroup /> Equipes</Link>
+        <Link href="/profile"><MdPerson /> Perfil</Link>
+        <Link href="/settings"><MdSettings /> Configurações</Link>
+      </nav>
+
+      <div className="achievements">
+        <h4>Conquistas</h4>
+        <div className="badges">
           <div className="badge yellow"></div>
           <div className="badge green"></div>
           <div className="badge red"></div>
         </div>
       </div>
+
+      <div className="version">v1.0.0</div>
     </div>
   );
 };

@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 export interface ThemeContextType {
@@ -14,7 +13,7 @@ export const ThemeContext = createContext<ThemeContextType>({
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error('useTheme deve ser usado dentro de um ThemeProvider');
   }
   return context;
 };
@@ -28,17 +27,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   });
   const [showModal, setShowModal] = useState(false);
-
-  useEffect(() => {
-    try {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        setTheme(savedTheme as 'light' | 'dark');
-      }
-    } catch (error) {
-      console.warn('Local storage not available');
-    }
-  }, []);
 
   useEffect(() => {
     try {
@@ -75,12 +63,4 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       )}
     </ThemeContext.Provider>
   );
-};
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
 };

@@ -25,12 +25,12 @@ function HeaderUser() {
 
         <div className="header-actions">
           <div className="notification-icon">
-            <i className="fas fa-bell"></i>
+            <i className="fas fa-bell fa-lg"></i>
             {notifications > 0 && <span className="badge">{notifications}</span>}
           </div>
           
           <div className="messages-icon">
-            <i className="fas fa-envelope"></i>
+            <i className="fas fa-envelope fa-lg"></i>
             {messages > 0 && <span className="badge">{messages}</span>}
           </div>
 

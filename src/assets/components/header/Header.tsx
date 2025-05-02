@@ -1,9 +1,8 @@
+
 import './header.css';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../../../contexts/ThemeContext';
 
 function Header() {
-  const { theme, toggleTheme } = useTheme();
   return (
     <header className="header">
       <nav className="nav-container">
@@ -22,9 +21,6 @@ function Header() {
           <button className="notifications">+3</button>
           <button className="user-profile">
             <img src="https://github.com/user.png" alt="Profile" />
-          </button>
-          <button className="theme-toggle" onClick={toggleTheme}>
-            {theme === 'light' ? '🌙' : '☀️'}
           </button>
         </div>
       </nav>

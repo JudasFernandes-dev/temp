@@ -72,6 +72,25 @@ const Usuario = () => {
           </button>
         </div>
 
+        <div className="card-grid">
+          <div className="card">
+            <h3>Projetos Ativos</h3>
+            <p>3 projetos em andamento</p>
+          </div>
+          <div className="card">
+            <h3>Conquistas</h3>
+            <p>12 badges conquistadas</p>
+          </div>
+          <div className="card">
+            <h3>Habilidades</h3>
+            <p>React, TypeScript, Node.js</p>
+          </div>
+          <div className="card">
+            <h3>Certificações</h3>
+            <p>4 certificados obtidos</p>
+          </div>
+        </div>
+
         <div className="carousels">
           <section className="carousel-section projects">
             <h2>Projetos</h2>

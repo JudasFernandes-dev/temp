@@ -4,7 +4,7 @@ header {
   position: fixed; /* Fixa o header no topo */
   top: 0;
   left: 0;
-  z-index: 1000; /* Garante que o header fique sobre o conteúdo */
+  z-index: 998; /* Ajustado para ficar abaixo do header de usuário quando necessário */
   background: rgba(255, 255, 255, 0.1); /* Transparência do fundo */
   backdrop-filter: blur(10px) saturate(180%); /* Efeito de vidro */
   -webkit-backdrop-filter: blur(10px) saturate(180%);

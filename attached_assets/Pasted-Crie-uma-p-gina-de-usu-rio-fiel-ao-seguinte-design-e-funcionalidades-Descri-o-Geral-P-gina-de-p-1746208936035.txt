@@ -1,0 +1,147 @@
+Crie uma página de usuário fiel ao seguinte design e funcionalidades:
+
+Descrição Geral:
+
+Página de perfil de uma plataforma colaborativa de projetos, hackathons e networking.
+
+Stack Tecnológica:
+
+React
+
+TypeScript
+
+TailwindCSS
+
+Drizzle ORM com PostgreSQL
+
+Wouter para rotas
+
+TanStack Query (React Query) para carregamento de dados
+
+Shadcn/UI para componentes
+
+Lucide React para ícones
+
+Estrutura da Página:
+
+Menu superior fixo (10px altura):
+
+Links de navegação à esquerda: Home, Contato, Sobre
+
+Ícones à direita: Botão "+", Sino de notificação, Avatar do usuário com dropdown (Editar Perfil, Configurações, Sair) e botão de alternância entre tema claro/escuro
+
+Fundo azul claro no modo claro e cinza escuro no modo escuro
+
+Menu lateral esquerdo fixo (180px largura):
+
+Avatar do usuário no topo
+
+Informações pessoais: Função, Github, LinkedIn, Link
+
+Botão "Editar Perfil"
+
+Navegação: Página Inicial, Notificações, Mensagens, Hackathons, Projetos, Equipes, Perfil, Configurações
+
+Seção de conquistas: três selos (amarelo, verde, vermelho)
+
+Exibir versão no rodapé: "v1.0.0"
+
+Barra lateral direita:
+
+Seção de idiomas e seleção de níveis
+
+Barra de progresso de tarefas e conquistas
+
+Lista de tarefas
+
+Conteúdo central:
+
+Barra de pesquisa centralizada
+
+Filtros de categorias: Todos, Design, Dev, Marketing, Gestão
+
+Três carrosséis distintos:
+
+Projetos (azul)
+
+Hackathons (preto)
+
+Grupos (verde)
+
+Cada carrossel deve navegar manualmente pelas setas
+
+Rodapé completo:
+
+Mensagem central: "Conectando pessoas do mesmo cosmo"
+
+Três colunas:
+
+SOBRE NÓS: Quem somos, Como funciona, Trabalhe conosco, FAQ
+
+LINKS ÚTEIS: Documentação, Política de privacidade, Termos de uso
+
+INFORMAÇÕES: Endereço, telefone, empresa
+
+Ícones de redes sociais centralizados
+
+Funcionalidades:
+
+Tema claro/escuro com Modal de confirmação
+
+Chat: botão fixo no canto inferior direito que abre lista de conversas e popup de chat
+
+Filtro de projetos por categoria
+
+Menu dropdown no avatar
+
+Todas navegações e menus funcionando (usando Wouter)
+
+Regras de Estilo e Responsividade:
+
+TailwindCSS como base
+
+Paleta personalizada:
+
+Projetos: #3B82F6
+
+Hackathons: #111827
+
+Grupos: #10B981
+
+Conquistas: #FCD34D (amarelo), #10B981 (verde), #EF4444 (vermelho)
+
+Bordas arredondadas nos botões e cards
+
+Sombras suaves
+
+Animações suaves nas transições
+
+Layout 100% responsivo
+
+Considerações Técnicas:
+
+Usar Contexto React para tema
+
+Salvar tema no localStorage
+
+Implementar modais via Portal para evitar problemas de sobreposição
+
+Carregar dados simulados usando React Query
+
+Otimizar para evitar re-renderizações desnecessárias
+
+Conteúdo Demonstrativo:
+
+Criar projetos, hackathons, grupos e mensagens de exemplo
+
+Simular progresso e tarefas
+
+Importante:
+
+O layout e separação visual deve ser exatamente igual ao das imagens fornecidas
+
+O rodapé deve ser fixo na parte inferior da página
+
+O sidebar da esquerda deve sempre acompanhar a rolagem
+
+Se clicar em páginas não existentes, mostrar 404 customizado

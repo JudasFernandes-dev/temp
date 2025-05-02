@@ -206,8 +206,10 @@ main {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  background-color: #0246cd27;
+  right: 0;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  padding: 20px 0;
   z-index: 1000;
 }
 
@@ -759,12 +761,4 @@ main {
 
 main {
     flex: 1;
-}
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #0246cd27;
-    z-index: 1000;
 }

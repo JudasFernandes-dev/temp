@@ -1,13 +1,14 @@
-
 import { useState, useEffect } from 'react';
+import { MdSearch, MdMessage } from 'react-icons/md';
 import Header from '../../components/header-user/HeaderUser';
+import Sidebar from '../../components/sidebar/Sidebar';
 import Footer from '../../components/footer/Footer';
 import './usuario.css';
-import { MdSearch, MdNotifications, MdMessage } from 'react-icons/md';
 
 const Usuario = () => {
   const [currentFilter, setCurrentFilter] = useState('Todos');
-  
+  const [searchQuery, setSearchQuery] = useState('');
+
   // Safe storage access
   useEffect(() => {
     try {
@@ -25,48 +26,17 @@ const Usuario = () => {
   return (
     <div className="user-page">
       <Header />
-      
-      {/* Left Sidebar */}
-      <div className="left-sidebar">
-        <div className="profile-info">
-          <img src="/avatar.png" alt="Profile" className="avatar" />
-          <h3>João Silva</h3>
-          <p>Desenvolvedor Front-end</p>
-          <div className="social-links">
-            <a href="https://github.com">Github</a>
-            <a href="https://linkedin.com">LinkedIn</a>
-          </div>
-          <button className="edit-profile-btn">Editar Perfil</button>
-        </div>
-        
-        <nav className="sidebar-nav">
-          <a href="#" className="active">Página Inicial</a>
-          <a href="#">Notificações</a>
-          <a href="#">Mensagens</a>
-          <a href="#">Hackathons</a>
-          <a href="#">Projetos</a>
-          <a href="#">Equipes</a>
-          <a href="#">Perfil</a>
-          <a href="#">Configurações</a>
-        </nav>
+      <Sidebar />
 
-        <div className="achievements">
-          <h4>Conquistas</h4>
-          <div className="badges">
-            <span className="badge yellow"></span>
-            <span className="badge green"></span>
-            <span className="badge red"></span>
-          </div>
-        </div>
-
-        <div className="version">v1.0.0</div>
-      </div>
-
-      {/* Main Content */}
       <main className="main-content">
         <div className="search-bar">
-          <MdSearch />
-          <input type="text" placeholder="Buscar projetos, hackathons ou grupos..." />
+          <MdSearch size={24} />
+          <input 
+            type="text"
+            placeholder="Pesquisar..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
         </div>
 
         <div className="filters">
@@ -102,36 +72,56 @@ const Usuario = () => {
           </button>
         </div>
 
-        {/* Projects, Hackathons, and Groups sections will be added here */}
+        <div className="carousels">
+          <section className="carousel-section projects">
+            <h2>Projetos</h2>
+            {/* Carrossel de projetos será implementado aqui */}
+          </section>
+
+          <section className="carousel-section hackathons">
+            <h2>Hackathons</h2>
+            {/* Carrossel de hackathons será implementado aqui */}
+          </section>
+
+          <section className="carousel-section groups">
+            <h2>Grupos</h2>
+            {/* Carrossel de grupos será implementado aqui */}
+          </section>
+        </div>
       </main>
 
-      {/* Right Sidebar */}
-      <div className="right-sidebar">
-        <div className="languages">
-          <h4>Idiomas</h4>
-          {/* Language selection will be added */}
-        </div>
+      <aside className="right-sidebar">
+        <section className="languages">
+          <h3>Idiomas</h3>
+          <div className="language-selection">
+            <select>
+              <option value="pt">Português</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+            </select>
+          </div>
+        </section>
 
-        <div className="progress">
-          <h4>Progresso</h4>
+        <section className="progress">
+          <h3>Progresso</h3>
           <div className="progress-bar">
             <div className="progress-fill" style={{width: '75%'}}></div>
           </div>
-        </div>
+          <p>75% completo</p>
+        </section>
 
-        <div className="tasks">
-          <h4>Tarefas</h4>
+        <section className="tasks">
+          <h3>Tarefas</h3>
           <ul>
             <li>Completar perfil básico</li>
             <li>Vincular GitHub</li>
             <li>Participar de um projeto</li>
           </ul>
-        </div>
-      </div>
+        </section>
+      </aside>
 
-      {/* Chat Button */}
       <button className="chat-button">
-        <MdMessage />
+        <MdMessage size={24} />
       </button>
 
       <Footer />

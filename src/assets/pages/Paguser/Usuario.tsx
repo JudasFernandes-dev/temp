@@ -43,6 +43,7 @@ const Usuario: React.FC = () => {
   return (
     <div className={`app-container ${theme}`}>
       <Header />
+      <div className="content-wrapper">
 
       {/* Sidebar Esquerda */}
       <div className="sidebar-left">
@@ -258,6 +259,7 @@ const Usuario: React.FC = () => {
         {theme === 'light' ? '🌙' : '☀️'}
       </button>
 
+      </div>
       <Footer />
     </div>
   );

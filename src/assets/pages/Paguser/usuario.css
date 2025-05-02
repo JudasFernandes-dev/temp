@@ -15,14 +15,11 @@
 
 /* Sidebar Esquerda */
 .sidebar-left {
+  width: 180px;
   background-color: white;
   padding: 20px;
   border-right: 1px solid #e2e8f0;
-  height: calc(100vh - 60px);
-  position: fixed;
-  width: 180px;
   margin-top: 60px;
-  overflow-y: auto;
 }
 
 .dark .sidebar-left {
@@ -101,9 +98,9 @@
 
 /* Main Content */
 .main-content {
-  margin: 60px 250px 0 180px;
+  flex: 1;
+  margin: 60px 20px 0;
   padding: 20px;
-  min-height: calc(100vh - 60px);
 }
 
 .top-bar {
@@ -206,11 +203,12 @@ main {
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  background-color: #f8f9fa;
-  padding: 40px 0;
-  margin-top: auto;
-  border-top: 1px solid #dee2e6;
+  background-color: #0246cd27;
+  z-index: 1000;
 }
 
 .footer-content {
@@ -357,15 +355,11 @@ main {
 
 /* Sidebar Direita */
 .sidebar-right {
+  width: 250px;
   background-color: white;
   padding: 20px;
   border-left: 1px solid #e2e8f0;
-  position: fixed;
-  right: 0;
-  top: 60px;
-  width: 250px;
-  height: calc(100vh - 60px);
-  overflow-y: auto;
+  margin-top: 60px;
 }
 
 .section-header {
@@ -768,9 +762,9 @@ main {
 }
 
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     background-color: #0246cd27;
-    z-index: 10;
+    z-index: 1000;
 }

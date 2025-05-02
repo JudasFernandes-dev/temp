@@ -136,11 +136,12 @@
 .right-sidebar {
   position: fixed;
   right: 0;
-  width: 250px;
+  width: 280px;
   height: 100vh;
-  padding: 20px;
-  background-color: var(--sidebar-bg);
+  padding: 24px;
+  background-color: var(--cor-branca);
   border-left: 1px solid var(--border-color);
+  box-shadow: -2px 0 4px rgba(0,0,0,0.1);
 }
 
 .progress-bar {

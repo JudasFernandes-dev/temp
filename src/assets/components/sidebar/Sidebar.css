@@ -1,14 +1,15 @@
 
 .sidebar {
-  width: 180px;
+  width: 250px;
   height: 100vh;
-  padding: 20px;
-  background-color: var(--sidebar-bg);
+  padding: 24px;
+  background-color: var(--cor-branca);
   border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   position: fixed;
   left: 0;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.1);
 }
 
 .profile-section {

@@ -1,12 +1,14 @@
 
 import { useState } from 'react';
-import { MdSearch, MdSunny, MdNotifications, MdAdd, MdChat } from 'react-icons/md';
+import { MdSearch, MdSunny, MdMoon, MdNotifications, MdAdd, MdChat, MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { useTheme } from '../../contexts/ThemeContext';
 import './usuario.css';
 
 const Usuario = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todos');
   const [showChat, setShowChat] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const categories = ['Todos', 'Design', 'Dev', 'Marketing', 'Gestão'];
 
@@ -28,26 +30,66 @@ const Usuario = () => {
     {
       id: 3,
       name: 'nome:',
-      company: 'empresa:',
+      company: 'empresa adicional 1',
       description: 'Lorem ipsum dolor sit amet',
       status: 'Em andamento'
     },
   ];
 
+  const hackathons = [
+    {
+      id: 1,
+      name: 'Nome do hackathon',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra magna a modus'
+    },
+    {
+      id: 2,
+      name: 'Nome do hackathon',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra magna a modus'
+    },
+    {
+      id: 3,
+      name: 'Hackathon adicional 1',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra magna a modus'
+    }
+  ];
+
+  const groups = [
+    { id: 1, name: 'Grupo 1' },
+    { id: 2, name: 'Grupo 2' },
+    { id: 3, name: 'Grupo 3' }
+  ];
+
+  const languages = [
+    { name: 'JavaScript', level: 'intermediário' },
+    { name: 'Python', level: 'avançado' },
+    { name: 'Java', level: 'iniciante' }
+  ];
+
+  const achievements = [
+    { title: 'Desenvolvedor Experiente', progress: 75 },
+    { title: 'Mestre dos Hackathons', progress: 40 },
+    { title: 'Colaborador Elite', progress: 27 }
+  ];
+
   return (
     <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
       {/* Top Header */}
-      <header className="fixed top-0 w-full h-10 bg-blue-100 dark:bg-gray-800 flex items-center justify-between px-4">
+      <header className="fixed top-0 w-full h-10 bg-blue-100 dark:bg-gray-800 flex items-center justify-between px-4 z-50">
         <nav className="flex gap-4">
           <a href="/">Home</a>
           <a href="/contato">Contato</a>
           <a href="/sobre">Sobre</a>
         </nav>
         <div className="flex items-center gap-4">
-          <MdAdd />
-          <MdNotifications />
-          <img src="/avatar.png" alt="User" className="w-8 h-8 rounded-full" />
-          <MdSunny className="cursor-pointer" />
+          <MdAdd className="cursor-pointer" />
+          <MdNotifications className="cursor-pointer" />
+          <img src="/avatar.png" alt="User" className="w-8 h-8 rounded-full cursor-pointer" />
+          {theme === 'dark' ? (
+            <MdSunny className="cursor-pointer" onClick={toggleTheme} />
+          ) : (
+            <MdMoon className="cursor-pointer" onClick={toggleTheme} />
+          )}
         </div>
       </header>
 
@@ -59,6 +101,25 @@ const Usuario = () => {
             <h3 className="font-semibold">nome</h3>
             <p className="text-sm text-gray-500">Função</p>
           </div>
+          
+          <div className="mb-4">
+            <div className="flex items-center gap-2 mb-2">
+              <img src="/github.png" alt="Github" className="w-4 h-4" />
+              <a href="#" className="text-sm">Github</a>
+            </div>
+            <div className="flex items-center gap-2 mb-2">
+              <img src="/linkedin.png" alt="LinkedIn" className="w-4 h-4" />
+              <a href="#" className="text-sm">LinkedIn</a>
+            </div>
+            <div className="flex items-center gap-2">
+              <img src="/link.png" alt="Link" className="w-4 h-4" />
+              <a href="#" className="text-sm">Link</a>
+            </div>
+          </div>
+
+          <button className="bg-blue-500 text-white rounded-lg py-2 mb-6">
+            Editar Perfil
+          </button>
           
           <nav className="flex-1">
             <a href="/page" className="flex items-center py-2">Página Inicial</a>
@@ -91,7 +152,7 @@ const Usuario = () => {
               <div className="relative w-96">
                 <input
                   type="text"
-                  placeholder="Pesquisar projetos..."
+                  placeholder="Procurar..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-4 py-2 rounded-lg border"
@@ -120,34 +181,81 @@ const Usuario = () => {
           {/* Projects Carousel */}
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-4">Projetos</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {projects.map(project => (
-                <div key={project.id} className="bg-blue-100 rounded-lg p-4">
-                  <h3 className="font-semibold">{project.name}</h3>
-                  <p className="text-sm text-gray-600">{project.company}</p>
-                  <p className="mt-2">{project.description}</p>
-                  <div className="mt-4 flex gap-2">
-                    <button className="px-3 py-1 bg-white rounded">participar</button>
-                    <button className="px-3 py-1 bg-white rounded">saber</button>
-                  </div>
+            <div className="relative">
+              <button className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+                <MdChevronLeft size={24} />
+              </button>
+              <div className="overflow-hidden">
+                <div className="flex gap-4">
+                  {projects.map(project => (
+                    <div key={project.id} className="bg-blue-100 rounded-lg p-4 min-w-[300px]">
+                      <h3 className="font-semibold">{project.name}</h3>
+                      <p className="text-sm text-gray-600">{project.company}</p>
+                      <p className="mt-2">{project.description}</p>
+                      <div className="mt-4 flex gap-2">
+                        <button className="px-3 py-1 bg-white rounded">participar</button>
+                        <button className="px-3 py-1 bg-white rounded">saber</button>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <button className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+                <MdChevronRight size={24} />
+              </button>
             </div>
           </section>
 
           {/* Hackathons Section */}
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-4">Hackathons</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Similar structure as projects but with dark background */}
+            <div className="relative">
+              <button className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+                <MdChevronLeft size={24} />
+              </button>
+              <div className="overflow-hidden">
+                <div className="flex gap-4">
+                  {hackathons.map(hackathon => (
+                    <div key={hackathon.id} className="bg-gray-900 text-white rounded-lg p-4 min-w-[300px]">
+                      <h3 className="font-semibold">{hackathon.name}</h3>
+                      <p className="mt-2">{hackathon.description}</p>
+                      <div className="mt-4 flex gap-2">
+                        <button className="px-3 py-1 bg-white text-gray-900 rounded">participar</button>
+                        <button className="px-3 py-1 bg-white text-gray-900 rounded">saber</button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <button className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+                <MdChevronRight size={24} />
+              </button>
             </div>
           </section>
 
           {/* Groups Section */}
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-4">Grupos</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Similar structure as projects but with green background */}
+            <div className="relative">
+              <button className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+                <MdChevronLeft size={24} />
+              </button>
+              <div className="overflow-hidden">
+                <div className="flex gap-4">
+                  {groups.map(group => (
+                    <div key={group.id} className="bg-green-100 rounded-lg p-4 min-w-[300px]">
+                      <h3 className="font-semibold">{group.name}</h3>
+                      <div className="mt-4 flex gap-2">
+                        <button className="px-3 py-1 bg-white rounded">participar</button>
+                        <button className="px-3 py-1 bg-white rounded">saber</button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <button className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+                <MdChevronRight size={24} />
+              </button>
             </div>
           </section>
         </div>
@@ -158,34 +266,32 @@ const Usuario = () => {
         <section className="mb-8">
           <h3 className="font-semibold mb-4">Linguagens</h3>
           <div className="space-y-2">
-            <div className="flex justify-between">
-              <span>JavaScript</span>
-              <span>intermediário</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Python</span>
-              <span>avançado</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Java</span>
-              <span>iniciante</span>
-            </div>
+            {languages.map((lang, index) => (
+              <div key={index} className="flex justify-between">
+                <span>{lang.name}</span>
+                <span>{lang.level}</span>
+              </div>
+            ))}
           </div>
         </section>
 
         <section className="mb-8">
           <h3 className="font-semibold mb-4">Progresso dos selos</h3>
           <div className="space-y-4">
-            <div>
-              <div className="flex justify-between mb-1">
-                <span>Desenvolvedor Experiente</span>
-                <span>75%</span>
+            {achievements.map((achievement, index) => (
+              <div key={index}>
+                <div className="flex justify-between mb-1">
+                  <span>{achievement.title}</span>
+                  <span>{achievement.progress}%</span>
+                </div>
+                <div className="h-2 bg-gray-200 rounded">
+                  <div 
+                    className="h-full bg-blue-500 rounded"
+                    style={{ width: `${achievement.progress}%` }}
+                  ></div>
+                </div>
               </div>
-              <div className="h-2 bg-gray-200 rounded">
-                <div className="h-full w-3/4 bg-blue-500 rounded"></div>
-              </div>
-            </div>
-            {/* Add more progress bars */}
+            ))}
           </div>
         </section>
       </aside>
@@ -193,13 +299,13 @@ const Usuario = () => {
       {/* Chat Button */}
       <button
         onClick={() => setShowChat(!showChat)}
-        className="fixed bottom-4 right-4 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center shadow-lg"
+        className="fixed bottom-4 right-4 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center shadow-lg z-50"
       >
         <MdChat size={24} />
       </button>
 
       {showChat && (
-        <div className="fixed bottom-20 right-4 w-80 h-96 bg-white rounded-lg shadow-xl">
+        <div className="fixed bottom-20 right-4 w-80 h-96 bg-white rounded-lg shadow-xl z-50">
           {/* Chat interface */}
         </div>
       )}

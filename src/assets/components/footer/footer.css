@@ -7,17 +7,25 @@
     bottom: 0;
     left: 0;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 1;
 }
 
 .app-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 main {
     flex: 1;
-    margin-bottom: 50px;
+    margin-bottom: 120px;
+    padding-bottom: 50px;
+    min-height: calc(100vh - 120px);
+}
+
+.sidebar-left, .sidebar-right {
+    z-index: 2;
 }
 
 /* Adicionar margem inferior para evitar que o conteúdo fique sob o footer */

@@ -1,23 +1,38 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-interface ThemeContextType {
+export interface ThemeContextType {
   theme: 'light' | 'dark';
   toggleTheme: () => void;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+export const ThemeContext = createContext<ThemeContextType>({
+  theme: 'light',
+  toggleTheme: () => {}
+});
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return (savedTheme as 'light' | 'dark') || 'light';
-  });
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('theme', theme);
-    document.body.className = theme;
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        setTheme(savedTheme as 'light' | 'dark');
+      }
+    } catch (error) {
+      console.warn('Local storage not available');
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('theme', theme);
+      document.body.className = theme;
+    } catch (error) {
+      console.warn('Local storage not available');
+    }
   }, [theme]);
 
   const toggleTheme = () => {

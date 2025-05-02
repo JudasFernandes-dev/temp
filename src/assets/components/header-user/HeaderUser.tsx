@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MdAdd, MdNotifications, MdPerson, MdLightMode, MdDarkMode } from 'react-icons/md';
-import { ThemeContext } from '../../../contexts/ThemeContext';
+import { useTheme } from '../../../contexts/ThemeContext';
 import './header-user.css';
 
 const HeaderUser = () => {

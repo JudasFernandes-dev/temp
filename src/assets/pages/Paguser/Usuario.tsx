@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import Header from '../../components/header/Header';
+import Header from '../../components/header-user/HeaderUser';
 import Footer from '../../components/footer/Footer';
 import './usuario.css';
 import { MdSearch, MdNotifications, MdMessage } from 'react-icons/md';

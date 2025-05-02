@@ -1,9 +1,8 @@
 .footer {
     width: 100%;
-    background-color: #0246cd; /* Cor sólida para teste */
     padding: 20px 0;
     font-family: Arial, sans-serif;
-    position: relative; /* Fixa o footer na parte inferior */
+    position: fixed; /* Fixa o footer na parte inferior */
     bottom: 0; /* Garante que ele fique no final da janela */
     left: 0;
     z-index: 1000; /* Garante que o footer fique acima de outros elementos */

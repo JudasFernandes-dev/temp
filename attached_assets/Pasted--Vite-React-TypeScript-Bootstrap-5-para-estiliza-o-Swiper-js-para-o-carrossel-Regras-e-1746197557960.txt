@@ -1,0 +1,81 @@
+ Vite + React + TypeScript
+- Bootstrap 5 para estilização
+- Swiper.js para o carrossel
+
+Regras e Estrutura:
+
+1. Sidebar no lado esquerdo:
+- Deve ser fixa, exatamente como mostrado nas imagens fornecidas.
+- Botões com ícones e textos:
+  - Página Inicial
+  - Notificações
+  - Mensagens
+  - Hackathons
+  - Projetos
+  - Equipes
+  - Perfil
+  - Configurações
+- Um botão "Editar Perfil" que redireciona para a rota `/editar-perfil`.
+- Estilo idêntico ao das imagens (espacamento, divisões, ícones, e ordem).
+
+2. Centro da tela:
+- Área de pesquisa para "Projetos".
+- Filtros por categorias: "Todos", "Design", "Dev", "Marketing", "Gestão".
+- Quando clicar em um filtro, deve exibir apenas os projetos da categoria correspondente.
+- Três seções separadas:
+  - Carrossel de **Projetos** (cards azuis)
+  - Carrossel de **Hackathons** (cards pretos)
+  - Carrossel de **Grupos** (cards verdes)
+- Cada carrossel deve ter setas para navegação lateral, utilizando **Swiper.js** com animações suaves.
+
+3. Menu lateral direito:
+- Seção para selecionar Linguagens de Programação e Nível (Iniciante, Intermediário, Avançado).
+- Seção para selecionar Idiomas e Nível.
+- Botões para "Adicionar" e "Excluir" linguagens e idiomas.
+- Área mostrando os progressos com selos (skills).
+
+4. Dark Mode:
+- Criar um botão no canto superior direito.
+- Quando clicado, abrir um Modal pedindo confirmação para ativar o Dark Mode.
+- Se confirmado, mudar o tema do site para:
+  - `bg-dark`
+  - `text-white`
+  - Ajustar também cores dos cards, menus e botões.
+- Dark Mode e Light Mode devem funcionar perfeitamente.
+
+5. Chat:
+- Botão fixo no canto inferior direito ("Mensagens").
+- Ao clicar, abrir um Modal exibindo lista de mensagens no estilo fornecido pelas imagens.
+
+6. Footer (Rodapé):
+- O Footer deve ser **fixo no final da tela**, mesmo que a página tenha pouco conteúdo.
+- Footer dividido em três colunas:
+  - Sobre Nós
+  - Links Úteis
+  - Informações
+- Exatamente igual ao modelo das imagens.
+
+7. Navegação e Rotas:
+- Cada botão da Sidebar deve redirecionar para uma página.
+- As rotas configuradas devem ser:
+  - `/` → Página Inicial
+  - `/editar-perfil` → Página de Edição de Perfil
+- Caso tente acessar uma rota inexistente, exibir página 404 customizada.
+
+8. Organização do projeto:
+- `src/components` → Components como Sidebar, Footer, Header, Carousel, ModalDarkMode, ChatModal, etc.
+- `src/pages` → Páginas como Home, EditarPerfil, Projetos, Hackathons, Equipes, Perfil, Configurações.
+- `src/styles` → CSS ou SCSS personalizados.
+- `src/routes` → Configuração das rotas usando React Router.
+
+Requisitos técnicos:
+- Utilizar React funcional com Hooks (useState, useEffect, useContext).
+- Código organizado e limpo.
+- Responsividade mobile-first utilizando Bootstrap.
+- Animações suaves nos carrosséis e botões.
+- Sem alterar o layout ou design original fornecido nas imagens.
+
+Importante:
+- Não remover ou alterar elementos visuais.
+- Seguir o espaçamento e divisões conforme mostrado nas imagens.
+- Carrosséis e filtros devem ser 100% funcionais.

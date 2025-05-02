@@ -1,14 +1,15 @@
 
 import React, { useState } from 'react';
 import './usuario.css';
+import { useTheme } from '../../../contexts/ThemeContext';
 import building from './image/iconesUsuario/building.png';
 import email from './image/iconesUsuario/email.png';
 import github from './image/iconesUsuario/github.png';
 import linkedin from './image/iconesUsuario/linkedin.png';
 import link from './image/iconesUsuario/link.png';
-import placeholder from './image/iconesUsuario/placeholder.png';
 
 const Usuario: React.FC = () => {
+  const { theme, toggleTheme } = useTheme();
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const [currentHackathonIndex, setCurrentHackathonIndex] = useState(0);
   const [currentGroupIndex, setCurrentGroupIndex] = useState(0);
@@ -18,33 +19,34 @@ const Usuario: React.FC = () => {
     { name: 'Projeto 1', empresa: 'Empresa 1' },
     { name: 'Projeto 2', empresa: 'Empresa 2' },
     { name: 'Projeto 3', empresa: 'Empresa 3' },
+    { name: 'Projeto 4', empresa: 'Empresa 4' },
   ];
 
   const hackathons = [
-    { name: 'Hackathon 1', data: '2024' },
-    { name: 'Hackathon 2', data: '2024' },
-    { name: 'Hackathon 3', data: '2024' },
+    { name: 'Hackathon 1', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { name: 'Hackathon 2', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { name: 'Hackathon 3', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { name: 'Hackathon 4', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   ];
 
   const groups = [
     { name: 'Grupo 1', members: 5 },
     { name: 'Grupo 2', members: 8 },
     { name: 'Grupo 3', members: 6 },
+    { name: 'Grupo 4', members: 4 },
   ];
 
   return (
-    <div className="user-container">
+    <div className={`app-container ${theme}`}>
       {/* Sidebar Esquerda */}
       <div className="sidebar-left">
         <div className="profile-section">
           <img src="https://github.com/user.png" alt="Avatar" className="avatar" />
           <h2>Nome do Usuário</h2>
-          <p className="role">Desenvolvedor Full Stack</p>
-          
           <div className="social-links">
             <div className="social-item">
-              <img src={building} alt="Empresa" />
-              <span>Empresa Atual</span>
+              <img src={building} alt="Função" />
+              <span>Função</span>
             </div>
             <div className="social-item">
               <img src={github} alt="Github" />
@@ -55,14 +57,14 @@ const Usuario: React.FC = () => {
               <span>LinkedIn</span>
             </div>
             <div className="social-item">
-              <img src={link} alt="Website" />
-              <span>Website</span>
+              <img src={link} alt="Link" />
+              <span>Link</span>
             </div>
           </div>
 
           <button className="edit-profile-btn">Editar Perfil</button>
 
-          <nav className="sidebar-nav">
+          <nav className="nav-menu">
             <a href="#" className="nav-item active">Página Inicial</a>
             <a href="#" className="nav-item">Notificações</a>
             <a href="#" className="nav-item">Mensagens</a>
@@ -74,9 +76,9 @@ const Usuario: React.FC = () => {
           </nav>
 
           <div className="achievements">
-            <img src="/medal-yellow.png" alt="Conquista 1" className="achievement-badge" />
-            <img src="/medal-green.png" alt="Conquista 2" className="achievement-badge" />
-            <img src="/medal-red.png" alt="Conquista 3" className="achievement-badge" />
+            <div className="achievement-badge yellow"></div>
+            <div className="achievement-badge green"></div>
+            <div className="achievement-badge red"></div>
           </div>
 
           <div className="version">v1.0.0</div>
@@ -85,8 +87,10 @@ const Usuario: React.FC = () => {
 
       {/* Conteúdo Principal */}
       <main className="main-content">
-        <div className="search-section">
-          <input type="text" placeholder="Buscar projetos..." className="search-input" />
+        <div className="top-bar">
+          <div className="search-section">
+            <input type="text" placeholder="Buscar..." className="search-input" />
+          </div>
           <div className="filters">
             {['Todos', 'Design', 'Dev', 'Marketing', 'Gestão'].map(filter => (
               <button
@@ -100,40 +104,61 @@ const Usuario: React.FC = () => {
           </div>
         </div>
 
-        {/* Carrossel de Projetos */}
-        <section className="carousel-section projects">
+        <section className="projects-section">
           <h2>Projetos</h2>
           <div className="carousel">
             <button className="carousel-btn prev" onClick={() => setCurrentProjectIndex(prev => prev > 0 ? prev - 1 : projects.length - 1)}>←</button>
             <div className="carousel-content blue">
-              <h3>{projects[currentProjectIndex].name}</h3>
-              <p>{projects[currentProjectIndex].empresa}</p>
+              {projects.map((project, index) => (
+                <div key={index} className={`carousel-item ${index === currentProjectIndex ? 'active' : ''}`}>
+                  <h3>{project.name}</h3>
+                  <p>{project.empresa}</p>
+                  <div className="card-actions">
+                    <button>Participar</button>
+                    <button>Saber +</button>
+                  </div>
+                </div>
+              ))}
             </div>
             <button className="carousel-btn next" onClick={() => setCurrentProjectIndex(prev => (prev + 1) % projects.length)}>→</button>
           </div>
         </section>
 
-        {/* Carrossel de Hackathons */}
-        <section className="carousel-section hackathons">
+        <section className="hackathons-section">
           <h2>Hackathons</h2>
           <div className="carousel">
             <button className="carousel-btn prev" onClick={() => setCurrentHackathonIndex(prev => prev > 0 ? prev - 1 : hackathons.length - 1)}>←</button>
             <div className="carousel-content black">
-              <h3>{hackathons[currentHackathonIndex].name}</h3>
-              <p>{hackathons[currentHackathonIndex].data}</p>
+              {hackathons.map((hackathon, index) => (
+                <div key={index} className={`carousel-item ${index === currentHackathonIndex ? 'active' : ''}`}>
+                  <h3>{hackathon.name}</h3>
+                  <p>{hackathon.descricao}</p>
+                  <div className="card-actions">
+                    <button>Participar</button>
+                    <button>Saber +</button>
+                  </div>
+                </div>
+              ))}
             </div>
             <button className="carousel-btn next" onClick={() => setCurrentHackathonIndex(prev => (prev + 1) % hackathons.length)}>→</button>
           </div>
         </section>
 
-        {/* Carrossel de Grupos */}
-        <section className="carousel-section groups">
+        <section className="groups-section">
           <h2>Grupos</h2>
           <div className="carousel">
             <button className="carousel-btn prev" onClick={() => setCurrentGroupIndex(prev => prev > 0 ? prev - 1 : groups.length - 1)}>←</button>
             <div className="carousel-content green">
-              <h3>{groups[currentGroupIndex].name}</h3>
-              <p>{groups[currentGroupIndex].members} membros</p>
+              {groups.map((group, index) => (
+                <div key={index} className={`carousel-item ${index === currentGroupIndex ? 'active' : ''}`}>
+                  <h3>{group.name}</h3>
+                  <p>{group.members} membros</p>
+                  <div className="card-actions">
+                    <button>Participar</button>
+                    <button>Saber +</button>
+                  </div>
+                </div>
+              ))}
             </div>
             <button className="carousel-btn next" onClick={() => setCurrentGroupIndex(prev => (prev + 1) % groups.length)}>→</button>
           </div>
@@ -142,40 +167,49 @@ const Usuario: React.FC = () => {
 
       {/* Sidebar Direita */}
       <div className="sidebar-right">
-        <section className="languages">
-          <h3>Idiomas</h3>
+        <div className="language-section">
+          <h3>Linguagens</h3>
           <div className="language-item">
-            <span>Inglês</span>
+            <span>JavaScript</span>
             <span>Intermediário</span>
           </div>
           <div className="language-item">
-            <span>Espanhol</span>
-            <span>Básico</span>
+            <span>Python</span>
+            <span>Avançado</span>
           </div>
-        </section>
+          <div className="language-item">
+            <span>Java</span>
+            <span>Iniciante</span>
+          </div>
+        </div>
 
-        <section className="progress">
-          <h3>Progresso</h3>
+        <div className="progress-section">
+          <h3>Progresso dos selos</h3>
           <div className="progress-item">
-            <span>Desenvolvedor Frontend</span>
+            <span>Desenvolvedor Front-end</span>
             <div className="progress-bar">
               <div className="progress-fill" style={{width: '75%'}}></div>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section className="tasks">
-          <h3>Tarefas</h3>
+        <div className="tasks-section">
+          <h3>Tarefas Pendentes</h3>
           <div className="task-item">
             <input type="checkbox" id="task1" />
-            <label htmlFor="task1">Completar projeto frontend</label>
+            <label htmlFor="task1">Completar 5 projetos de front-end</label>
           </div>
           <div className="task-item">
             <input type="checkbox" id="task2" />
-            <label htmlFor="task2">Participar do hackathon</label>
+            <label htmlFor="task2">Participar de 2 hackathons</label>
           </div>
-        </section>
+        </div>
       </div>
+
+      {/* Botão Dark Mode */}
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {theme === 'light' ? '🌙' : '☀️'}
+      </button>
     </div>
   );
 };

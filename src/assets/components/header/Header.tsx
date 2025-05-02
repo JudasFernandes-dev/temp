@@ -11,9 +11,18 @@ function Header() {
           <Link to="/sobre">Sobre</Link>
         </div>
         <div className="right-nav">
+          <ul className="menu-header">
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/cadastro">Cadastre-se</Link></li>
+            <li><Link to="/cadprojeto">Cadastrar Projeto</Link></li>
+            <li><Link to="/paguser">Minha Página</Link></li>
+          </ul>
           <button className="notifications">+3</button>
           <button className="user-profile">
             <img src="https://github.com/user.png" alt="Profile" />
+          </button>
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {theme === 'light' ? '🌙' : '☀️'}
           </button>
         </div>
       </nav>

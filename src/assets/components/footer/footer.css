@@ -3,21 +3,21 @@
     background-color: #0246cd27;
     padding: 20px 0;
     font-family: Arial, sans-serif;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
-    z-index: 100;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
 .app-container {
-    padding-bottom: 200px; /* Espaço para o footer */
     min-height: 100vh;
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
-    margin-bottom: 200px; /* Espaço para o footer */
+    flex: 1;
+    margin-bottom: 50px;
 }
 
 /* Adicionar margem inferior para evitar que o conteúdo fique sob o footer */

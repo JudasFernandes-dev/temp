@@ -1,29 +1,8 @@
 
 .carousel-container {
-  margin: 2rem 0;
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-
-.carousel-container.projects {
-  background-color: #e6f0ff;
-  border-left: 4px solid var(--cor-azul);
-}
-
-.carousel-container.hackathons {
-  background-color: #f0f0f0;
-  border-left: 4px solid var(--cor-preto);
-}
-
-.carousel-container.groups {
-  background-color: #e6ffe6;
-  border-left: 4px solid #66d966;
-}
-
-.carousel-container h2 {
-  margin-bottom: 1.5rem;
-  color: var(--cor-azul);
-  font-size: 1.5rem;
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
 }
 
 .carousel-items {
@@ -31,36 +10,9 @@
   gap: 1rem;
   overflow-x: auto;
   padding: 0.5rem;
+  scroll-behavior: smooth;
 }
 
-.carousel-item {
-  min-width: 280px;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-item h3 {
-  color: var(--cor-azul);
-  margin-bottom: 0.5rem;
-}
-
-.carousel-item p {
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-.carousel-item .category {
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  background: var(--cor-cinza);
-  border-radius: 4px;
-  font-size: 0.875rem;
-  color: var(--cor-azul);
-}
-
-/* Customizar a barra de rolagem */
 .carousel-items::-webkit-scrollbar {
   height: 8px;
 }
@@ -71,10 +23,74 @@
 }
 
 .carousel-items::-webkit-scrollbar-thumb {
-  background: var(--cor-azul);
+  background: var(--cor-cinza);
   border-radius: 4px;
 }
 
-.carousel-items::-webkit-scrollbar-thumb:hover {
+.carousel-item {
+  min-width: 280px;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.carousel-item h3 {
+  margin: 0.5rem 0;
+  color: var(--cor-azul);
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status.active { background-color: #22c55e; color: white; }
+.status.completed { background-color: var(--cor-azul); color: white; }
+.status.upcoming { background-color: var(--cor-laranja); color: white; }
+.status.open { background-color: #3b82f6; color: white; }
+
+.progress-bar {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  margin-top: 1rem;
+}
+
+.progress-fill {
+  height: 100%;
   background: var(--cor-laranja);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.join-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--cor-laranja);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.join-button:hover {
+  background-color: #e67300;
+}
+
+.category {
+  background: var(--cor-cinza);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: var(--cor-azul);
+}
+
+.tech, .date, .members {
+  color: #666;
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
 }

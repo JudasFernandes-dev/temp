@@ -1,45 +1,40 @@
 
-import { useState } from 'react';
+import React from 'react';
 import './carousel.css';
 
-interface Group {
-  id: number;
-  name: string;
-  members: number;
-  category: string;
-}
-
 const GroupCarousel = () => {
-  const [groups] = useState<Group[]>([
+  const groups = [
     {
       id: 1,
-      name: "Grupo 1",
-      members: 15,
-      category: "Dev"
+      name: "Dev Frontend",
+      members: 45,
+      category: "Desenvolvimento"
     },
     {
       id: 2,
-      name: "Grupo 2",
-      members: 20,
+      name: "UX/UI Design",
+      members: 32,
       category: "Design"
     },
     {
       id: 3,
-      name: "Grupo 3",
-      members: 10,
-      category: "Gestão"
+      name: "Data Science",
+      members: 28,
+      category: "Dados"
     }
-  ]);
+  ];
 
   return (
-    <div className="carousel-container groups">
-      <h2>Grupos</h2>
+    <div className="carousel-container">
       <div className="carousel-items">
         {groups.map(group => (
-          <div key={group.id} className="carousel-item">
+          <div key={group.id} className="carousel-item group-item">
+            <div className="group-header">
+              <span className="category">{group.category}</span>
+            </div>
             <h3>{group.name}</h3>
-            <p>Membros: {group.members}</p>
-            <span className="category">{group.category}</span>
+            <p className="members">{group.members} membros</p>
+            <button className="join-button">Participar</button>
           </div>
         ))}
       </div>

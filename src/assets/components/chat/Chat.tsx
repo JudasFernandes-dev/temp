@@ -1,47 +1,92 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { MdSend, MdClose, MdMinimize } from 'react-icons/md';
 import './Chat.css';
+
+interface Message {
+  id: number;
+  sender: string;
+  text: string;
+  timestamp: string;
+}
 
 const Chat = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([]);
-  const [inputMessage, setInputMessage] = useState('');
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState<Message[]>([]);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const handleSendMessage = () => {
-    if (inputMessage.trim()) {
-      setMessages([...messages, { text: inputMessage, sender: 'user' }]);
-      setInputMessage('');
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const handleSendMessage = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (message.trim()) {
+      const newMessage: Message = {
+        id: Date.now(),
+        sender: 'Você',
+        text: message,
+        timestamp: new Date().toLocaleTimeString()
+      };
+      setMessages([...messages, newMessage]);
+      setMessage('');
     }
   };
 
+  const toggleChat = () => {
+    setIsOpen(!isOpen);
+    setIsMinimized(false);
+  };
+
+  const toggleMinimize = () => {
+    setIsMinimized(!isMinimized);
+  };
+
   return (
-    <>
-      <button 
-        className="chat-button"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <MdMessage size={24} />
-      </button>
-      
-      {isOpen && (
-        <>
-          <div className="chat-overlay" onClick={() => setIsOpen(false)} />
-          <div className="chat-window">
-            <div className="chat-header">
-              <span>Chat</span>
-              <button onClick={() => setIsOpen(false)}>×</button>
+    <div className={`chat-container ${isOpen ? 'open' : ''} ${isMinimized ? 'minimized' : ''}`}>
+      <div className="chat-header">
+        <h3>Chat</h3>
+        <div className="chat-controls">
+          <button onClick={toggleMinimize}>
+            <MdMinimize size={20} />
+          </button>
+          <button onClick={toggleChat}>
+            <MdClose size={20} />
+          </button>
+        </div>
+      </div>
+
+      <div className="chat-messages">
+        {messages.map(msg => (
+          <div key={msg.id} className="message">
+            <div className="message-header">
+              <span className="sender">{msg.sender}</span>
+              <span className="timestamp">{msg.timestamp}</span>
             </div>
-            <div className="chat-messages">
-              {/* Messages will go here */}
-            </div>
-            <div className="chat-input">
-              <input type="text" placeholder="Digite sua mensagem..." />
-              <button>Enviar</button>
-            </div>
+            <p>{msg.text}</p>
           </div>
-        </>
-      )}
-    </>
+        ))}
+        <div ref={messagesEndRef} />
+      </div>
+
+      <form onSubmit={handleSendMessage} className="chat-input">
+        <input
+          type="text"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Digite sua mensagem..."
+        />
+        <button type="submit">
+          <MdSend size={20} />
+        </button>
+      </form>
+    </div>
   );
 };
 

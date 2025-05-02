@@ -1,68 +1,186 @@
-.main-users-container-principal {
-  display: flex;
+
+.main-container {
+  display: grid;
+  grid-template-columns: 180px 1fr 250px;
+  min-height: 100vh;
+  background-color: var(--background-color);
 }
-.perfil-lateral-container {
+
+.sidebar-left {
+  position: fixed;
+  width: 180px;
+  height: 100vh;
+  background-color: var(--sidebar-bg);
+  padding: 20px;
+  border-right: 1px solid var(--border-color);
+}
+
+.content-area {
+  margin: 0 20px;
+  padding: 20px;
+  grid-column: 2;
+}
+
+.sidebar-right {
+  position: fixed;
+  right: 0;
   width: 250px;
+  height: 100vh;
+  background-color: var(--sidebar-bg);
   padding: 20px;
-  background-color: #f5f5f5;
+  border-left: 1px solid var(--border-color);
 }
-.content-container {
-  flex: 1;
-  padding: 20px;
-  background-color: white;
-}
-.search-bar {
+
+.search-section {
   position: relative;
   margin-bottom: 20px;
 }
-.search-bar input {
+
+.search-section input {
   width: 100%;
   padding: 12px 40px 12px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   font-size: 16px;
 }
+
 .search-icon {
   position: absolute;
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #666;
+  color: var(--text-secondary);
 }
+
 .categories {
   display: flex;
   gap: 10px;
   margin-bottom: 30px;
-  flex-wrap: wrap;
+  justify-content: center;
 }
+
 .category-btn {
   padding: 8px 16px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 20px;
-  background: transparent;
+  background: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .category-btn.active {
-  background: #007bff;
+  background-color: var(--primary-color);
   color: white;
-  border-color: #007bff;
+  border-color: var(--primary-color);
 }
-.category-btn:hover {
-  background: #f0f0f0;
+
+.carousels {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
-.category-btn.active:hover {
-  background: #0056b3;
+
+.carousel-section {
+  margin-bottom: 30px;
 }
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+.carousel-section h2 {
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.carousel-items {
+  display: flex;
   gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
 }
-.project-card {
+
+.carousel-card {
+  min-width: 280px;
+  padding: 20px;
+  border-radius: 12px;
   background: white;
-  border: 1px solid #eee;
-  padding: 15px;
-  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.projects .carousel-card {
+  border-top: 4px solid #3B82F6;
+}
+
+.hackathons .carousel-card {
+  border-top: 4px solid #111827;
+}
+
+.groups .carousel-card {
+  border-top: 4px solid #10B981;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: var(--background-light);
+  border-radius: 6px;
+}
+
+.progress-section {
+  margin-top: 30px;
+}
+
+.progress-item {
+  margin-bottom: 15px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: var(--background-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .sidebar-left {
+    width: 60px;
+  }
+
+  .sidebar-right {
+    display: none;
+  }
 }

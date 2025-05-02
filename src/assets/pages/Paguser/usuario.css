@@ -6,7 +6,7 @@
   @apply bg-gray-900 text-white;
 }
 
-/* Custom scrollbar */
+/* Scrollbar customizada */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -19,246 +19,36 @@
   @apply bg-gray-300 dark:bg-gray-600 rounded-full;
 }
 
-/* Transitions */
+/* Transições */
 .transition-all {
   transition: all 0.3s ease;
 }
 
-/* Cards hover effect */
-.project-card,
-.hackathon-card,
-.group-card {
+/* Hover nos cards */
+.card {
   @apply transition-all hover:shadow-lg hover:-translate-y-1;
 }
 
-/* Carousel navigation buttons */
-.carousel-nav-button {
-  @apply w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center;
-  @apply hover:bg-gray-100 transition-colors;
-}
-
-/* Progress bars */
-.progress-bar-container {
-  @apply w-full h-2 bg-gray-200 rounded-full overflow-hidden;
-}
-
-.progress-bar-fill {
-  @apply h-full transition-all duration-300 ease-in-out;
-}
-
-/* Achievement badges */
-.achievement-badge {
-  @apply w-8 h-8 rounded-full flex items-center justify-center;
-}
-
-.achievement-badge.gold {
-  @apply bg-yellow-400;
-}
-
-.achievement-badge.green {
-  @apply bg-green-400;
-}
-
-.achievement-badge.red {
-  @apply bg-red-400;
-}
-
-/* Chat button and container */
+/* Botão de chat */
 .chat-button {
   @apply fixed bottom-4 right-4 w-12 h-12 bg-blue-500 text-white rounded-full;
   @apply flex items-center justify-center shadow-lg z-50;
   @apply hover:bg-blue-600 transition-colors;
 }
 
+/* Container do chat */
 .chat-container {
   @apply fixed bottom-20 right-4 w-80 h-96 bg-white rounded-lg shadow-xl z-50;
   @apply dark:bg-gray-800 dark:text-white;
 }
 
-/* Responsive adjustments */
+/* Responsividade */
 @media (max-width: 1024px) {
-  .sidebar-left {
+  .sidebar {
     @apply w-16;
-  }
-
-  .sidebar-right {
-    @apply hidden;
   }
 
   .main-content {
     @apply ml-16;
   }
-}
-
-.main-container {
-  display: grid;
-  grid-template-columns: 180px 1fr 250px;
-  min-height: 100vh;
-  background-color: var(--background-color);
-}
-
-.sidebar-left {
-  position: fixed;
-  width: 180px;
-  height: 100vh;
-  background-color: var(--sidebar-bg);
-  padding: 20px;
-  border-right: 1px solid var(--border-color);
-}
-
-.content-area {
-  margin: 0 20px;
-  padding: 20px;
-  grid-column: 2;
-}
-
-.sidebar-right {
-  position: fixed;
-  right: 0;
-  width: 250px;
-  height: 100vh;
-  background-color: var(--sidebar-bg);
-  padding: 20px;
-  border-left: 1px solid var(--border-color);
-}
-
-.search-section {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.search-section input {
-  width: 100%;
-  padding: 12px 40px 12px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-.search-icon {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-secondary);
-}
-
-.categories {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
-  justify-content: center;
-}
-
-.category-btn {
-  padding: 8px 16px;
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  background: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.category-btn.active {
-  background-color: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
-}
-
-.carousels {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.carousel-section {
-  margin-bottom: 30px;
-}
-
-.carousel-section h2 {
-  margin-bottom: 20px;
-  color: var(--text-primary);
-}
-
-.carousel-items {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 20px;
-}
-
-.carousel-card {
-  min-width: 280px;
-  padding: 20px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.projects .carousel-card {
-  border-top: 4px solid #3B82F6;
-}
-
-.hackathons .carousel-card {
-  border-top: 4px solid #111827;
-}
-
-.groups .carousel-card {
-  border-top: 4px solid #10B981;
-}
-
-.language-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  padding: 8px;
-  background-color: var(--background-light);
-  border-radius: 6px;
-}
-
-.progress-section {
-  margin-top: 30px;
-}
-
-.progress-item {
-  margin-bottom: 15px;
-}
-
-.progress-info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-
-.progress-bar {
-  height: 8px;
-  background-color: var(--background-light);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background-color: var(--primary-color);
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
-
-.chat-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }

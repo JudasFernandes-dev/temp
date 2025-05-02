@@ -1,100 +1,102 @@
 
 .sidebar {
-  width: 250px;
-  height: 100vh;
-  padding: 24px;
-  background-color: var(--cor-branca);
-  border-right: 1px solid var(--border-color);
-  display: flex;
-  flex-direction: column;
   position: fixed;
   left: 0;
-  box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+  top: 0;
+  width: 180px;
+  height: 100vh;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.profile-section {
+.user-profile {
   text-align: center;
-  margin-bottom: 24px;
 }
 
-.avatar {
+.profile-avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   margin-bottom: 12px;
 }
 
-.profile-section h3 {
-  margin: 0;
+.user-info h3 {
   font-size: 16px;
-  color: var(--text-primary);
+  margin-bottom: 4px;
 }
 
-.profile-section p {
-  margin: 4px 0 12px;
+.user-role {
   font-size: 14px;
-  color: var(--text-secondary);
+  color: #6b7280;
+  margin-bottom: 8px;
 }
 
 .social-links {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 4px;
+  margin-bottom: 12px;
 }
 
 .social-links a {
-  color: var(--text-primary);
+  color: #3B82F6;
   text-decoration: none;
   font-size: 14px;
 }
 
 .edit-profile-btn {
-  width: 100%;
-  padding: 8px;
-  border-radius: 20px;
-  background-color: var(--primary-color);
+  display: block;
+  padding: 8px 16px;
+  background: #3B82F6;
   color: white;
-  border: none;
-  cursor: pointer;
+  border-radius: 20px;
+  text-decoration: none;
   font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
-.navigation {
+.edit-profile-btn:hover {
+  background: #2563eb;
+}
+
+.sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 8px;
 }
 
-.navigation a {
+.sidebar-nav a {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 8px;
-  color: var(--text-primary);
+  color: #4b5563;
   text-decoration: none;
   border-radius: 8px;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s ease;
 }
 
-.navigation a:hover {
-  background-color: var(--hover-bg);
+.sidebar-nav a:hover {
+  background: #f3f4f6;
 }
 
-.navigation a svg {
-  font-size: 20px;
+.sidebar-nav a.active {
+  background: #3B82F6;
+  color: white;
 }
 
 .achievements {
   margin-top: auto;
-  padding-top: 24px;
+  padding-top: 20px;
 }
 
 .achievements h4 {
-  margin: 0 0 12px;
   font-size: 14px;
-  color: var(--text-primary);
+  margin-bottom: 8px;
 }
 
 .badges {
@@ -104,18 +106,18 @@
 }
 
 .badge {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
 }
 
-.badge.yellow { background-color: #FFD700; }
-.badge.green { background-color: #4CAF50; }
-.badge.red { background-color: #F44336; }
+.badge.yellow { background-color: #FCD34D; }
+.badge.green { background-color: #10B981; }
+.badge.red { background-color: #EF4444; }
 
 .version {
-  margin-top: 16px;
-  text-align: center;
   font-size: 12px;
-  color: var(--text-secondary);
+  color: #9ca3af;
+  text-align: center;
+  margin-top: 20px;
 }

@@ -1,9 +1,9 @@
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MdAdd, MdNotifications, MdWbSunny, MdNightlight } from 'react-icons/md';
+import { MdAdd, MdNotifications, MdWbSunny, MdNightlight, MdSettings, MdPerson, MdExitToApp } from 'react-icons/md';
 import './header-user.css';
-import { useTheme } from '../../contexts/ThemeContext';
+import { useTheme } from '../../../contexts/ThemeContext';
 
 function HeaderUser() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -19,11 +19,12 @@ function HeaderUser() {
         </div>
 
         <div className="nav-right">
-          <button className="icon-button">
+          <button className="icon-button" title="Adicionar">
             <MdAdd />
           </button>
-          <button className="icon-button">
+          <button className="icon-button" title="Notificações">
             <MdNotifications />
+            <span className="notification-badge">3</span>
           </button>
           
           <div className="user-menu">
@@ -35,14 +36,20 @@ function HeaderUser() {
             />
             {isDropdownOpen && (
               <div className="dropdown-menu">
-                <Link to="/edit-profile">Editar Perfil</Link>
-                <Link to="/settings">Configurações</Link>
-                <button onClick={() => {/* Implement logout */}}>Sair</button>
+                <Link to="/edit-profile">
+                  <MdPerson /> Editar Perfil
+                </Link>
+                <Link to="/settings">
+                  <MdSettings /> Configurações
+                </Link>
+                <button onClick={() => {/* Implement logout */}}>
+                  <MdExitToApp /> Sair
+                </button>
               </div>
             )}
           </div>
 
-          <button className="theme-toggle" onClick={toggleTheme}>
+          <button className="theme-toggle" onClick={toggleTheme} title="Alternar tema">
             {theme === 'light' ? <MdWbSunny /> : <MdNightlight />}
           </button>
         </div>

@@ -1,59 +1,51 @@
 
-import { Link } from 'wouter';
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { MdHome, MdNotifications, MdMessage, MdGroup, MdWork, MdPerson, MdSettings } from 'react-icons/md';
+import { FaHackerrank } from 'react-icons/fa';
 import './Sidebar.css';
-import { MdHome, MdNotifications, MdMessage, MdGroup, MdPerson, MdSettings } from 'react-icons/md';
-import { FaHackerrank, FaProjectDiagram } from 'react-icons/fa';
 
-const Sidebar = () => {
-  const [userData, setUserData] = useState({
-    name: 'João Silva',
-    title: 'Desenvolvedor Front-end',
-    avatar: '/default-avatar.png',
-    github: 'github.com/joaosilva',
-    linkedin: 'linkedin.com/in/joaosilva',
-    website: 'joaosilva.dev'
-  });
-
+function Sidebar() {
   return (
-    <div className="sidebar">
-      <div className="profile-section">
-        <img src={userData.avatar} alt="Avatar" className="avatar" />
-        <h3>{userData.name}</h3>
-        <p>{userData.title}</p>
-        
-        <div className="social-links">
-          <a href={`https://${userData.github}`} target="_blank" rel="noopener noreferrer">Github</a>
-          <a href={`https://${userData.linkedin}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href={`https://${userData.website}`} target="_blank" rel="noopener noreferrer">Website</a>
+    <aside className="sidebar">
+      <div className="user-profile">
+        <img src="/default-avatar.png" alt="Avatar" className="profile-avatar" />
+        <div className="user-info">
+          <h3>Nome do Usuário</h3>
+          <p className="user-role">Desenvolvedor Full Stack</p>
+          <div className="social-links">
+            <a href="#" target="_blank">Github</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">Portfolio</a>
+          </div>
+          <Link to="/edit-profile" className="edit-profile-btn">
+            Editar Perfil
+          </Link>
         </div>
-
-        <button className="edit-profile-btn">Editar Perfil</button>
       </div>
 
-      <nav className="navigation">
-        <Link href="/"><MdHome /> Página Inicial</Link>
-        <Link href="/notifications"><MdNotifications /> Notificações</Link>
-        <Link href="/messages"><MdMessage /> Mensagens</Link>
-        <Link href="/hackathons"><FaHackerrank /> Hackathons</Link>
-        <Link href="/projects"><FaProjectDiagram /> Projetos</Link>
-        <Link href="/teams"><MdGroup /> Equipes</Link>
-        <Link href="/profile"><MdPerson /> Perfil</Link>
-        <Link href="/settings"><MdSettings /> Configurações</Link>
+      <nav className="sidebar-nav">
+        <Link to="/"><MdHome /> Página Inicial</Link>
+        <Link to="/notifications"><MdNotifications /> Notificações</Link>
+        <Link to="/messages"><MdMessage /> Mensagens</Link>
+        <Link to="/hackathons"><FaHackerrank /> Hackathons</Link>
+        <Link to="/projects"><MdWork /> Projetos</Link>
+        <Link to="/teams"><MdGroup /> Equipes</Link>
+        <Link to="/profile"><MdPerson /> Perfil</Link>
+        <Link to="/settings"><MdSettings /> Configurações</Link>
       </nav>
 
       <div className="achievements">
         <h4>Conquistas</h4>
         <div className="badges">
-          <div className="badge yellow"></div>
-          <div className="badge green"></div>
-          <div className="badge red"></div>
+          <div className="badge yellow" title="Conquista Ouro"></div>
+          <div className="badge green" title="Conquista Verde"></div>
+          <div className="badge red" title="Conquista Vermelha"></div>
         </div>
       </div>
 
       <div className="version">v1.0.0</div>
-    </div>
+    </aside>
   );
-};
+}
 
 export default Sidebar;

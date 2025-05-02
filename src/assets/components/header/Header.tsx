@@ -1,7 +1,9 @@
 import './header.css';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../../../contexts/ThemeContext';
 
 function Header() {
+  const { theme, toggleTheme } = useTheme();
   return (
     <header className="header">
       <nav className="nav-container">

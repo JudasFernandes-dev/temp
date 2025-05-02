@@ -40,9 +40,9 @@ const Card: React.FC = () => {
       {/* Título da seção de cards */}
       <h1>Conexões que transformam</h1>
       {/* Container para os cards individuais */}
-      <div className="container-inicial">
+      <div className="container-inicial" style={{ display: 'flex', overflowX: 'auto', scrollBehavior: 'smooth', gap: '20px', padding: '20px 0' }}>
         {/* Card 1 */}
-        <article className="card-iniciais">
+        <article className="card-iniciais" style={{ minWidth: '300px', flex: '0 0 auto' }}>
           <h2>Vantagens da parceria</h2>
           <p>Facilita o match entre empresas, instituições, alunos e tutores, promovendo parcerias que aceleram a inovação e o aprendizado.</p>
         </article>

@@ -4,6 +4,15 @@ import './Chat.css';
 
 const Chat = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const [inputMessage, setInputMessage] = useState('');
+
+  const handleSendMessage = () => {
+    if (inputMessage.trim()) {
+      setMessages([...messages, { text: inputMessage, sender: 'user' }]);
+      setInputMessage('');
+    }
+  };
 
   return (
     <>
@@ -11,7 +20,7 @@ const Chat = () => {
         className="chat-button"
         onClick={() => setIsOpen(!isOpen)}
       >
-        💬
+        <MdMessage size={24} />
       </button>
       
       {isOpen && (

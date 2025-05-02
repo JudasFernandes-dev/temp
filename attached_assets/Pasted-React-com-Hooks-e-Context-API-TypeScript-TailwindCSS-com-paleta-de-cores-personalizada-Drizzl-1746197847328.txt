@@ -1,0 +1,194 @@
+React (com Hooks e Context API)
+
+TypeScript
+
+TailwindCSS (com paleta de cores personalizada)
+
+Drizzle ORM integrado com PostgreSQL
+
+Wouter para roteamento
+
+TanStack Query (React Query) para gerenciamento de dados assíncronos
+
+Shadcn/UI para componentes de interface
+
+Lucide React para ícones
+
+Estrutura da Interface
+1. Layout Geral
+Header (Menu Superior):
+
+Fixo no topo com altura de 10px.
+
+À esquerda: Links de navegação (Home, Contato, Sobre).
+
+À direita: Ícones de notificações, botão "+3", foto do usuário com dropdown e botão de alternância entre tema claro/escuro.
+
+Fundo azul claro no tema claro e cinza escuro no tema escuro.
+
+Sidebar (Menu Lateral Esquerdo):
+
+Fixo na esquerda com largura de 180px.
+
+Avatar do usuário no topo.
+
+Seção de informações pessoais (Função, Github, LinkedIn, Link).
+
+Botão "Editar Perfil" que redireciona para /editar-perfil.
+
+Navegação:
+
+Página Inicial
+
+Notificações
+
+Mensagens
+
+Hackathons
+
+Projetos
+
+Equipes
+
+Perfil
+
+Configurações
+
+Seção inferior para conquistas com três selos (amarelo, verde, vermelho).
+
+Versão do sistema exibida no rodapé lateral (v1.0.0).
+
+Sidebar Direita:
+
+Seções para:
+
+Idiomas e níveis
+
+Barra de progresso de habilidades
+
+Tarefas pendentes
+
+Conteúdo Central:
+
+Área principal responsiva com:
+
+Barra de pesquisa.
+
+Filtros de categorias (Todos, Design, Dev, Marketing, Gestão).
+
+Três carrosséis distintos:
+
+Projetos (azul)
+
+Hackathons (preto)
+
+Grupos (verde)
+
+Carrosséis com navegação manual via setas utilizando Swiper.js.
+
+Rodapé:
+
+Fixo na parte inferior da página.
+
+Conteúdo centralizado:
+
+Mensagem: “Conectando pessoas do mesmo cosmo”
+
+Três colunas:
+
+SOBRE NÓS: Quem somos, Como funciona, Trabalhe conosco, FAQ
+
+LINKS ÚTEIS: Documentação, Política de Privacidade, Termos de Uso
+
+INFORMAÇÕES: Endereço, Telefone, Empresa
+
+Ícones de redes sociais alinhados.
+
+Funcionalidades Específicas
+Tema Claro/Escuro:
+
+Ao clicar no botão de lua/sol, abrir Modal pedindo confirmação.
+
+Armazenar a preferência de tema no localStorage.
+
+Gerenciar tema via Contexto do React.
+
+Dropdown no Avatar:
+
+Opções disponíveis:
+
+Editar Perfil
+
+Configurações
+
+Sair
+
+Chat:
+
+Botão fixo no canto inferior direito.
+
+Ao clicar, abrir Modal mostrando lista de mensagens.
+
+Clicando em uma conversa, abrir pop-up individual de chat.
+
+Filtros de Conteúdo:
+
+Centralizados no topo da seção de projetos.
+
+Exibir apenas os cards da categoria selecionada.
+
+Carrosséis:
+
+Implementar três carrosséis com navegação manual via setas.
+
+Utilizar Swiper.js com animações suaves.
+
+Comportamento Responsivo
+Menu lateral colapsa automaticamente em telas pequenas.
+
+Carrosséis adaptam para mobile.
+
+Todos elementos permanecem organizados independentemente do tamanho de tela.
+
+Cores e Estilo
+TailwindCSS com customização:
+
+Projetos: Azul #3B82F6
+
+Hackathons: Preto/Cinza Escuro #111827
+
+Grupos: Verde #10B981
+
+Conquistas:
+
+Amarelo #FCD34D
+
+Verde #10B981
+
+Vermelho #EF4444
+
+Estilo geral:
+
+Bordas arredondadas
+
+Sombreamento sutil
+
+Transições suaves nos componentes interativos
+
+Conteúdo Demonstrativo
+Projetos, Hackathons e Grupos preenchidos com dados de exemplo.
+
+Chat populado com mensagens simuladas.
+
+Barra de progresso e tarefas preenchidas de forma aleatória.
+
+Considerações Técnicas
+Gerenciamento de estado de tema via React Context API.
+
+Preferências de tema salvas no localStorage.
+
+Utilização de modais via Portals para evitar conflitos de z-index.
+
+Carregamento de dados iniciais utilizando React Query.
+
+Otimizações para evitar re-renderizações desnecessárias e manter alta performance.

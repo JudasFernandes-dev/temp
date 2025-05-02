@@ -169,15 +169,27 @@
 
 .app-container {
   min-height: 100vh;
-  position: relative;
-  padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
-footer {
+main {
+  flex: 1;
+  margin-bottom: 120px;
+}
+
+.footer {
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 999;
+  background-color: #0246cd27;
+}
+
+.main-content {
+  padding-bottom: 120px;
 }
 
 .project-card,

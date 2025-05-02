@@ -7,17 +7,18 @@ function Header() {
     <header className="header">
       <nav className="nav-container">
         <div className="left-nav">
-          <Link to="/">Logo</Link>
-          <Link to="/about">Sobre</Link>
+          <Link to="/">Home</Link>
+          <Link to="/contato">Contato</Link>
+          <Link to="/sobre">Sobre</Link>
         </div>
-        <ul className="menu-header">
-          <li><Link to="/home">Início</Link></li>
-          <li><Link to="/projects">Projetos</Link></li>
-          <li><Link to="/hackathons">Hackathons</Link></li>
-          <li><Link to="/contact">Contato</Link></li>
-        </ul>
         <div className="right-nav">
-          <button className="notifications">Notificações</button>
+          <ul className="menu-header">
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/cadastro">Cadastre-se</Link></li>
+            <li><Link to="/cadprojeto">Cadastrar Projeto</Link></li>
+            <li><Link to="/paguser">Minha Página</Link></li>
+          </ul>
+          <button className="notifications">+3</button>
           <button className="user-profile">
             <img src="https://github.com/user.png" alt="Profile" />
           </button>

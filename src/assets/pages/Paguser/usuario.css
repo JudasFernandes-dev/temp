@@ -163,7 +163,20 @@
   padding: 20px 0;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  margin-bottom: 200px; /* Espaço para o footer */
+  margin-bottom: 100px;
+}
+
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 200px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 .project-card,

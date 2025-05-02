@@ -7,10 +7,12 @@ import PagCadProjetos from "./assets/pages/PagCadProjetos";
 import Empresa from "./assets/pages/Pagemp/Empresa";
 import Usuario from "./assets/pages/Paguser/Usuario";
 import EditProfile from "./assets/components/perfil/EditProfile"; // Added import
+import { ThemeProvider } from './contexts/ThemeContext'; // Added import
+
 
 function App() {
   return (
-    <>
+    <ThemeProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -31,7 +33,7 @@ function App() {
           <Route path="/edit-profile" element={<EditProfile />} /> {/* Added route */}
         </Routes>
       </Router>
-    </>
+    </ThemeProvider>
   );
 }
 

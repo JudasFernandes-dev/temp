@@ -5,7 +5,7 @@ import PagCadastro from "./assets/pages/PagCadastro";
 import PagLogin from "./assets/pages/PagLogin";
 import PagCadProjetos from "./assets/pages/PagCadProjetos";
 import Empresa from "./assets/pages/Pagemp/Empresa";
-import Usuario from "./assets/pages/Paguser/Usuario";
+
 import EditProfile from "./assets/components/perfil/EditProfile"; // Added import
 import { ThemeProvider } from './contexts/ThemeContext'; // Added import
 
@@ -19,7 +19,7 @@ function App() {
           <Route path="/pre-cadastro" element={<PagCadastro />} />
           <Route path="/login" element={<PagLogin />} />
           <Route path="/cadprojeto" element={<PagCadProjetos />} />
-          <Route path="/paguser" element={<Usuario />} />
+          
           <Route path="/pagempresa" element={<Empresa />} />
           {/* Rota /cadastro-empresa com chave única */}
           <Route

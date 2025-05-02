@@ -1,11 +1,11 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MdAdd, MdNotifications, MdPerson, MdLightMode, MdDarkMode } from 'react-icons/md';
 import { useTheme } from '../../../contexts/ThemeContext';
 import './header-user.css';
 
 const HeaderUser = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useTheme();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (

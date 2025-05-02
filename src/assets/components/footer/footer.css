@@ -9,6 +9,11 @@
     z-index: 100;
 }
 
+/* Adicionar margem inferior para evitar que o conteúdo fique sob o footer */
+body {
+    margin-bottom: 200px; /* Ajuste este valor de acordo com a altura do seu footer */
+}
+
 .top-footer {
     text-align: center;
     padding: 10px 0;

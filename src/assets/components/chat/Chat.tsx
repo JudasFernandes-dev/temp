@@ -15,19 +15,22 @@ const Chat = () => {
       </button>
       
       {isOpen && (
-        <div className="chat-window">
-          <div className="chat-header">
-            <span>Mensagens</span>
-            <button onClick={() => setIsOpen(false)}>×</button>
+        <>
+          <div className="chat-overlay" onClick={() => setIsOpen(false)} />
+          <div className="chat-window">
+            <div className="chat-header">
+              <span>Chat</span>
+              <button onClick={() => setIsOpen(false)}>×</button>
+            </div>
+            <div className="chat-messages">
+              {/* Messages will go here */}
+            </div>
+            <div className="chat-input">
+              <input type="text" placeholder="Digite sua mensagem..." />
+              <button>Enviar</button>
+            </div>
           </div>
-          <div className="chat-messages">
-            {/* Messages will go here */}
-          </div>
-          <div className="chat-input">
-            <input type="text" placeholder="Digite sua mensagem..." />
-            <button>Enviar</button>
-          </div>
-        </div>
+        </>
       )}
     </>
   );

@@ -4,27 +4,30 @@
     background-color: #0246cd27;
     padding: 20px 0;
     font-family: Arial, sans-serif;
-    position: relative;
-    margin-top: 50px;
-    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
 .app-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-bottom: 200px; /* Espaço para o footer */
 }
 
 main {
     flex: 1;
-    margin-bottom: 50px;
     position: relative;
     z-index: 1;
 }
 
 .sidebar-left, .sidebar-right {
     position: fixed;
-    z-index: 998;
+    z-index: 101; /* Maior que o z-index do footer */
+    top: 60px;
 }
 
 .top-footer {

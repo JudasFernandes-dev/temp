@@ -10,7 +10,7 @@ import Carousel from '../components/carrossel/Carousel';
 
 function Home() {
     return (
-        <>
+        <div className="app-container">
             <Header/>
             <Banner/>
             <Carousel/>   
@@ -21,7 +21,7 @@ function Home() {
                 <MapPernambuco/>
             </main>  
             <Footer/>
-        </>
+        </div>
     )
 }
 

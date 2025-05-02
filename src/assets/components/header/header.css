@@ -61,7 +61,7 @@ header {
   list-style-type: none;
   position: absolute;
   height: calc(100vh - 12vh);
-  width: 40vw;
+  width: 220px; /* Adjusted width */
   transform: translateX(-100%);
   transition: all .3s;
   left: 0; /* Posiciona o menu no canto esquerdo */
@@ -155,4 +155,43 @@ div.buttons-container button{
   .logo-right{
     display: block;
   }
+}
+
+.menu-header ul {
+  padding: 0;
+  list-style: none;
+}
+
+.menu-header li {
+  margin-bottom: 10px;
+}
+
+.menu-header li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--cor-branca);
+}
+
+.menu-header li a:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
+.menu-header ul li:last-child {
+  margin-bottom: 0;
+}
+
+.menu-header ul li button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
 }

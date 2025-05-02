@@ -4,6 +4,7 @@
   min-height: 100vh;
   background-color: #f5f7fa;
   transition: background-color 0.3s;
+  position: relative;
 }
 
 .app-container.dark {
@@ -16,9 +17,11 @@
   background-color: white;
   padding: 20px;
   border-right: 1px solid #e2e8f0;
-  height: 100vh;
+  height: calc(100vh - 60px);
   position: fixed;
   width: 180px;
+  margin-top: 60px;
+  overflow-y: auto;
 }
 
 .dark .sidebar-left {
@@ -51,6 +54,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #666;
 }
 
 .social-item img {
@@ -66,6 +70,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin: 10px 0;
 }
 
 .nav-menu {
@@ -73,6 +78,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
 }
 
 .nav-item {
@@ -80,10 +86,7 @@
   color: #4B5563;
   text-decoration: none;
   border-radius: 4px;
-}
-
-.dark .nav-item {
-  color: #e2e8f0;
+  transition: all 0.3s;
 }
 
 .nav-item:hover {
@@ -93,6 +96,262 @@
 .nav-item.active {
   background-color: #EBF5FF;
   color: #3B82F6;
+}
+
+/* Main Content */
+.main-content {
+  margin: 60px 250px 0 180px;
+  padding: 20px;
+  min-height: calc(100vh - 60px);
+}
+
+.top-bar {
+  margin-bottom: 30px;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.search-button {
+  padding: 10px;
+  background: #3B82F6;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  border: 1px solid #E5E7EB;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn.active {
+  background-color: #3B82F6;
+  color: white;
+  border-color: #3B82F6;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.project-card,
+.hackathon-card,
+.group-card {
+  background-color: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hackathon-card {
+  background-color: #2c3e50;
+}
+
+.group-card {
+  background-color: #2ecc71;
+}
+
+.card-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 4px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card-actions button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar Direita */
+.sidebar-right {
+  background-color: white;
+  padding: 20px;
+  border-left: 1px solid #e2e8f0;
+  position: fixed;
+  right: 0;
+  top: 60px;
+  width: 250px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.add-button {
+  padding: 5px 10px;
+  background: #3B82F6;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.level {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.progress-section {
+  margin: 30px 0;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #E5E7EB;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #3B82F6;
+  transition: width 0.3s;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.xp {
+  color: #666;
+  font-size: 0.8em;
+  margin-left: auto;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 270px;
+  padding: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f5f7fa;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Dark Mode */
+.dark .sidebar-right,
+.dark .search-input,
+.dark .filter-btn {
+  background-color: #2d2d2d;
+  border-color: #3d3d3d;
+  color: white;
+}
+
+.dark .language-item,
+.dark .progress-bar {
+  border-color: #3d3d3d;
+}
+
+.dark .level,
+.dark .xp {
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .app-container {
+    grid-template-columns: 180px 1fr;
+  }
+
+  .sidebar-right {
+    display: none;
+  }
+
+  .main-content {
+    margin-right: 0;
+  }
+
+  .theme-toggle {
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-left {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
 }
 
 .achievements {
@@ -117,56 +376,6 @@
   font-size: 12px;
 }
 
-/* Conteúdo Principal */
-.main-content {
-  margin-left: 180px;
-  margin-right: 250px;
-  padding: 20px;
-}
-
-.top-bar {
-  margin-bottom: 30px;
-}
-
-.search-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #E5E7EB;
-  border-radius: 4px;
-  margin-bottom: 15px;
-}
-
-.dark .search-input {
-  background-color: #2d2d2d;
-  border-color: #3d3d3d;
-  color: white;
-}
-
-.filters {
-  display: flex;
-  gap: 10px;
-}
-
-.filter-btn {
-  padding: 6px 12px;
-  border: 1px solid #E5E7EB;
-  border-radius: 4px;
-  background: white;
-  cursor: pointer;
-}
-
-.dark .filter-btn {
-  background-color: #2d2d2d;
-  border-color: #3d3d3d;
-  color: white;
-}
-
-.filter-btn.active {
-  background-color: #3B82F6;
-  color: white;
-}
-
-/* Carrosséis */
 .carousel {
   display: flex;
   align-items: center;
@@ -207,123 +416,35 @@
   color: #e2e8f0;
 }
 
-.card-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.card-actions button {
-  padding: 6px 12px;
-  border: 1px solid white;
-  border-radius: 4px;
-  background: transparent;
+.dark {
+  background-color: #1a1a1a;
   color: white;
-  cursor: pointer;
 }
 
-/* Sidebar Direita */
-.sidebar-right {
-  background-color: white;
-  padding: 20px;
-  border-left: 1px solid #e2e8f0;
-  position: fixed;
-  right: 0;
-  width: 250px;
-  height: 100vh;
-}
-
-.dark .sidebar-right {
+.dark .left-sidebar,
+.dark .right-sidebar {
   background-color: #2d2d2d;
   border-color: #3d3d3d;
 }
 
-.language-section,
-.progress-section,
-.tasks-section {
-  margin-bottom: 30px;
+.dark .nav-item {
+  color: #fff;
 }
 
-.language-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background-color: #E5E7EB;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.dark .progress-bar {
+.dark .nav-item:hover {
   background-color: #3d3d3d;
 }
 
-.progress-fill {
-  height: 100%;
-  background-color: #3B82F6;
-  transition: width 0.3s ease;
+.dark .category-button {
+  background-color: #3d3d3d;
+  color: white;
 }
 
-.task-item {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-/* Botão Dark Mode */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 270px;
-  padding: 8px;
-  border-radius: 50%;
-  border: none;
-  background-color: #f5f7fa;
-  cursor: pointer;
-  font-size: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.dark .theme-toggle {
+.dark .chat-window {
   background-color: #2d2d2d;
+  border-color: #3d3d3d;
 }
 
-/* Responsividade */
-@media (max-width: 1024px) {
-  .app-container {
-    grid-template-columns: 60px 1fr;
-  }
-
-  .sidebar-right {
-    display: none;
-  }
-
-  .main-content {
-    margin-right: 0;
-  }
-
-  .theme-toggle {
-    right: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .app-container {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar-left {
-    display: none;
-  }
-
-  .main-content {
-    margin-left: 0;
-  }
-}
 
 .projects-grid,
 .hackathons-grid,
@@ -352,15 +473,6 @@
   background-color: #2ecc71;
   padding: 20px;
   border-radius: 10px;
-}
-
-.card-actions button {
-  padding: 5px 10px;
-  border: 1px solid white;
-  border-radius: 5px;
-  background: transparent;
-  color: white;
-  cursor: pointer;
 }
 
 .chat-button {
@@ -407,70 +519,6 @@
   padding: 15px;
 }
 
-.dark {
-  background-color: #1a1a1a;
-  color: white;
-}
-
-.dark .left-sidebar,
-.dark .right-sidebar {
-  background-color: #2d2d2d;
-  border-color: #3d3d3d;
-}
-
-.dark .nav-item {
-  color: #fff;
-}
-
-.dark .nav-item:hover {
-  background-color: #3d3d3d;
-}
-
-.dark .category-button {
-  background-color: #3d3d3d;
-  color: white;
-}
-
-.dark .chat-window {
-  background-color: #2d2d2d;
-  border-color: #3d3d3d;
-}
-
-@media (max-width: 1200px) {
-  .right-sidebar {
-    display: none;
-  }
-  .main-content {
-    margin-right: 0;
-  }
-  .chat-button {
-    right: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .left-sidebar {
-    display: none;
-  }
-  .main-content {
-    margin-left: 0;
-  }
-}
-
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background-color: #E5E7EB;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background-color: #3B82F6;
-  transition: width 0.3s ease;
-}
-
 .language-selection select {
   flex: 1;
   padding: 5px;
@@ -490,6 +538,7 @@
   justify-content: space-between;
   margin-bottom: 10px;
 }
+
 
 .achievement-header {
   display: flex;
@@ -549,12 +598,6 @@
 
 .languages, .progress, .tasks {
   margin-bottom: 30px;
-}
-
-.language-item, .task-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
 }
 
 .sidebar-nav {

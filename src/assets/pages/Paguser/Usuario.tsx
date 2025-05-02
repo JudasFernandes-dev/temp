@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 import './usuario.css';
 import { useTheme } from '../../../contexts/ThemeContext';
 import building from './image/iconesUsuario/building.png';
-import email from './image/iconesUsuario/email.png';
 import github from './image/iconesUsuario/github.png';
 import linkedin from './image/iconesUsuario/linkedin.png';
 import link from './image/iconesUsuario/link.png';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
+import { FaSearch, FaPlus } from 'react-icons/fa';
 
 const Usuario: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -16,33 +18,27 @@ const Usuario: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('Todos');
 
   const projects = [
-    { name: 'Projeto 1', empresa: 'Empresa 1' },
-    { name: 'Projeto 2', empresa: 'Empresa 2' },
-    { name: 'Projeto 3', empresa: 'Empresa 3' },
-    { name: 'Projeto 4', empresa: 'Empresa 4' },
+    { name: 'nome:', empresa: 'empresa' },
+    { name: 'nome:', empresa: 'empresa' },
+    { name: 'nome:', empresa: 'empresa' },
+    { name: 'nome: adicional 1', empresa: 'empresa adicional' },
   ];
 
   const hackathons = [
-    { name: 'Hackathon 1', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { name: 'Hackathon 2', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { name: 'Hackathon 3', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { name: 'Hackathon 4', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  ];
-
-  const groups = [
-    { name: 'Grupo 1', members: 5 },
-    { name: 'Grupo 2', members: 8 },
-    { name: 'Grupo 3', members: 6 },
-    { name: 'Grupo 4', members: 4 },
+    { name: 'Nome do hackathon', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { name: 'Nome do hackathon', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { name: 'Nome do hackathon', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { name: 'Hackathon adicional', descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   ];
 
   return (
     <div className={`app-container ${theme}`}>
+      <Header />
+      
       {/* Sidebar Esquerda */}
       <div className="sidebar-left">
         <div className="profile-section">
           <img src="https://github.com/user.png" alt="Avatar" className="avatar" />
-          <h2>Nome do Usuário</h2>
           <div className="social-links">
             <div className="social-item">
               <img src={building} alt="Função" />
@@ -80,16 +76,16 @@ const Usuario: React.FC = () => {
             <div className="achievement-badge green"></div>
             <div className="achievement-badge red"></div>
           </div>
-
-          <div className="version">v1.0.0</div>
         </div>
       </div>
 
       {/* Conteúdo Principal */}
       <main className="main-content">
         <div className="top-bar">
+          <h2>Projetos</h2>
           <div className="search-section">
-            <input type="text" placeholder="Buscar..." className="search-input" />
+            <input type="text" placeholder="Procurar..." className="search-input" />
+            <button className="search-button"><FaSearch /></button>
           </div>
           <div className="filters">
             {['Todos', 'Design', 'Dev', 'Marketing', 'Gestão'].map(filter => (
@@ -104,104 +100,142 @@ const Usuario: React.FC = () => {
           </div>
         </div>
 
-        <section className="projects-section">
-          <h2>Projetos</h2>
-          <div className="carousel">
-            <button className="carousel-btn prev" onClick={() => setCurrentProjectIndex(prev => prev > 0 ? prev - 1 : projects.length - 1)}>←</button>
-            <div className="carousel-content blue">
+        <div className="content-sections">
+          <section className="projects-section">
+            <h3>projetos</h3>
+            <div className="cards-grid">
               {projects.map((project, index) => (
-                <div key={index} className={`carousel-item ${index === currentProjectIndex ? 'active' : ''}`}>
-                  <h3>{project.name}</h3>
+                <div key={index} className="project-card">
+                  <div className="card-icon">🏆</div>
+                  <h4>{project.name}</h4>
                   <p>{project.empresa}</p>
                   <div className="card-actions">
-                    <button>Participar</button>
-                    <button>Saber +</button>
+                    <button>participar</button>
+                    <button>saber</button>
                   </div>
                 </div>
               ))}
             </div>
-            <button className="carousel-btn next" onClick={() => setCurrentProjectIndex(prev => (prev + 1) % projects.length)}>→</button>
-          </div>
-        </section>
+          </section>
 
-        <section className="hackathons-section">
-          <h2>Hackathons</h2>
-          <div className="carousel">
-            <button className="carousel-btn prev" onClick={() => setCurrentHackathonIndex(prev => prev > 0 ? prev - 1 : hackathons.length - 1)}>←</button>
-            <div className="carousel-content black">
+          <section className="hackathons-section">
+            <h3>hackatons</h3>
+            <div className="cards-grid">
               {hackathons.map((hackathon, index) => (
-                <div key={index} className={`carousel-item ${index === currentHackathonIndex ? 'active' : ''}`}>
-                  <h3>{hackathon.name}</h3>
+                <div key={index} className="hackathon-card">
+                  <div className="card-icon">🏆</div>
+                  <h4>{hackathon.name}</h4>
                   <p>{hackathon.descricao}</p>
                   <div className="card-actions">
-                    <button>Participar</button>
-                    <button>Saber +</button>
+                    <button>participar</button>
+                    <button>saber</button>
                   </div>
                 </div>
               ))}
             </div>
-            <button className="carousel-btn next" onClick={() => setCurrentHackathonIndex(prev => (prev + 1) % hackathons.length)}>→</button>
-          </div>
-        </section>
+          </section>
 
-        <section className="groups-section">
-          <h2>Grupos</h2>
-          <div className="carousel">
-            <button className="carousel-btn prev" onClick={() => setCurrentGroupIndex(prev => prev > 0 ? prev - 1 : groups.length - 1)}>←</button>
-            <div className="carousel-content green">
-              {groups.map((group, index) => (
-                <div key={index} className={`carousel-item ${index === currentGroupIndex ? 'active' : ''}`}>
-                  <h3>{group.name}</h3>
-                  <p>{group.members} membros</p>
+          <section className="groups-section">
+            <h3>Grupos</h3>
+            <div className="cards-grid">
+              {Array(4).fill(null).map((_, index) => (
+                <div key={index} className="group-card">
+                  <div className="card-icon">👥</div>
                   <div className="card-actions">
-                    <button>Participar</button>
-                    <button>Saber +</button>
+                    <button>participar</button>
+                    <button>saber</button>
                   </div>
                 </div>
               ))}
             </div>
-            <button className="carousel-btn next" onClick={() => setCurrentGroupIndex(prev => (prev + 1) % groups.length)}>→</button>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
 
       {/* Sidebar Direita */}
       <div className="sidebar-right">
         <div className="language-section">
-          <h3>Linguagens</h3>
-          <div className="language-item">
-            <span>JavaScript</span>
-            <span>Intermediário</span>
+          <div className="section-header">
+            <h3>Linguagens</h3>
+            <button className="add-button"><FaPlus /></button>
           </div>
-          <div className="language-item">
-            <span>Python</span>
-            <span>Avançado</span>
-          </div>
-          <div className="language-item">
-            <span>Java</span>
-            <span>Iniciante</span>
-          </div>
-        </div>
-
-        <div className="progress-section">
-          <h3>Progresso dos selos</h3>
-          <div className="progress-item">
-            <span>Desenvolvedor Front-end</span>
-            <div className="progress-bar">
-              <div className="progress-fill" style={{width: '75%'}}></div>
+          <div className="language-list">
+            <div className="language-item">
+              <span>JavaScript</span>
+              <span className="level">intermediário</span>
+            </div>
+            <div className="language-item">
+              <span>Python</span>
+              <span className="level">avançado</span>
+            </div>
+            <div className="language-item">
+              <span>Java</span>
+              <span className="level">iniciante</span>
             </div>
           </div>
-        </div>
 
-        <div className="tasks-section">
-          <h3>Tarefas Pendentes</h3>
-          <div className="task-item">
-            <input type="checkbox" id="task1" />
-            <label htmlFor="task1">Completar 5 projetos de front-end</label>
+          <div className="section-header">
+            <h3>Idiomas</h3>
+            <button className="add-button"><FaPlus /></button>
           </div>
-          <div className="task-item">
-            <input type="checkbox" id="task2" />
-            <label htmlFor="task2">Participar de 2 hackathons</label>
+          <div className="language-list">
+            <div className="language-item">
+              <span>Inglês</span>
+              <span className="level">intermediário</span>
+            </div>
+            <div className="language-item">
+              <span>Espanhol</span>
+              <span className="level">iniciante</span>
+            </div>
+          </div>
+
+          <div className="progress-section">
+            <h3>Progresso dos selos</h3>
+            <div className="progress-item">
+              <div className="progress-header">
+                <span>Desenvolvedor Experiente</span>
+                <span>75%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{width: '75%'}}></div>
+              </div>
+            </div>
+            <div className="progress-item">
+              <div className="progress-header">
+                <span>Mestre dos Hackathons</span>
+                <span>40%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{width: '40%'}}></div>
+              </div>
+            </div>
+            <div className="progress-item">
+              <div className="progress-header">
+                <span>Colaborador Elite</span>
+                <span>27%</span>
+              </div>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{width: '27%'}}></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="tasks-section">
+            <div className="task-item">
+              <input type="checkbox" id="task1" />
+              <label htmlFor="task1">Completar 5 projetos de front-end</label>
+              <span className="xp">+500 XP</span>
+            </div>
+            <div className="task-item">
+              <input type="checkbox" id="task2" />
+              <label htmlFor="task2">Participar de 2 hackathons</label>
+              <span className="xp">+500 XP</span>
+            </div>
+            <div className="task-item">
+              <input type="checkbox" id="task3" />
+              <label htmlFor="task3">Colaborar com 3 novos membros</label>
+              <span className="xp">+500 XP</span>
+            </div>
           </div>
         </div>
       </div>
@@ -210,6 +244,8 @@ const Usuario: React.FC = () => {
       <button className="theme-toggle" onClick={toggleTheme}>
         {theme === 'light' ? '🌙' : '☀️'}
       </button>
+
+      <Footer />
     </div>
   );
 };

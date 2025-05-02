@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MdSearch, MdSunny, MdMoon, MdNotifications, MdAdd, MdChat, MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { MdSearch, MdDarkMode, MdLightMode, MdNotifications, MdAdd, MdChat, MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { useTheme } from '../../../contexts/ThemeContext';
 import './usuario.css';
 
@@ -85,7 +85,7 @@ const Usuario = () => {
           <MdNotifications className="cursor-pointer" />
           <img src="/avatar.png" alt="User" className="w-8 h-8 rounded-full cursor-pointer" />
           <button onClick={toggleTheme}>
-            {theme === 'dark' ? <MdSunny /> : <MdMoon />}
+            {theme === 'dark' ? <MdLightMode /> : <MdDarkMode />}
           </button>
         </div>
       </header>

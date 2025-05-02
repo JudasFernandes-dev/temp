@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import './usuario.css';
@@ -11,10 +11,11 @@ const Usuario = () => {
   // Safe storage access
   useEffect(() => {
     try {
-      // Your localStorage operations here
-      const userData = localStorage.getItem('userData');
-      if (userData) {
-        // Handle user data
+      const participanteLogado = localStorage.getItem('participanteLogado');
+      if (participanteLogado) {
+        const dados = JSON.parse(participanteLogado);
+        // Handle user data here
+        console.log('User data loaded:', dados);
       }
     } catch (error) {
       console.error('Storage access error:', error);

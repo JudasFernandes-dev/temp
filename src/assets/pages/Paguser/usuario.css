@@ -1,8 +1,15 @@
 .user-page {
   display: flex;
   min-height: 100vh;
-  background-color: #111827;
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.project-card,
+.hackathon-card,
+.group-card {
+  background: var(--content-bg);
+  border: 1px solid var(--border-color);
 }
 
 .left-sidebar {

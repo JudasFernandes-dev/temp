@@ -5,15 +5,11 @@
   left: 0;
   right: 0;
   width: 100%;
-  background-color: var(--cor-azul);
-  color: white;
+  background-color: white;
+  color: #333;
   padding: 2rem 4rem;
-  z-index: 10;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  z-index: 90;
+  border-top: 1px solid #e5e7eb;
 }
 
 .footer-message {
@@ -25,14 +21,15 @@
 .footer-sections {
   display: flex;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
   gap: 4rem;
-  margin-bottom: 2rem;
 }
 
 .footer-column h3 {
   font-size: 1rem;
-  margin-bottom: 1rem;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .footer-column ul {
@@ -45,37 +42,37 @@
 }
 
 .footer-column ul li a {
-  color: white;
+  color: #333;
   text-decoration: none;
   transition: opacity 0.2s;
 }
 
 .footer-column ul li a:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .footer-social {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 1rem;
+  margin: 2rem 0;
 }
 
 .social-link {
-  color: white;
+  color: #333;
   text-decoration: none;
   font-size: 1.2rem;
   transition: opacity 0.2s;
 }
 
 .social-link:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .footer-copyright {
   text-align: center;
   font-size: 0.9rem;
-  opacity: 0.8;
+  color: #666;
 }
 
 @media (max-width: 768px) {

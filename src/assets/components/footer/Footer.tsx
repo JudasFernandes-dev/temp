@@ -1,25 +1,58 @@
 
 import './footer.css';
-import { FaInstagram, FaFacebook, FaGoogle, FaLinkedin} from 'react-icons/fa';
 
-function Footer () {
-    return (
-        <>
-            <footer className='footer'>
-                <div className='top-footer'>
-                    <ul>
-                        <li><a className='icon-rede-footer' href="https://www.instagram.com/re9.acao" target='_blank' rel='external'><FaInstagram /></a></li>
-                        <li><a className='icon-rede-footer' href="https://www.facebook.com/Re9Acao.Solucoes/" target='_blank' rel='external'><FaFacebook /></a></li>
-                        <li><a className='icon-rede-footer' href="https://mail.google.com/mail/u/0/?fs=1&to=contato@re9acao.com.br&su=Assunto+do+Email&body=Mensagem+inicial+aqui.&tf=cm" target='_blank' rel='external'><FaGoogle /></a></li>
-                        <li><a className='icon-rede-footer' href="https://www.linkedin.com/in/gustavo-boudoux" target='_blank' rel='external'><FaLinkedin /></a></li>
-                    </ul>
-                </div>
-                <div className='bottom-footer'>
-                    <p>&copy;2024, todos os direitos reservados</p>
-                </div>
-            </footer>
-        </>  
-    );
-};
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="footer-message">
+          <p>Conectando pessoas do mesmo cosmo</p>
+        </div>
+        
+        <div className="footer-sections">
+          <div className="footer-column">
+            <h3>SOBRE NÓS</h3>
+            <ul>
+              <li><a href="#">Quem somos</a></li>
+              <li><a href="#">Como funciona</a></li>
+              <li><a href="#">Trabalhe conosco</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-column">
+            <h3>LINKS ÚTEIS</h3>
+            <ul>
+              <li><a href="#">Documentação</a></li>
+              <li><a href="#">Política de privacidade</a></li>
+              <li><a href="#">Termos de uso</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-column">
+            <h3>INFORMAÇÕES</h3>
+            <ul>
+              <li>Juncal 475</li>
+              <li>+11 11 42 742 01 08</li>
+              <li>Digital • AI Strategy 3D</li>
+              <li>HELLO Digital</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="footer-social">
+          <a href="#" className="social-link">f</a>
+          <a href="#" className="social-link">t</a>
+          <a href="#" className="social-link">i</a>
+          <a href="#" className="social-link">g</a>
+        </div>
+
+        <div className="footer-copyright">
+          <p>© 2025 DevCollaborative. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
 
 export default Footer;

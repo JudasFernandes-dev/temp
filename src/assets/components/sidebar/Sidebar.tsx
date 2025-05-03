@@ -42,8 +42,6 @@ function Sidebar() {
           <div className="badge red" title="Conquista Vermelha"></div>
         </div>
       </div>
-
-      <div className="version">v1.0.0</div>
     </aside>
   );
 }

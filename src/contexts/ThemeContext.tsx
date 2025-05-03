@@ -20,47 +20,23 @@ export const useTheme = () => {
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    try {
-      return localStorage.getItem('theme') as 'light' | 'dark' || 'light';
-    } catch {
-      return 'light';
-    }
+    const savedTheme = localStorage.getItem('theme');
+    return (savedTheme === 'dark' || savedTheme === 'light') ? savedTheme : 'light';
   });
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    try {
-      localStorage.setItem('theme', theme);
-      document.body.className = theme;
-    } catch (error) {
-      console.warn('Local storage not available');
-    }
+    localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+    document.body.className = theme;
   }, [theme]);
 
   const toggleTheme = () => {
-    setShowModal(true);
-  };
-
-  const confirmThemeChange = () => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-    setShowModal(false);
   };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
-      {showModal && (
-        <div className="theme-modal">
-          <div className="theme-modal-content">
-            <h3>Mudar tema?</h3>
-            <p>Você deseja alterar para o tema {theme === 'light' ? 'escuro' : 'claro'}?</p>
-            <div className="theme-modal-buttons">
-              <button onClick={confirmThemeChange}>Sim</button>
-              <button onClick={() => setShowModal(false)}>Não</button>
-            </div>
-          </div>
-        </div>
-      )}
     </ThemeContext.Provider>
   );
 };

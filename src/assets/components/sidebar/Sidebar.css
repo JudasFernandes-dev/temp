@@ -1,5 +1,6 @@
 .sidebar {
   width: 240px;
+  height: 788px;
   background: #f3f4f6;
   padding: 1rem;
   display: flex;
@@ -37,6 +38,7 @@
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  margin-left:7px;
 }
 
 .user-links p {

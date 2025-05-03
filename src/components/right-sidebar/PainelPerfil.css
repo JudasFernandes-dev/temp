@@ -4,11 +4,12 @@
   padding: 20px;
   background: white;
   border-left: 1px solid #e5e7eb;
-  height: 100vh;
+  height: calc(100vh - 120px);
   position: fixed;
   right: 0;
   top: 60px;
   z-index: 100;
+  overflow-y: auto;
 }
 
 .section-header {

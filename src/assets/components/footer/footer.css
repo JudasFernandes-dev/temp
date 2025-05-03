@@ -6,8 +6,6 @@
   padding: 1rem 4rem;
   margin-top: auto;
   border-top: 1px solid #e5e7eb;
-  position: relative;
-  z-index: 1000;
 }
 
 .footer-message {

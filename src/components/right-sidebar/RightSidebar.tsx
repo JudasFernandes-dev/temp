@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { MdSettings, MdDelete } from 'react-icons/md';
 import { BiCodeAlt } from 'react-icons/bi';
 import { IoLanguage } from 'react-icons/io5';
-import { FaTrophy } from 'react-icons/fa';
+import { FaJs, FaPython, FaJava, FaTrophy } from 'react-icons/fa';
 import './RightSidebar.css';
 
 const RightSidebar = () => {
   const [programmingLanguages, setProgrammingLanguages] = useState([
-    { name: 'JavaScript', level: 'intermediario' },
-    { name: 'Python', level: 'avancado' },
-    { name: 'Java', level: 'iniciante' }
+    { name: 'JavaScript', level: 'intermediario', icon: FaJs },
+    { name: 'Python', level: 'avancado', icon: FaPython },
+    { name: 'Java', level: 'iniciante', icon: FaJava }
   ]);
 
   const [languages, setLanguages] = useState([
@@ -25,7 +25,8 @@ const RightSidebar = () => {
 
   const handleAddProgramming = () => {
     if (selectedProgramming) {
-      setProgrammingLanguages([...programmingLanguages, { name: selectedProgramming, level: selectedProgrammingLevel }]);
+      setProgrammingLanguages([...programmingLanguages, 
+        { name: selectedProgramming, level: selectedProgrammingLevel, icon: FaJs }]);
       setSelectedProgramming('');
     }
   };
@@ -49,12 +50,12 @@ const RightSidebar = () => {
     <div className="right-sidebar">
       <div className="sidebar-header">
         <h2>Linguagens</h2>
-        <MdSettings />
+        <MdSettings className="settings-icon" />
       </div>
 
       <div className="section">
         <div className="section-header">
-          <BiCodeAlt />
+          <BiCodeAlt className="icon-purple" />
           <span>programação</span>
         </div>
         
@@ -80,7 +81,10 @@ const RightSidebar = () => {
         <div className="language-list">
           {programmingLanguages.map((lang, index) => (
             <div key={index} className="language-item">
-              <span>{lang.name}</span>
+              <div className="language-info">
+                <lang.icon className="language-icon" />
+                <span>{lang.name}</span>
+              </div>
               <div className="item-right">
                 <span className={`level-badge ${lang.level}`}>{lang.level}</span>
                 <button onClick={() => handleRemoveProgramming(index)} className="delete-btn">
@@ -94,7 +98,7 @@ const RightSidebar = () => {
 
       <div className="section">
         <div className="section-header">
-          <IoLanguage />
+          <IoLanguage className="icon-blue" />
           <span>Idiomas</span>
         </div>
         
@@ -134,7 +138,7 @@ const RightSidebar = () => {
 
       <div className="section">
         <div className="section-header">
-          <FaTrophy />
+          <FaTrophy className="icon-trophy" />
           <span>Progresso dos selos</span>
         </div>
         
@@ -155,7 +159,7 @@ const RightSidebar = () => {
             <span>40%</span>
           </div>
           <div className="progress-bar">
-            <div className="progress-fill" style={{ width: '40%' }}></div>
+            <div className="progress-fill purple" style={{ width: '40%' }}></div>
           </div>
           <span className="progress-subtitle">2 hackathons participados</span>
         </div>
@@ -166,7 +170,7 @@ const RightSidebar = () => {
             <span>0%</span>
           </div>
           <div className="progress-bar">
-            <div className="progress-fill" style={{ width: '0%' }}></div>
+            <div className="progress-fill blue" style={{ width: '0%' }}></div>
           </div>
           <span className="progress-subtitle">0 contribuições</span>
         </div>

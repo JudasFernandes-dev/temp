@@ -2,9 +2,9 @@
 .right-sidebar {
   width: 280px;
   height: 100vh;
-  background: var(--sidebar-bg);
-  padding: 1rem;
-  border-left: 1px solid var(--border-color);
+  background: white;
+  padding: 1.25rem;
+  border-left: 1px solid #e5e7eb;
   overflow-y: auto;
 }
 
@@ -18,7 +18,12 @@
 .sidebar-header h2 {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--text-color);
+  color: #111827;
+}
+
+.settings-icon {
+  color: #6b7280;
+  cursor: pointer;
 }
 
 .section {
@@ -30,8 +35,16 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: #374151;
   font-size: 0.875rem;
+}
+
+.icon-purple {
+  color: #8b5cf6;
+}
+
+.icon-blue {
+  color: #3b82f6;
 }
 
 .selectors {
@@ -43,17 +56,17 @@
 .selectors select {
   flex: 1;
   padding: 0.5rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid #e5e7eb;
   border-radius: 0.375rem;
-  background: var(--bg-color);
-  color: var(--text-color);
+  background: white;
+  color: #374151;
   font-size: 0.875rem;
 }
 
 .add-button {
   width: 100%;
   padding: 0.5rem;
-  background: #3b82f6;
+  background: #2563eb;
   color: white;
   border: none;
   border-radius: 0.375rem;
@@ -73,11 +86,20 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  background: var(--bg-color);
+  background: white;
   border-radius: 0.375rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid #e5e7eb;
   font-size: 0.875rem;
-  color: var(--text-color);
+}
+
+.language-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-icon {
+  font-size: 1rem;
 }
 
 .item-right {
@@ -90,21 +112,19 @@
   font-size: 0.75rem;
   padding: 0.125rem 0.5rem;
   border-radius: 1rem;
+  color: white;
 }
 
 .level-badge.iniciante {
   background: #93c5fd;
-  color: #1e40af;
 }
 
 .level-badge.intermediario {
-  background: #3b82f6;
-  color: white;
+  background: #2563eb;
 }
 
 .level-badge.avancado {
   background: #1e40af;
-  color: white;
 }
 
 .delete-btn {
@@ -126,7 +146,7 @@
   justify-content: space-between;
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
-  color: var(--text-color);
+  color: #374151;
 }
 
 .progress-bar {
@@ -142,6 +162,14 @@
   height: 100%;
   background: #22c55e;
   border-radius: 0.25rem;
+}
+
+.progress-fill.purple {
+  background: #8b5cf6;
+}
+
+.progress-fill.blue {
+  background: #3b82f6;
 }
 
 .progress-subtitle {

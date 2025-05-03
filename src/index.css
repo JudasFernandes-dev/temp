@@ -38,13 +38,13 @@ main {
 }
 
 [data-theme='dark'] {
-  --bg-color: #1a1d21;
+  --bg-color: #000000;
   --text-color: #ffffff;
-  --border-color: #2d3238;
-  --header-bg: #1a1d21;
-  --sidebar-bg: #1a1d21;
-  --card-bg: #2d3238;
-  --content-bg: #2d3238;
+  --border-color: #ffffff;
+  --header-bg: #e6f3ff;
+  --sidebar-bg: #e6f3ff;
+  --card-bg: #000000;
+  --content-bg: #000000;
   --project-card-bg: #3b82f6;
   --hackathon-card-bg: #1f2937;
   --group-card-bg: #10B981;

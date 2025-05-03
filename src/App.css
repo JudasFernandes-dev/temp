@@ -22,9 +22,10 @@
 
 .content-container {
   margin-top: 60px;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 120px);
   position: relative;
   width: 100%;
+  display: flex;
 }
 
 .sidebar {

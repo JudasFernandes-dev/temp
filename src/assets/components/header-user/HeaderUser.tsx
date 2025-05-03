@@ -12,8 +12,8 @@ const HeaderUser = () => {
     <header className="header-user">
       <nav className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/contato">Contato</Link>
-        <Link to="/sobre">Sobre</Link>
+        <Link to="/configuracoes">Configurações</Link>
+        <Link to="/conquistas">Conquistas</Link>
       </nav>
 
       <div className="right-icons">

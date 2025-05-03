@@ -7,39 +7,41 @@ import './Sidebar.css';
 function Sidebar() {
   return (
     <aside className="sidebar">
-      <div className="user-profile">
-        <img src="/default-avatar.png" alt="Avatar" className="profile-avatar" />
-        <div className="user-info">
-          <h3>Nome do Usuário</h3>
-          <p className="user-role">Desenvolvedor Full Stack</p>
-          <div className="social-links">
-            <a href="#" target="_blank">Github</a>
-            <a href="#" target="_blank">LinkedIn</a>
-            <a href="#" target="_blank">Portfolio</a>
+      <div>
+        <div className="user-profile">
+          <div className="profile-avatar">
+            <MdPerson size={28} />
           </div>
+          <p className="username">nome</p>
+        </div>
+
+        <div className="user-links">
+          <p>Função</p>
+          <p>Github</p>
+          <p>Linkedin</p>
+          <p>Link</p>
           <Link to="/edit-profile" className="edit-profile-btn">
             Editar Perfil
           </Link>
         </div>
+
+        <nav className="nav-links">
+          <Link to="/"><MdHome size={16} /> Página Inicial</Link>
+          <Link to="/notifications"><MdNotifications size={16} /> Notificações</Link>
+          <Link to="/messages"><MdMessage size={16} /> Mensagens</Link>
+          <Link to="/hackathons"><FaHackerrank size={16} /> Hackathons</Link>
+          <Link to="/projects"><MdWork size={16} /> Projetos</Link>
+          <Link to="/teams"><MdGroup size={16} /> Equipes</Link>
+          <Link to="/profile"><MdPerson size={16} /> Perfil</Link>
+          <Link to="/settings"><MdSettings size={16} /> Configurações</Link>
+        </nav>
       </div>
 
-      <nav className="sidebar-nav">
-        <Link to="/"><MdHome /> Página Inicial</Link>
-        <Link to="/notifications"><MdNotifications /> Notificações</Link>
-        <Link to="/messages"><MdMessage /> Mensagens</Link>
-        <Link to="/hackathons"><FaHackerrank /> Hackathons</Link>
-        <Link to="/projects"><MdWork /> Projetos</Link>
-        <Link to="/teams"><MdGroup /> Equipes</Link>
-        <Link to="/profile"><MdPerson /> Perfil</Link>
-        <Link to="/settings"><MdSettings /> Configurações</Link>
-      </nav>
-
       <div className="achievements">
-        <h4>Conquistas</h4>
         <div className="badges">
           <div className="badge yellow" title="Conquista Ouro"></div>
-          <div className="badge green" title="Conquista Verde"></div>
           <div className="badge red" title="Conquista Vermelha"></div>
+          <div className="badge green" title="Conquista Verde"></div>
         </div>
       </div>
     </aside>

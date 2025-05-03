@@ -38,4 +38,8 @@ args = "chmod +x node_modules/.bin/vite"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm run dev"
+args = "npm run dev -- --host 0.0.0.0"
+
+[[ports]]
+localPort = 5000
+externalPort = 80

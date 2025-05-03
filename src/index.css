@@ -7,13 +7,16 @@
 }
 
 html, body {
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  margin: 0;
 }
 
 body {
   font-family: "DM Sans";
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: #f9f9f9;
 }
 
 main {

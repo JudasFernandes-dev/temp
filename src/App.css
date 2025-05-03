@@ -28,11 +28,13 @@
 
 .sidebar {
   width: 250px;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 60px; /* Abaixo do header */
   bottom: 60px; /* Acima do footer */
   overflow-y: auto;
+  background-color: white;
+  z-index: 1;
 }
 
 .main-content {

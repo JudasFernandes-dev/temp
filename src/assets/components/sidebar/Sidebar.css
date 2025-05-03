@@ -1,10 +1,10 @@
 
 .sidebar {
-  position: fixed;
+  position: absolute;
   left: 0;
-  top: 0;
+  top: 60px;
   width: 180px;
-  height: 100vh;
+  min-height: calc(100vh - 120px);
   background: white;
   border-right: 1px solid #e5e7eb;
   padding: 20px;

@@ -15,7 +15,9 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
-        <Routes>
+        <div className="app-container">
+          <div className="content-container">
+            <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pre-cadastro" element={<PagCadastro />} />
           <Route path="/login" element={<PagLogin />} />
@@ -34,6 +36,8 @@ function App() {
           />
           <Route path="/edit-profile" element={<EditProfile />} /> {/* Added route */}
         </Routes>
+          </div>
+        </div>
       </Router>
     </ThemeProvider>
   );

@@ -1,16 +1,17 @@
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 60px;
+  top: 120px; /* Aumentado para ficar abaixo do header e da barra de idioma */
   width: 180px;
-  min-height: calc(100vh - 120px);
+  height: calc(100vh - 180px);
   background: white;
   border-right: 1px solid #e5e7eb;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  z-index: 90;
 }
 
 .user-profile {

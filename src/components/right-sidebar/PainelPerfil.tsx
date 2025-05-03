@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
 import { MdCode, MdLanguage, MdSettings } from 'react-icons/md';
-import Chat from '../../assets/components/chat/Chat'; // Assuming this component exists
+import Chat from '../../assets/components/chat/Chat';
 import './PainelPerfil.css';
 
 interface Item {
@@ -37,7 +37,9 @@ export default function PainelPerfil() {
   const [nivelLingua, setNivelLingua] = useState<'iniciante' | 'intermediario' | 'avancado'>('iniciante');
   const [novoIdioma, setNovoIdioma] = useState('');
   const [nivelIdioma, setNivelIdioma] = useState<'iniciante' | 'intermediario' | 'avancado'>('iniciante');
-  const [showChat, setShowChat] = useState(false);
+  return (
+    <div className="painel-perfil">
+      <Chat />
 
 
   const adicionarLinguagem = () => {

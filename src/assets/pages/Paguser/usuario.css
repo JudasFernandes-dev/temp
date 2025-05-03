@@ -267,15 +267,15 @@
 }
 
 .project-card {
-  background: #3b82f6;
+  background: var(--project-card-bg);
 }
 
 .hackathon-card {
-  background: #1f2937;
+  background: var(--hackathon-card-bg);
 }
 
 .group-card {
-  background: #10B981;
+  background: var(--group-card-bg);
 }
 
 

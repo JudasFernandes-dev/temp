@@ -431,3 +431,48 @@
 .chat-button:hover {
   transform: scale(1.1);
 }
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background: #374151;
+  margin: 2rem 0;
+}
+
+.groups-section {
+  margin-top: 2rem;
+}
+
+.groups-section h2 {
+  margin-bottom: 1rem;
+}
+
+.groups-carousel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.group-cards {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: hidden;
+  padding: 0.5rem;
+}
+
+.group-card {
+  flex: 0 0 auto;
+  width: 280px;
+  background: #10B981;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  color: white;
+}
+
+.group-card h3 {
+  margin-bottom: 1rem;
+}
+
+.group-card .card-buttons {
+  margin-top: 1rem;
+}

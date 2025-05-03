@@ -98,6 +98,8 @@ const Usuario = () => {
             <button className="nav-button next">›</button>
           </div>
 
+          <hr className="section-divider" />
+          
           <div className="hackathons-section">
             <h2>HACKATHONS</h2>
             <div className="hackathons-carousel">
@@ -114,6 +116,42 @@ const Usuario = () => {
                 <div className="hackathon-card">
                   <h3>Nome do hackathon</h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat, tortor tempus ultricies sollicitudin, Nam viverra magna a metus.</p>
+                  <div className="card-buttons">
+                    <button className="participate">participar</button>
+                    <button className="learn-more">saber+</button>
+                  </div>
+                </div>
+              </div>
+              <button className="nav-button next">›</button>
+            </div>
+          </div>
+
+          <hr className="section-divider" />
+
+          <div className="groups-section">
+            <h2>GRUPOS</h2>
+            <div className="groups-carousel">
+              <button className="nav-button prev">‹</button>
+              <div className="group-cards">
+                <div className="group-card">
+                  <h3>Grupo 1</h3>
+                  <p>Grupo de desenvolvimento web focado em React e TypeScript</p>
+                  <div className="card-buttons">
+                    <button className="participate">participar</button>
+                    <button className="learn-more">saber+</button>
+                  </div>
+                </div>
+                <div className="group-card">
+                  <h3>Grupo 2</h3>
+                  <p>Grupo de UI/UX Design e prototipação</p>
+                  <div className="card-buttons">
+                    <button className="participate">participar</button>
+                    <button className="learn-more">saber+</button>
+                  </div>
+                </div>
+                <div className="group-card">
+                  <h3>Grupo 3</h3>
+                  <p>Grupo de estudos em DevOps e Cloud</p>
                   <div className="card-buttons">
                     <button className="participate">participar</button>
                     <button className="learn-more">saber+</button>

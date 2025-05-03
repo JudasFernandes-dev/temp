@@ -424,27 +424,7 @@
   width: 75%;
 }
 
-.chat-button {
-  position: fixed;
-  bottom: 20px;
-  right: 290px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #3B82F6;
-  color: white;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
-  transition: transform 0.2s ease;
-}
 
-.chat-button:hover {
-  transform: scale(1.1);
-}
 
 .section-divider {
   border: none;

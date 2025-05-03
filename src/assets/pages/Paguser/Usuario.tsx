@@ -3,6 +3,7 @@ import { MdSearch, MdMessage } from 'react-icons/md';
 import PainelPerfil from '../../../components/right-sidebar/PainelPerfil';
 import Header from '../../components/header-user/HeaderUser';
 import Sidebar from '../../components/sidebar/Sidebar';
+import Footer from '../../components/footer/Footer';
 import './usuario.css';
 
 const Usuario = () => {
@@ -165,6 +166,7 @@ const Usuario = () => {
       <button className="chat-button">
         <MdMessage size={24} />
       </button>
+      <Footer />
     </div>
   );
 };

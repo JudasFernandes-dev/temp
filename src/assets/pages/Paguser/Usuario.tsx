@@ -31,7 +31,7 @@ const Usuario = () => {
       <main className="main-content">
         <div className="projects-section">
           <h1>Projetos</h1>
-          
+
           <div className="search-bar">
             <input type="text" placeholder="Procurar..." />
             <button>Buscar</button>
@@ -46,7 +46,7 @@ const Usuario = () => {
           </div>
 
           <div className="projects-title">PROJETOS</div>
-          
+
           <div className="projects-carousel">
             <button className="nav-button prev">‹</button>
             <div className="project-cards">
@@ -99,7 +99,7 @@ const Usuario = () => {
           </div>
 
           <hr className="section-divider" />
-          
+
           <div className="hackathons-section">
             <h2>HACKATHONS</h2>
             <div className="hackathons-carousel">

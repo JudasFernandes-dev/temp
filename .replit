@@ -34,11 +34,7 @@ args = "npm install"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm install -g vite"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm run dev -- --host 0.0.0.0 --port 5000"
+args = "npm run dev -- --host 0.0.0.0 --port 5000 --force"
 
 [[ports]]
 localPort = 5000

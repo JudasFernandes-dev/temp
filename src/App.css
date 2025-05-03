@@ -21,7 +21,6 @@
 }
 
 .content-container {
-  display: flex;
   margin-top: 60px;
   min-height: calc(100vh - 60px);
   position: relative;

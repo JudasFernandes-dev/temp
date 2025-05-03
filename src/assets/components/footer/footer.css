@@ -1,10 +1,6 @@
 .footer {
     width: 100vw;
     backdrop-filter: blur(10px) saturate(180%);
-    background-color: var(--cor-azul); /* Retaining original background color */
-    color: white; /* Retaining original text color */
-    padding: 40px 20px; /* Retaining original padding */
-
 }
 
 .top-footer {

@@ -1,3 +1,4 @@
+
 import './footer.css';
 import { FaInstagram, FaFacebook, FaGoogle, FaLinkedin} from 'react-icons/fa';
 

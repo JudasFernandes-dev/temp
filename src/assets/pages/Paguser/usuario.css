@@ -7,11 +7,15 @@
 
 .left-sidebar {
   position: fixed;
-  width: 180px;
-  height: 100vh;
-  padding: 20px;
+  width: 100%;
+  height: 60px;
+  padding: 0 20px;
   background-color: var(--sidebar-bg);
-  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
 }
 
 .profile-info {
@@ -44,8 +48,8 @@
 
 .sidebar-nav {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+  align-items: center;
 }
 
 .sidebar-nav a {

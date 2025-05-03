@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
-import { MdHome, MdNotifications, MdMessage, MdGroup, MdWork, MdPerson, MdSettings } from 'react-icons/md';
-import { FaHackerrank } from 'react-icons/fa';
+import { MdHome, MdNotifications, MdMessage, MdGroup, MdWork, MdPerson, MdSettings, MdLink } from 'react-icons/md';
+import { FaHackerrank, FaGithub, FaLinkedin } from 'react-icons/fa';
 import './Sidebar.css';
 
 function Sidebar() {
@@ -16,10 +16,10 @@ function Sidebar() {
         </div>
 
         <div className="user-links">
-          <p>Função</p>
-          <p>Github</p>
-          <p>Linkedin</p>
-          <p>Link</p>
+          <p><MdWork size={16} /> Função</p>
+          <p><FaGithub size={16} /> Github</p>
+          <p><FaLinkedin size={16} /> Linkedin</p>
+          <p><MdLink size={16} /> Link</p>
           <Link to="/edit-profile" className="edit-profile-btn">
             Editar Perfil
           </Link>

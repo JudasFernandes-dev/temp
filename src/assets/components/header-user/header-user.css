@@ -21,14 +21,14 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-.nav-links {
+.header-user .nav-links {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
 }
 
-.nav-links a {
+.header-user .nav-links a {
   color: var(--text-color);
   text-decoration: none;
   font-size: 14px;

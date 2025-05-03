@@ -57,13 +57,13 @@
   text-decoration: none;
 }
 
-.nav-links {
+.sidebar .nav-links {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.nav-links a {
+.sidebar .nav-links a {
   display: flex;
   align-items: center;
   gap: 0.5rem;

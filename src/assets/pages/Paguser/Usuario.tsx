@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { MdSearch, MdMessage } from 'react-icons/md';
 import Header from '../../components/header-user/HeaderUser';
@@ -161,36 +160,6 @@ const Usuario = () => {
           </div>
         </div>
       </main>
-
-      <aside className="right-sidebar">
-        <section className="languages">
-          <h3>Idiomas</h3>
-          <div className="language-selection">
-            <select>
-              <option value="pt">Português</option>
-              <option value="en">English</option>
-              <option value="es">Español</option>
-            </select>
-          </div>
-        </section>
-
-        <section className="progress">
-          <h3>Progresso</h3>
-          <div className="progress-bar">
-            <div className="progress-fill" style={{width: '75%'}}></div>
-          </div>
-          <p>75% completo</p>
-        </section>
-
-        <section className="tasks">
-          <h3>Tarefas</h3>
-          <ul>
-            <li>Completar perfil básico</li>
-            <li>Vincular GitHub</li>
-            <li>Participar de um projeto</li>
-          </ul>
-        </section>
-      </aside>
 
       <button className="chat-button">
         <MdMessage size={24} />

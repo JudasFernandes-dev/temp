@@ -1,12 +1,14 @@
 
 .footer {
+  position: fixed;
+  bottom: -300px;
+  left: 0;
   width: 100%;
-  background-color: #f1f1f1;
+  background-color: white;
   color: #333;
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid #ccc;
-  margin-top: auto;
+  padding: 1rem 4rem;
+  z-index: 1000;
+  border-top: 1px solid #e5e7eb;
 }
 
 .footer-message {

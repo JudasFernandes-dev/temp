@@ -1,18 +1,13 @@
 .user-page {
   display: flex;
-  flex: 1;
-  padding: 20px;
-  background-color: #f9f9f9;
+  min-height: calc(100vh - 60px);
+  padding-bottom: 120px;
+  background-color: var(--bg-color);
+  position: relative;
   margin-top: 60px;
   padding-left: 240px;
   color: var(--text-color);
-}
-
-/* Add sample content for scrolling */
-.user-page::after {
-  content: "";
-  display: block;
-  height: 1500px;
+  margin-bottom: 60px;
 }
 
 .project-card,

@@ -4,9 +4,10 @@
   padding-bottom: 120px;
   background-color: var(--bg-color);
   position: relative;
-  margin-top: 60px;
+  margin-top: 0;
   color: var(--text-color);
   margin-bottom: 60px;
+  padding-top: 60px;
 }
 
 .project-card,

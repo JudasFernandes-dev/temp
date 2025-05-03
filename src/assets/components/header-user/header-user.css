@@ -3,6 +3,7 @@
   --text-color: #333; /* Example - Define your text color */
   --border-color: #eee; /* Example - Define your border color */
   --hover-color: rgba(0, 0, 0, 0.1); /* Example - Define hover color */
+  --cor-branca: white; /* Added for consistency with provided changes */
 }
 
 .header-user {
@@ -20,6 +21,31 @@
   padding: 0 20px;
   border-bottom: 1px solid var(--border-color);
 }
+
+.menu-header { /* Added menu-header class */
+  display: flex; /* Added display flex for horizontal layout */
+  align-items: center; /* Align items vertically */
+}
+
+.menu-header ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu-header li {
+  margin: 0;
+}
+
+.menu-header li a {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--cor-branca);
+}
+
 
 .nav-links {
   display: flex;

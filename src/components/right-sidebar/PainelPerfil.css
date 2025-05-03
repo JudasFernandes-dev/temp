@@ -4,12 +4,34 @@
   padding: 20px;
   background: white;
   border-left: 1px solid #e5e7eb;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 60px);
   position: fixed;
   right: 0;
   top: 60px;
   z-index: 100;
   overflow-y: auto;
+}
+
+.certifications-section {
+  margin-top: 20px;
+}
+
+.certifications-section h2 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.languages-section {
+  margin-bottom: 20px;
+}
+
+.languages-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
 }
 
 .section-header {

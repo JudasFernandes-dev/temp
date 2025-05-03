@@ -91,21 +91,78 @@ const Usuario = () => {
           </div>
         </div>
 
-        <div className="carousels">
-          <section className="carousel-section projects">
-            <h2>Projetos</h2>
-            {/* Carrossel de projetos será implementado aqui */}
-          </section>
+        <div className="projects-section">
+          <h1>Projetos</h1>
+          
+          <div className="search-bar">
+            <input type="text" placeholder="Procurar..." />
+            <button>Buscar</button>
+          </div>
 
-          <section className="carousel-section hackathons">
-            <h2>Hackathons</h2>
-            {/* Carrossel de hackathons será implementado aqui */}
-          </section>
+          <div className="filter-tabs">
+            <button className="active">Todos</button>
+            <button>Design</button>
+            <button>Dev</button>
+            <button>Marketing</button>
+            <button>Gestão</button>
+          </div>
 
-          <section className="carousel-section groups">
-            <h2>Grupos</h2>
-            {/* Carrossel de grupos será implementado aqui */}
-          </section>
+          <div className="projects-title">PROJETOS</div>
+          
+          <div className="projects-carousel">
+            <button className="nav-button prev">‹</button>
+            <div className="project-cards">
+              <div className="project-card">
+                <div className="bulb-icon">💡</div>
+                <div className="project-info">
+                  <p className="project-name">nome: Projeto A</p>
+                  <p className="company-name">empresa: Empresa X</p>
+                  <div className="card-buttons">
+                    <button className="participate">participar</button>
+                    <button className="learn-more">saber+</button>
+                  </div>
+                </div>
+              </div>
+              <div className="project-card">
+                <div className="bulb-icon">💡</div>
+                <div className="project-info">
+                  <p className="project-name">nome: Projeto B</p>
+                  <p className="company-name">empresa: Empresa Y</p>
+                  <div className="card-buttons">
+                    <button className="participate">participar</button>
+                    <button className="learn-more">saber+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button className="nav-button next">›</button>
+          </div>
+
+          <div className="hackathons-section">
+            <h2>HACKATHONS</h2>
+            <div className="hackathons-carousel">
+              <button className="nav-button prev">‹</button>
+              <div className="hackathon-cards">
+                <div className="hackathon-card">
+                  <h3>Nome do hackathon</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat, tortor tempus ultricies sollicitudin, Nam viverra magna a metus.</p>
+                  <div className="card-buttons">
+                    <button className="participate">participar</button>
+                    <button className="learn-more">saber+</button>
+                  </div>
+                </div>
+                <div className="hackathon-card">
+                  <h3>Nome do hackathon</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat, tortor tempus ultricies sollicitudin, Nam viverra magna a metus.</p>
+                  <div className="card-buttons">
+                    <button className="participate">participar</button>
+                    <button className="learn-more">saber+</button>
+                  </div>
+                </div>
+              </div>
+              <button className="nav-button next">›</button>
+            </div>
+          </div>
         </div>
       </main>
 

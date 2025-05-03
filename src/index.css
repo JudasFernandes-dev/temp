@@ -55,12 +55,17 @@ main {
   --text-color: #1f2937;
   --border-color: #e5e7eb;
   --header-bg: #ffffff;
-  --sidebar-bg: #ffffff;
+  --sidebar-bg: #f3f4f6;
   --card-bg: #ffffff;
   --content-bg: #ffffff;
-  --project-card-bg: #3b82f6;
+  --project-card-bg: #2563eb;
   --hackathon-card-bg: #1f2937;
   --group-card-bg: #10B981;
+  --hover-bg: #f9fafb;
+  --sidebar-text: #4b5563;
+  --primary-button: #3b82f6;
+  --search-bg: #f3f4f6;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 body {

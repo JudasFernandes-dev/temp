@@ -82,11 +82,21 @@
   background: #e5e7eb;
 }
 
+.achievements-section {
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+
+.achievements-title {
+  display: block;
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
 .badges {
   display: flex;
-  justify-content: center;
   gap: 0.5rem;
-  margin-top: auto;
 }
 
 .badge {

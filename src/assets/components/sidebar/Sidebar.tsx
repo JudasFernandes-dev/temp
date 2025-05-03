@@ -33,13 +33,15 @@ function Sidebar() {
           <Link to="/projects"><MdWork size={16} /> Projetos</Link>
           <Link to="/teams"><MdGroup size={16} /> Equipes</Link>
           <Link to="/settings"><MdSettings size={16} /> Configurações</Link>
+          <div className="achievements-section">
+            <span className="achievements-title">Conquistas</span>
+            <div className="badges">
+              <div className="badge yellow"></div>
+              <div className="badge red"></div>
+              <div className="badge green"></div>
+            </div>
+          </div>
         </nav>
-      </div>
-
-      <div className="badges">
-        <div className="badge yellow"></div>
-        <div className="badge red"></div>
-        <div className="badge green"></div>
       </div>
     </aside>
   );

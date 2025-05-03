@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
 import { MdCode, MdLanguage, MdSettings } from 'react-icons/md';
@@ -30,17 +31,12 @@ export default function PainelPerfil() {
     { nome: 'Italiano', nivel: 'iniciante', icone: <span>🇮🇹</span>, corTag: 'bg-yellow-300' },
     { nome: 'Português', nivel: 'avancado', icone: <span>🇵🇹</span>, corTag: 'bg-red-700' },
     { nome: 'Japonês', nivel: 'iniciante', icone: <span>🇯🇵</span>, corTag: 'bg-orange-300' }
-
   ]);
 
   const [novaLingua, setNovaLingua] = useState('');
   const [nivelLingua, setNivelLingua] = useState<'iniciante' | 'intermediario' | 'avancado'>('iniciante');
   const [novoIdioma, setNovoIdioma] = useState('');
   const [nivelIdioma, setNivelIdioma] = useState<'iniciante' | 'intermediario' | 'avancado'>('iniciante');
-  return (
-    <div className="painel-perfil">
-      <Chat />
-
 
   const adicionarLinguagem = () => {
     if (novaLingua && !linguagens.find(l => l.nome === novaLingua)) {
@@ -76,6 +72,7 @@ export default function PainelPerfil() {
 
   return (
     <div className="painel-perfil">
+      <Chat />
       <div className="section-header">
         <h2>Painel de Perfil</h2>
         <button className="config-button">
@@ -104,8 +101,6 @@ export default function PainelPerfil() {
             <option value="JavaScript">JavaScript</option>
             <option value="Python">Python</option>
             <option value="TypeScript">TypeScript</option>
-
-
           </select>
           <select
             value={nivelLingua}
@@ -155,7 +150,6 @@ export default function PainelPerfil() {
             <option value="Japonês">Japonês</option>
             <option value="Inglês">Inglês</option>
             <option value="Espanhol">Espanhol</option>
-
           </select>
           <select
             value={nivelIdioma}
@@ -184,11 +178,6 @@ export default function PainelPerfil() {
             </div>
           ))}
         </div>
-      </section>
-
-      <section className="chat-section">
-        <button onClick={() => setShowChat(!showChat)}>Toggle Chat</button>
-        {showChat && <Chat />}
       </section>
 
       <section className="progresso-section">

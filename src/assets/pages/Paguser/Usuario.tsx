@@ -72,6 +72,28 @@ const Usuario = () => {
                   </div>
                 </div>
               </div>
+              <div className="project-card">
+                <div className="bulb-icon">💡</div>
+                <div className="project-info">
+                  <p className="project-name">nome: Projeto C</p>
+                  <p className="company-name">empresa: Empresa Z</p>
+                  <div className="card-buttons">
+                    <button className="participate">participar</button>
+                    <button className="learn-more">saber+</button>
+                  </div>
+                </div>
+              </div>
+              <div className="project-card">
+                <div className="bulb-icon">💡</div>
+                <div className="project-info">
+                  <p className="project-name">nome: Projeto D</p>
+                  <p className="company-name">empresa: Empresa W</p>
+                  <div className="card-buttons">
+                    <button className="participate">participar</button>
+                    <button className="learn-more">saber+</button>
+                  </div>
+                </div>
+              </div>
             </div>
             <button className="nav-button next">›</button>
           </div>

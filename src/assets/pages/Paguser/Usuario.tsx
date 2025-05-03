@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+
+import { useState, useEffect, useRef } from 'react';
 import { MdSearch, MdMessage } from 'react-icons/md';
 import Header from '../../components/header-user/HeaderUser';
 import Sidebar from '../../components/sidebar/Sidebar';
@@ -8,20 +9,34 @@ import './usuario.css';
 const Usuario = () => {
   const [currentFilter, setCurrentFilter] = useState('Todos');
   const [searchQuery, setSearchQuery] = useState('');
+  const [filteredProjects, setFilteredProjects] = useState([]);
+  const projectsRef = useRef(null);
+  const hackathonsRef = useRef(null);
+  const groupsRef = useRef(null);
 
-  // Safe storage access
+  const projects = [
+    { nome: 'Projeto A', empresa: 'Empresa X', tipo: 'Design' },
+    { nome: 'Projeto B', empresa: 'Empresa Y', tipo: 'Dev' },
+    { nome: 'Projeto C', empresa: 'Empresa Z', tipo: 'Marketing' },
+    { nome: 'Projeto D', empresa: 'Empresa W', tipo: 'Gestão' }
+  ];
+
   useEffect(() => {
-    try {
-      const participanteLogado = localStorage.getItem('participanteLogado');
-      if (participanteLogado) {
-        const dados = JSON.parse(participanteLogado);
-        // Handle user data here
-        console.log('User data loaded:', dados);
-      }
-    } catch (error) {
-      console.error('Storage access error:', error);
+    const filtered = projects.filter(project => {
+      const matchesSearch = project.nome.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          project.empresa.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesFilter = currentFilter === 'Todos' || project.tipo === currentFilter;
+      return matchesSearch && matchesFilter;
+    });
+    setFilteredProjects(filtered);
+  }, [searchQuery, currentFilter]);
+
+  const scroll = (direction, ref) => {
+    if (ref.current) {
+      const scrollAmount = 300;
+      ref.current.scrollLeft += direction === 'left' ? -scrollAmount : scrollAmount;
     }
-  }, []);
+  };
 
   return (
     <div className="user-page">
@@ -33,69 +48,68 @@ const Usuario = () => {
           <h1>Projetos</h1>
 
           <div className="search-bar">
-            <input type="text" placeholder="Procurar..." />
-            <button>Buscar</button>
+            <input 
+              type="text" 
+              placeholder="Procurar..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button onClick={() => setSearchQuery(searchQuery)}>Buscar</button>
           </div>
 
           <div className="filter-tabs">
-            <button className="active">Todos</button>
-            <button>Design</button>
-            <button>Dev</button>
-            <button>Marketing</button>
-            <button>Gestão</button>
+            <button 
+              className={currentFilter === 'Todos' ? 'active' : ''} 
+              onClick={() => setCurrentFilter('Todos')}
+            >
+              Todos
+            </button>
+            <button 
+              className={currentFilter === 'Design' ? 'active' : ''} 
+              onClick={() => setCurrentFilter('Design')}
+            >
+              Design
+            </button>
+            <button 
+              className={currentFilter === 'Dev' ? 'active' : ''} 
+              onClick={() => setCurrentFilter('Dev')}
+            >
+              Dev
+            </button>
+            <button 
+              className={currentFilter === 'Marketing' ? 'active' : ''} 
+              onClick={() => setCurrentFilter('Marketing')}
+            >
+              Marketing
+            </button>
+            <button 
+              className={currentFilter === 'Gestão' ? 'active' : ''} 
+              onClick={() => setCurrentFilter('Gestão')}
+            >
+              Gestão
+            </button>
           </div>
 
           <div className="projects-title">PROJETOS</div>
 
           <div className="projects-carousel">
-            <button className="nav-button prev">‹</button>
-            <div className="project-cards">
-              <div className="project-card">
-                <div className="bulb-icon">💡</div>
-                <div className="project-info">
-                  <p className="project-name">nome: Projeto A</p>
-                  <p className="company-name">empresa: Empresa X</p>
-                  <div className="card-buttons">
-                    <button className="participate">participar</button>
-                    <button className="learn-more">saber+</button>
+            <button className="nav-button prev" onClick={() => scroll('left', projectsRef)}>‹</button>
+            <div className="project-cards" ref={projectsRef}>
+              {filteredProjects.map((project, index) => (
+                <div className="project-card" key={index}>
+                  <div className="bulb-icon">💡</div>
+                  <div className="project-info">
+                    <p className="project-name">nome: {project.nome}</p>
+                    <p className="company-name">empresa: {project.empresa}</p>
+                    <div className="card-buttons">
+                      <button className="participate">participar</button>
+                      <button className="learn-more">saber+</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="project-card">
-                <div className="bulb-icon">💡</div>
-                <div className="project-info">
-                  <p className="project-name">nome: Projeto B</p>
-                  <p className="company-name">empresa: Empresa Y</p>
-                  <div className="card-buttons">
-                    <button className="participate">participar</button>
-                    <button className="learn-more">saber+</button>
-                  </div>
-                </div>
-              </div>
-              <div className="project-card">
-                <div className="bulb-icon">💡</div>
-                <div className="project-info">
-                  <p className="project-name">nome: Projeto C</p>
-                  <p className="company-name">empresa: Empresa Z</p>
-                  <div className="card-buttons">
-                    <button className="participate">participar</button>
-                    <button className="learn-more">saber+</button>
-                  </div>
-                </div>
-              </div>
-              <div className="project-card">
-                <div className="bulb-icon">💡</div>
-                <div className="project-info">
-                  <p className="project-name">nome: Projeto D</p>
-                  <p className="company-name">empresa: Empresa W</p>
-                  <div className="card-buttons">
-                    <button className="participate">participar</button>
-                    <button className="learn-more">saber+</button>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
-            <button className="nav-button next">›</button>
+            <button className="nav-button next" onClick={() => scroll('right', projectsRef)}>›</button>
           </div>
 
           <hr className="section-divider" />
@@ -103,11 +117,11 @@ const Usuario = () => {
           <div className="hackathons-section">
             <h2>HACKATHONS</h2>
             <div className="hackathons-carousel">
-              <button className="nav-button prev">‹</button>
-              <div className="hackathon-cards">
+              <button className="nav-button prev" onClick={() => scroll('left', hackathonsRef)}>‹</button>
+              <div className="hackathon-cards" ref={hackathonsRef}>
                 <div className="hackathon-card">
                   <h3>Nome do hackathon</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat, tortor tempus ultricies sollicitudin, Nam viverra magna a metus.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   <div className="card-buttons">
                     <button className="participate">participar</button>
                     <button className="learn-more">saber+</button>
@@ -115,14 +129,14 @@ const Usuario = () => {
                 </div>
                 <div className="hackathon-card">
                   <h3>Nome do hackathon</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat, tortor tempus ultricies sollicitudin, Nam viverra magna a metus.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   <div className="card-buttons">
                     <button className="participate">participar</button>
                     <button className="learn-more">saber+</button>
                   </div>
                 </div>
               </div>
-              <button className="nav-button next">›</button>
+              <button className="nav-button next" onClick={() => scroll('right', hackathonsRef)}>›</button>
             </div>
           </div>
 
@@ -131,8 +145,8 @@ const Usuario = () => {
           <div className="groups-section">
             <h2>GRUPOS</h2>
             <div className="groups-carousel">
-              <button className="nav-button prev">‹</button>
-              <div className="group-cards">
+              <button className="nav-button prev" onClick={() => scroll('left', groupsRef)}>‹</button>
+              <div className="group-cards" ref={groupsRef}>
                 <div className="group-card">
                   <h3>Grupo 1</h3>
                   <p>Grupo de desenvolvimento web focado em React e TypeScript</p>
@@ -158,7 +172,7 @@ const Usuario = () => {
                   </div>
                 </div>
               </div>
-              <button className="nav-button next">›</button>
+              <button className="nav-button next" onClick={() => scroll('right', groupsRef)}>›</button>
             </div>
           </div>
         </div>

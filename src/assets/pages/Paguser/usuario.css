@@ -226,11 +226,21 @@
 }
 
 .project-cards,
-.hackathon-cards {
+.hackathon-cards,
+.group-cards {
   display: flex;
   gap: 1.25rem;
-  overflow-x: hidden;
+  overflow-x: auto;
   padding: 0.5rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.project-cards::-webkit-scrollbar,
+.hackathon-cards::-webkit-scrollbar,
+.group-cards::-webkit-scrollbar {
+  display: none;
 }
 
 .project-card {
@@ -451,13 +461,6 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.group-cards {
-  display: flex;
-  gap: 1.25rem;
-  overflow-x: hidden;
-  padding: 0.5rem;
 }
 
 .group-card {

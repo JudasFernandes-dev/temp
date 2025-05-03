@@ -245,14 +245,32 @@
   display: none;
 }
 
-.project-card {
+.project-card,
+.hackathon-card,
+.group-card {
   flex: 0 0 auto;
   width: 280px;
-  background: #1e40af;
   padding: 1.5rem;
   border-radius: 0.75rem;
-  margin: 0.5rem 0;
+  color: white;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.project-card {
+  background: #3b82f6;
+}
+
+.hackathon-card {
+  background: #1f2937;
+}
+
+.group-card {
+  background: #10B981;
+}
+
 
 .bulb-icon {
   font-size: 1.5rem;
@@ -280,14 +298,6 @@
   cursor: pointer;
 }
 
-.hackathon-card {
-  background: #1f2937;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  min-width: 280px;
-  color: white;
-}
-
 .hackathon-card h3 {
   margin-bottom: 1rem;
 }
@@ -296,14 +306,6 @@
   margin-bottom: 1.5rem;
   font-size: 0.875rem;
   line-height: 1.4;
-}
-
-.project-card {
-  flex: 0 0 auto;
-  width: 256px;
-  background: #3b82f6;
-  padding: 1rem;
-  border-radius: 0.5rem;
 }
 
 .project-card .icon {
@@ -337,13 +339,6 @@
   margin-top: 40px;
 }
 
-.hackathon-card {
-  background: #1a1d21;
-  border-radius: 12px;
-  padding: 20px;
-  color: white;
-  border: 1px solid #2d3239;
-}
 
 .carousels {
   display: flex;
@@ -463,15 +458,6 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.group-card {
-  flex: 0 0 auto;
-  width: 280px;
-  background: #10B981;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  color: white;
 }
 
 .group-card h3 {

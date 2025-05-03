@@ -32,17 +32,14 @@ function Sidebar() {
           <Link to="/hackathons"><FaHackerrank size={16} /> Hackathons</Link>
           <Link to="/projects"><MdWork size={16} /> Projetos</Link>
           <Link to="/teams"><MdGroup size={16} /> Equipes</Link>
-          <Link to="/profile"><MdPerson size={16} /> Perfil</Link>
           <Link to="/settings"><MdSettings size={16} /> Configurações</Link>
         </nav>
       </div>
 
-      <div className="achievements">
-        <div className="badges">
-          <div className="badge yellow" title="Conquista Ouro"></div>
-          <div className="badge red" title="Conquista Vermelha"></div>
-          <div className="badge green" title="Conquista Verde"></div>
-        </div>
+      <div className="badges">
+        <div className="badge yellow"></div>
+        <div className="badge red"></div>
+        <div className="badge green"></div>
       </div>
     </aside>
   );

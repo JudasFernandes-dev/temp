@@ -13,14 +13,7 @@ const HeaderUser = () => {
       <nav className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/configuracoes">Configurações</Link>
-        <div className="achievements-section">
-          <span className="achievements-title">Conquistas</span>
-          <div className="achievements-badges">
-            <div className="badge yellow"></div>
-            <div className="badge green"></div>
-            <div className="badge red"></div>
-          </div>
-        </div>
+        <Link to="/conquistas">Conquistas</Link>
       </nav>
 
       <div className="right-icons">

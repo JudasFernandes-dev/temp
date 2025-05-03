@@ -18,7 +18,11 @@ const Usuario = () => {
     { nome: 'Projeto A', empresa: 'Empresa X', tipo: 'Design' },
     { nome: 'Projeto B', empresa: 'Empresa Y', tipo: 'Dev' },
     { nome: 'Projeto C', empresa: 'Empresa Z', tipo: 'Marketing' },
-    { nome: 'Projeto D', empresa: 'Empresa W', tipo: 'Gestão' }
+    { nome: 'Projeto D', empresa: 'Empresa W', tipo: 'Gestão' },
+    { nome: 'Projeto E', empresa: 'Empresa V', tipo: 'Design' },
+    { nome: 'Projeto F', empresa: 'Empresa U', tipo: 'Dev' },
+    { nome: 'Projeto G', empresa: 'Empresa T', tipo: 'Marketing' },
+    { nome: 'Projeto H', empresa: 'Empresa S', tipo: 'Gestão' }
   ];
 
   useEffect(() => {
@@ -119,22 +123,16 @@ const Usuario = () => {
             <div className="hackathons-carousel">
               <button className="nav-button prev" onClick={() => scroll('left', hackathonsRef)}>‹</button>
               <div className="hackathon-cards" ref={hackathonsRef}>
-                <div className="hackathon-card">
-                  <h3>Nome do hackathon</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <div className="card-buttons">
-                    <button className="participate">participar</button>
-                    <button className="learn-more">saber+</button>
+                {[...Array(8)].map((_, index) => (
+                  <div className="hackathon-card" key={index}>
+                    <h3>Hackathon {index + 1}</h3>
+                    <p>Descrição do hackathon {index + 1}</p>
+                    <div className="card-buttons">
+                      <button className="participate">participar</button>
+                      <button className="learn-more">saber+</button>
+                    </div>
                   </div>
-                </div>
-                <div className="hackathon-card">
-                  <h3>Nome do hackathon</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <div className="card-buttons">
-                    <button className="participate">participar</button>
-                    <button className="learn-more">saber+</button>
-                  </div>
-                </div>
+                ))}
               </div>
               <button className="nav-button next" onClick={() => scroll('right', hackathonsRef)}>›</button>
             </div>
@@ -147,30 +145,16 @@ const Usuario = () => {
             <div className="groups-carousel">
               <button className="nav-button prev" onClick={() => scroll('left', groupsRef)}>‹</button>
               <div className="group-cards" ref={groupsRef}>
-                <div className="group-card">
-                  <h3>Grupo 1</h3>
-                  <p>Grupo de desenvolvimento web focado em React e TypeScript</p>
-                  <div className="card-buttons">
-                    <button className="participate">participar</button>
-                    <button className="learn-more">saber+</button>
+                {[...Array(8)].map((_, index) => (
+                  <div className="group-card" key={index}>
+                    <h3>Grupo {index + 1}</h3>
+                    <p>Descrição do grupo {index + 1}</p>
+                    <div className="card-buttons">
+                      <button className="participate">participar</button>
+                      <button className="learn-more">saber+</button>
+                    </div>
                   </div>
-                </div>
-                <div className="group-card">
-                  <h3>Grupo 2</h3>
-                  <p>Grupo de UI/UX Design e prototipação</p>
-                  <div className="card-buttons">
-                    <button className="participate">participar</button>
-                    <button className="learn-more">saber+</button>
-                  </div>
-                </div>
-                <div className="group-card">
-                  <h3>Grupo 3</h3>
-                  <p>Grupo de estudos em DevOps e Cloud</p>
-                  <div className="card-buttons">
-                    <button className="participate">participar</button>
-                    <button className="learn-more">saber+</button>
-                  </div>
-                </div>
+                ))}
               </div>
               <button className="nav-button next" onClick={() => scroll('right', groupsRef)}>›</button>
             </div>

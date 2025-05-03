@@ -230,11 +230,13 @@
 .group-cards {
   display: flex;
   gap: 1.25rem;
-  overflow-x: auto;
+  overflow-x: hidden;
   padding: 0.5rem;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  width: calc(280px * 4 + 1.25rem * 3);
+  margin: 0 auto;
 }
 
 .project-cards::-webkit-scrollbar,

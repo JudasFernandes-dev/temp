@@ -1,27 +1,29 @@
-
 .sidebar {
   position: fixed;
   left: 0;
-  top: 60px; /* Aumentado para ficar abaixo do header e da barra de idioma */
+  top: 0;
   width: 180px;
-  background: white;
-  border-right: 1px solid #e5e7eb;
+  height: 100vh;
+  background: #1a1d21;
+  border-right: 1px solid #2d3239;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  z-index: 90;
+  color: white;
 }
 
 .user-profile {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .profile-avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin-bottom: 12px;
+  background: #2d3239;
+  margin: 0 auto 10px;
 }
 
 .user-info h3 {
@@ -38,60 +40,62 @@
 .social-links {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-bottom: 12px;
+  gap: 8px;
 }
 
 .social-links a {
-  color: #3B82F6;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
   text-decoration: none;
-  font-size: 14px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.social-links a:hover {
+  background: #2d3239;
 }
 
 .edit-profile-btn {
-  display: block;
-  padding: 8px 16px;
-  background: #3B82F6;
+  background: #3b82f6;
   color: white;
+  border: none;
+  padding: 8px 16px;
   border-radius: 20px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  margin: 10px 0;
 }
 
-.edit-profile-btn:hover {
-  background: #2563eb;
-}
-
-.sidebar-nav {
+.nav-links {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.sidebar-nav a {
+.nav-links a {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px;
-  color: #4b5563;
+  color: white;
   text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+  padding: 8px;
+  border-radius: 6px;
 }
 
-.sidebar-nav a:hover {
-  background: #f3f4f6;
+.nav-links a:hover {
+  background: #2d3239;
 }
 
-.sidebar-nav a.active {
+.nav-links a.active {
   background: #3B82F6;
   color: white;
 }
 
 .achievements {
   margin-top: auto;
-  padding-top: 20px;
+  text-align: center;
 }
 
 .achievements h4 {
@@ -101,8 +105,9 @@
 
 .badges {
   display: flex;
-  gap: 8px;
   justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .badge {
@@ -111,9 +116,9 @@
   border-radius: 50%;
 }
 
-.badge.yellow { background-color: #FCD34D; }
-.badge.green { background-color: #10B981; }
-.badge.red { background-color: #EF4444; }
+.badge.yellow { background: #fbbf24; }
+.badge.green { background: #22c55e; }
+.badge.red { background: #ef4444; }
 
 .version {
   font-size: 12px;

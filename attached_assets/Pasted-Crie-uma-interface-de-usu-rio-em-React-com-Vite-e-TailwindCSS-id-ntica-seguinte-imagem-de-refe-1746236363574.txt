@@ -1,0 +1,45 @@
+Crie uma interface de usuário em React com Vite e TailwindCSS **idêntica** à seguinte imagem de referência:
+
+[INSERIR A IMAGEM NO CLAUDE AO LADO DO PROMPT]
+
+Ela contém os seguintes elementos:
+
+1. **Sidebar esquerda (vertical):**
+   - Foto de perfil com ícone de usuário e texto "nome"
+   - Links com ícones: Função, Github, Linkedin, Link
+   - Botão "Editar Perfil"
+   - Menu com itens: Página Inicial, Notificações, Mensagens, Hackathons, Projetos, Equipes, Perfil, Configurações
+   - Conquistas com 3 ícones circulares coloridos (amarelo, vermelho e verde)
+
+2. **Área central (main content):**
+   - Navbar superior com: "Home", "Contato", "Sobre" e ícones no topo direito (notificações, perfil, etc.)
+   - Título central: “Projetos”
+   - Barra de busca com botão “Buscar” (laranja)
+   - Filtros com botões: Todos, Design, Dev, Marketing, Gestão
+   - Carrossel de projetos:
+     - Cartão azul com ícone de lâmpada amarela
+     - Título: “nome: Projeto A / Projeto B”
+     - Subtítulo: “empresa: Empresa X / Empresa Y”
+     - Botões: “participar” e “saber+”
+   - Carrossel de Hackathons (fundo preto):
+     - Título: "Nome do hackathon"
+     - Texto descritivo lorem ipsum
+     - Botões: participar / saber+
+
+3. **Painel lateral direita:**
+   - Seção “Linguagens”
+     - Seletor de linguagem e nível (iniciante, intermediário, etc.)
+     - Lista com JavaScript, Python, Java e botões de exclusão
+   - Seção “Idiomas”
+     - Seletor e lista: Inglês (intermediário), Espanhol (iniciante)
+   - Progresso dos selos:
+     - Barra com selo “Desenvolvedor Experiente” e texto “5 projetos finalizados”
+
+4. **Estilo e aparência:**
+   - Tema **escuro**
+   - Componentes com cantos arredondados
+   - Tipografia clara
+   - Cores vibrantes (botões azuis, cartões azuis e pretos, textos brancos)
+   - Ícones representativos e layout responsivo com espaçamentos bem definidos
+
+Gere o código **100% fiel ao design da imagem**, usando React + Tailwind + ícones (ex: Lucide ou Heroicons). Estruture os componentes para fácil manutenção e reuso.

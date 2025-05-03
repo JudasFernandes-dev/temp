@@ -41,8 +41,8 @@ main {
   --bg-color: #000000;
   --text-color: #ffffff;
   --border-color: #ffffff;
-  --header-bg: #e6f3ff;
-  --sidebar-bg: #e6f3ff;
+  --header-bg: #1f2937;
+  --sidebar-bg: #1f2937;
   --card-bg: #000000;
   --content-bg: #000000;
   --project-card-bg: #3b82f6;
@@ -54,8 +54,8 @@ main {
   --bg-color: #ffffff;
   --text-color: #1f2937;
   --border-color: #e5e7eb;
-  --header-bg: #ffffff;
-  --sidebar-bg: #f3f4f6;
+  --header-bg: #eff6ff;
+  --sidebar-bg: #eff6ff;
   --card-bg: #ffffff;
   --content-bg: #ffffff;
   --project-card-bg: #2563eb;

@@ -29,68 +29,6 @@ const Usuario = () => {
       <Sidebar />
 
       <main className="main-content">
-        <div className="search-bar">
-          <MdSearch size={24} />
-          <input 
-            type="text"
-            placeholder="Pesquisar..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div>
-
-        <div className="filters">
-          <button 
-            className={currentFilter === 'Todos' ? 'active' : ''} 
-            onClick={() => setCurrentFilter('Todos')}
-          >
-            Todos
-          </button>
-          <button 
-            className={currentFilter === 'Design' ? 'active' : ''} 
-            onClick={() => setCurrentFilter('Design')}
-          >
-            Design
-          </button>
-          <button 
-            className={currentFilter === 'Dev' ? 'active' : ''} 
-            onClick={() => setCurrentFilter('Dev')}
-          >
-            Dev
-          </button>
-          <button 
-            className={currentFilter === 'Marketing' ? 'active' : ''} 
-            onClick={() => setCurrentFilter('Marketing')}
-          >
-            Marketing
-          </button>
-          <button 
-            className={currentFilter === 'Gestão' ? 'active' : ''} 
-            onClick={() => setCurrentFilter('Gestão')}
-          >
-            Gestão
-          </button>
-        </div>
-
-        <div className="card-grid">
-          <div className="card">
-            <h3>Projetos Ativos</h3>
-            <p>3 projetos em andamento</p>
-          </div>
-          <div className="card">
-            <h3>Conquistas</h3>
-            <p>12 badges conquistadas</p>
-          </div>
-          <div className="card">
-            <h3>Habilidades</h3>
-            <p>React, TypeScript, Node.js</p>
-          </div>
-          <div className="card">
-            <h3>Certificações</h3>
-            <p>4 certificados obtidos</p>
-          </div>
-        </div>
-
         <div className="projects-section">
           <h1>Projetos</h1>
           

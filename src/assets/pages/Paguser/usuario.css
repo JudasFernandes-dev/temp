@@ -113,6 +113,7 @@
   flex: 1;
   overflow-y: auto;
   margin-top: -1rem;
+  margin-right: 300px; /* Added margin to prevent overlap */
 }
 
 .search-bar {

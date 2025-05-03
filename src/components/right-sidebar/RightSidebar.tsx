@@ -25,7 +25,6 @@ export default function RightSidebar() {
 
   const [novaLingua, setNovaLingua] = useState('');
   const [nivelLingua, setNivelLingua] = useState<'iniciante' | 'intermediario' | 'avancado'>('iniciante');
-
   const [novoIdioma, setNovoIdioma] = useState('');
   const [nivelIdioma, setNivelIdioma] = useState<'iniciante' | 'intermediario' | 'avancado'>('iniciante');
 
@@ -54,120 +53,137 @@ export default function RightSidebar() {
   };
 
   const removerItem = (nome: string, tipo: 'linguagem' | 'idioma') => {
-    if (tipo === 'linguagem') setLinguagens(linguagens.filter(l => l.nome !== nome));
-    else setIdiomas(idiomas.filter(i => i.nome !== nome));
+    if (tipo === 'linguagem') {
+      setLinguagens(linguagens.filter(l => l.nome !== nome));
+    } else {
+      setIdiomas(idiomas.filter(i => i.nome !== nome));
+    }
   };
 
   return (
-    <div className="w-80 p-4 bg-white shadow-md h-screen overflow-y-auto">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold">Linguagens</h2>
-        <FaCog className="text-gray-500" />
+    <div className="right-sidebar">
+      <div className="sidebar-header">
+        <h2>Linguagens</h2>
+        <FaCog className="settings-icon" />
       </div>
 
-      <section className="mb-6">
-        <div className="flex items-center text-purple-600 mb-2">
-          <MdCode className="mr-2" />
-          <h3 className="font-medium">programação</h3>
+      <section className="section">
+        <div className="section-header">
+          <MdCode className="icon-purple" />
+          <h3>Programação</h3>
         </div>
-        <div className="flex gap-2 mb-2">
+        <div className="selectors">
           <input
             value={novaLingua}
             onChange={(e) => setNovaLingua(e.target.value)}
             placeholder="Selecionar..."
-            className="flex-1 border px-2 py-1 rounded"
           />
           <select
             value={nivelLingua}
             onChange={(e) => setNivelLingua(e.target.value as any)}
-            className="border px-2 py-1 rounded"
           >
-            <option>iniciante</option>
-            <option>intermediario</option>
-            <option>avancado</option>
+            <option value="iniciante">iniciante</option>
+            <option value="intermediario">intermediario</option>
+            <option value="avancado">avancado</option>
           </select>
         </div>
-        <button onClick={adicionarLinguagem} className="w-full bg-blue-600 text-white py-2 rounded">Adicionar</button>
-        <div className="mt-3 space-y-2">
-          {linguagens.map(({ nome, nivel, icone, corTag }) => (
-            <div key={nome} className="flex items-center justify-between bg-gray-100 rounded px-2 py-1">
-              <div className="flex items-center gap-2">
-                {icone}<span>{nome}</span>
-                <span className={`text-white text-xs px-2 rounded ${corTag}`}>{nivel}</span>
+        <button onClick={adicionarLinguagem} className="add-button">
+          Adicionar
+        </button>
+        <div className="language-list">
+          {linguagens.map((item) => (
+            <div key={item.nome} className="language-item">
+              <div className="language-info">
+                {item.icone}
+                <span>{item.nome}</span>
+                <span className={`level-tag ${item.corTag}`}>{item.nivel}</span>
               </div>
-              <FaTrashAlt onClick={() => removerItem(nome, 'linguagem')} className="text-red-500 cursor-pointer" />
+              <FaTrashAlt
+                onClick={() => removerItem(item.nome, 'linguagem')}
+                className="delete-icon"
+              />
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mb-6">
-        <div className="flex items-center text-blue-500 mb-2">
-          <MdLanguage className="mr-2" />
-          <h3 className="font-medium">Idiomas</h3>
+      <section className="section">
+        <div className="section-header">
+          <MdLanguage className="icon-blue" />
+          <h3>Idiomas</h3>
         </div>
-        <div className="flex gap-2 mb-2">
+        <div className="selectors">
           <input
             value={novoIdioma}
             onChange={(e) => setNovoIdioma(e.target.value)}
             placeholder="Selecionar..."
-            className="flex-1 border px-2 py-1 rounded"
           />
           <select
             value={nivelIdioma}
             onChange={(e) => setNivelIdioma(e.target.value as any)}
-            className="border px-2 py-1 rounded"
           >
-            <option>iniciante</option>
-            <option>intermediario</option>
-            <option>avancado</option>
+            <option value="iniciante">iniciante</option>
+            <option value="intermediario">intermediario</option>
+            <option value="avancado">avancado</option>
           </select>
         </div>
-        <button onClick={adicionarIdioma} className="w-full bg-blue-600 text-white py-2 rounded">Adicionar</button>
-        <div className="mt-3 space-y-2">
-          {idiomas.map(({ nome, nivel, icone, corTag }) => (
-            <div key={nome} className="flex items-center justify-between bg-gray-100 rounded px-2 py-1">
-              <div className="flex items-center gap-2">
-                {icone}<span>{nome}</span>
-                <span className={`text-white text-xs px-2 rounded ${corTag}`}>{nivel}</span>
+        <button onClick={adicionarIdioma} className="add-button">
+          Adicionar
+        </button>
+        <div className="language-list">
+          {idiomas.map((item) => (
+            <div key={item.nome} className="language-item">
+              <div className="language-info">
+                {item.icone}
+                <span>{item.nome}</span>
+                <span className={`level-tag ${item.corTag}`}>{item.nivel}</span>
               </div>
-              <FaTrashAlt onClick={() => removerItem(nome, 'idioma')} className="text-red-500 cursor-pointer" />
+              <FaTrashAlt
+                onClick={() => removerItem(item.nome, 'idioma')}
+                className="delete-icon"
+              />
             </div>
           ))}
         </div>
       </section>
 
-      <section>
-        <div className="flex items-center text-gray-700 font-medium mb-3">
-          <BsDot className="text-2xl" /> Progresso dos selos
+      <section className="section">
+        <div className="section-header">
+          <BsDot className="icon-purple" />
+          <h3>Progresso dos selos</h3>
         </div>
-        <div className="space-y-3">
-          <div>
-            <div className="flex justify-between">
-              <span className="text-green-600 font-medium">Desenvolvedor Experiente</span>
+        <div className="progress-section">
+          <div className="progress-item">
+            <div className="progress-header">
+              <span className="progress-title">Desenvolvedor Experiente</span>
               <span>75%</span>
             </div>
-            <div className="w-full bg-gray-200 h-2 rounded-full">
-              <div className="bg-green-500 h-2 rounded-full" style={{ width: '75%' }}></div>
+            <div className="progress-bar-bg">
+              <div className="progress-bar-fill" style={{ width: '75%' }}></div>
             </div>
-            <p className="text-sm text-gray-500">5 projetos finalizados</p>
+            <p className="progress-subtitle">5 projetos finalizados</p>
           </div>
-          <div>
-            <div className="flex justify-between">
-              <span className="text-purple-500 font-medium">Mestre dos Hackathons</span>
+
+          <div className="progress-item">
+            <div className="progress-header">
+              <span className="progress-title">Mestre dos Hackathons</span>
               <span>40%</span>
             </div>
-            <div className="w-full bg-gray-200 h-2 rounded-full">
-              <div className="bg-purple-400 h-2 rounded-full" style={{ width: '40%' }}></div>
+            <div className="progress-bar-bg">
+              <div className="progress-bar-fill" style={{ width: '40%' }}></div>
             </div>
-            <p className="text-sm text-gray-500">2 hackathons participados</p>
+            <p className="progress-subtitle">2 hackathons participados</p>
           </div>
-          <div>
-            <span className="text-blue-600 font-medium">Colaborador Elite</span>
-            <div className="w-full bg-gray-200 h-2 rounded-full">
-              <div className="bg-blue-500 h-2 rounded-full" style={{ width: '27%' }}></div>
+
+          <div className="progress-item">
+            <div className="progress-header">
+              <span className="progress-title">Colaborador Elite</span>
+              <span>27%</span>
             </div>
-            <p className="text-sm text-gray-500">8 contribuições</p>
+            <div className="progress-bar-bg">
+              <div className="progress-bar-fill" style={{ width: '27%' }}></div>
+            </div>
+            <p className="progress-subtitle">8 contribuições</p>
           </div>
         </div>
       </section>

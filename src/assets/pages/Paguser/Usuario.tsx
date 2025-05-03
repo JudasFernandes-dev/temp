@@ -45,6 +45,7 @@ const Usuario = () => {
   return (
     <div className="user-page">
       <Header />
+      <PainelPerfil />
       <Sidebar />
 
       <main className="main-content">
@@ -161,8 +162,6 @@ const Usuario = () => {
           </div>
         </div>
       </main>
-
-      <PainelPerfil />
 
       <button className="chat-button">
         <MdMessage size={24} />

@@ -4,7 +4,6 @@
   background-color: var(--bg-color);
   position: relative;
   padding-left: 240px;
-  padding-top: 60px;
 }
 
 .edit-profile-container {
@@ -12,7 +11,8 @@
   margin: 0 auto;
   padding: 2rem;
   background-color: #F0F2FF;
-  width: 100%;
+  margin-top: -61px;
+  width: 800px;
 }
 
 .profile-card {

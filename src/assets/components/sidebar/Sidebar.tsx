@@ -26,7 +26,7 @@ function Sidebar() {
         </div>
 
         <nav className="nav-links">
-          <Link to="/"><MdHome size={16} /> Página Inicial</Link>
+          <Link to="/paguser"><MdHome size={16} /> Página Inicial</Link>
           <Link to="/notifications"><MdNotifications size={16} /> Notificações</Link>
           <Link to="/messages"><MdMessage size={16} /> Mensagens</Link>
           <Link to="/hackathons"><FaHackerrank size={16} /> Hackathons</Link>

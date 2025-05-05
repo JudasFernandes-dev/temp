@@ -115,8 +115,28 @@
 .main-content {
   flex: 1;
   overflow-y: auto;
-  margin-top: -1rem;
-  margin-right: 300px; /* Added margin to prevent overlap */
+  padding: 20px;
+  margin-right: 300px;
+  min-height: calc(100vh - 60px);
+}
+
+@media screen and (max-width: 1200px) {
+  .main-content {
+    margin-right: 0;
+    padding: 10px;
+  }
+  
+  .user-page {
+    flex-direction: column;
+  }
+  
+  .painel-perfil {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    right: auto;
+  }
 }
 
 .search-bar {

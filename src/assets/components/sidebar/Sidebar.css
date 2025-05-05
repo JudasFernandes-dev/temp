@@ -12,6 +12,7 @@
   justify-content: space-between;
   color: #1f2937;
   border-right: 1px solid #e5e7eb;
+  overflow: hidden;
 }
 
 .user-profile {

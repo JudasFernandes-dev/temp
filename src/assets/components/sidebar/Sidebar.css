@@ -91,6 +91,10 @@
   background: #e5e7eb;
 }
 
+.nav-links a:last-child {
+  margin-bottom: 2rem;
+}
+
 .achievements-section {
   margin-top: 1rem;
   padding: 0.5rem;

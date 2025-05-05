@@ -166,7 +166,6 @@ const Usuario = () => {
       <button className="chat-button">
         <MdMessage size={24} />
       </button>
-      <Footer />
     </div>
   );
 };

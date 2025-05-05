@@ -1,8 +1,18 @@
+.user-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  position: relative;
+  padding-left: 240px;
+  padding-top: 60px;
+}
+
 .edit-profile-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
   background-color: #F0F2FF;
+  width: 100%;
 }
 
 .profile-card {

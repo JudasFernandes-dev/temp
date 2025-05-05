@@ -1,0 +1,61 @@
+1. Layout da página:
+   - Layout em tela cheia com barra lateral à esquerda e área de conteúdo principal à direita
+   - Cor de fundo: cinza claro (#F5F5F7) para a área de conteúdo principal
+   - Barra lateral com fundo gradiente: de #D3E4FD a #E5DEFF
+
+2. Componente da barra lateral:
+   - Largura fixa (64px no celular, 256px no desktop)
+   - Avatar do usuário no topo (circular, com borda)
+   - Links de navegação com ícones
+   - Botão "Editar Perfil" moderno e minimalista com fundo azul suave e cantos arredondados
+   - Seção de habilidades na parte inferior com emblemas de habilidades circulares
+3. Estrutura do conteúdo principal:
+   - Título da página "Configurações do Perfil" no topo
+   - Série de componentes de cartão para diferentes seções do perfil
+   - Cada cartão tem um cabeçalho com ícone, título e descrição opcional
+   - Os cartões têm sombras sutis e cantos arredondados (border-radius: 0,5rem)
+   - Espaçamento adequado entre os cartões (24px)
+
+4. Seções do formulário de perfil:
+   - Informações básicas: Envio de foto de perfil, nome, cargo profissional
+   - Informações de contato: E-mail, telefone, localização
+   - Sobre: Texto biográfico (área de texto com várias linhas)
+   - Links: LinkedIn, GitHub, campos de sites pessoais com ícones correspondentes
+   - Visibilidade do perfil: opções de botões de opção (todos, conexões, apenas-eu)
+
+5. Componentes do formulário:
+   - Campos de entrada com rótulos e descrições opcionais
+   - Áreas de texto com altura ajustável
+   - Grupo de rádio para configurações de visibilidade
+   - Validação de formulário usando esquema Zod
+   - Botão azul de salvar com ícone no rodapé do cartão final
+6. Campos específicos do formulário:
+   - Nome (obrigatório, mínimo 2 caracteres)
+   - E-mail (obrigatório, formato de e-mail válido)
+   - Título profissional (opcional)
+   - Localização (opcional)
+   - Telefone (opcional)
+   - Sobre o texto (opcional, multilinha)
+   - Links sociais (opcional): LinkedIn, GitHub, Site
+   - Visibilidade do perfil (seleção de rádio necessária)
+7. Seção de foto de perfil:
+   - Exibição de fotos atuais (circular, 96px x 96px)
+   - Botão de upload de fotos
+   - Texto de recomendação para dimensões ideais de imagem
+8. Detalhes de estilo:
+   - Fonte: pilha de fontes do sistema com fallbacks
+   - Fundo do cartão: branco
+   - Cores do texto: Cinza escuro para rótulos (#222), cinza médio para descrições
+   - Estilo dos botões: botão principal azul para salvar, botão de contorno para upload de fotos
+   - Espaçamento do formulário: 16px consistente entre os elementos do formulário
+9. Design responsivo:
+   - A barra lateral é recolhida no celular
+   - Os cartões são empilhados verticalmente e a largura pode ser ajustada em telas menores
+   - Os campos de entrada se expandem para a largura total no celular
+   - O formulário mantém a legibilidade em todos os tamanhos de tela
+10. Funcionalidade:
+    - Dados do formulário pré-preenchidos com informações do usuário
+    - Os dados de envio do formulário são registrados no console (para serem conectados ao backend posteriormente)
+    - Validação do lado do cliente para campos obrigatórios
+
+Use React com TypeScript, React Hook Form com Zod para validação, Tailwind CSS para estilização e componentes Shadcn UI para os elementos da interface. A página deve corresponder ao estilo visual de uma plataforma de rede profissional, com uma estética limpa e moderna.

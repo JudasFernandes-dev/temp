@@ -3,7 +3,6 @@
   min-height: calc(100vh - 60px);
   background-color: var(--bg-color);
   position: relative;
-  margin-top: 60px;
   padding-left: 240px;
   color: var(--text-color);
 }

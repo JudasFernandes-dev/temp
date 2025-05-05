@@ -12,6 +12,16 @@
   z-index: 10;
 }
 
+@media screen and (max-width: 1024px) {
+  .painel-perfil {
+    width: 100%;
+    position: relative;
+    height: auto;
+    border-left: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+}
+
 .certifications-section {
   margin-top: 20px;
 }

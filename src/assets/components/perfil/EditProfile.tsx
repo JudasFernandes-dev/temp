@@ -43,6 +43,7 @@ export default function EditProfile() {
   return (
     <div className="edit-profile-container">
       <h1>Configurações do Perfil</h1>
+      <p className="subtitle">Configure as informações principais do seu perfil</p>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="profile-card">
@@ -62,7 +63,7 @@ export default function EditProfile() {
           <h2>Informações Básicas</h2>
           <div className="form-group">
             <label>Nome*</label>
-            <input {...register('name')} />
+            <input {...register('name')} placeholder="Jane Doe" />
             {errors.name && <span className="error">{errors.name.message}</span>}
           </div>
           <div className="form-group">
